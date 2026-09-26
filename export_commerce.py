@@ -121,7 +121,13 @@ def main() -> None:
     big = "(" + "|".join(keyword_regex(w) for w in words) + ")"
     matched = (f"list_transform(list_filter(list_zip({sql_list(words)}, {sql_labels(words)}),"
                f" z -> regexp_matches(lower(header), z[1])), z -> z[2])")
-    con.execute("DROP VIEW IF EXISTS boundary")
+    # A previous run may have left `boundary` as either a view or a table in the
+    # persistent DB, and DuckDB refuses to drop one as the other.
+    for stmt in ("DROP TABLE IF EXISTS boundary", "DROP VIEW IF EXISTS boundary"):
+        try:
+            con.execute(stmt)
+        except duckdb.CatalogException:
+            pass
     con.execute(f"""
         CREATE OR REPLACE TABLE boundary AS
         WITH cand AS (

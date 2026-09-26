@@ -14,7 +14,6 @@
 # entry: getting a business started
 licens*
 permit*
-registration
 registr*
 application fee*
 occupation tax
