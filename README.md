@@ -78,7 +78,10 @@ Edit the file, rerun, and say in the commit message what you changed and why.
 
 ## Labeling
 
-`out/label_sheet.csv` opens in Excel or Google Sheets. No code needed. Fill in:
+`LABELING.md` has the round-by-round workflow: who does what, how the copies get
+made, how the files come back, and what the merge produces. Read that before a
+round. In short, `out/label_sheet.csv` opens in Excel or Google Sheets, no code
+needed, and you fill in:
 
 - `is_commerce` — yes / no / unsure
 - `category` — entry / operation / exit / other (from the WP3 stub)
@@ -88,9 +91,14 @@ Edit the file, rerun, and say in the commit message what you changed and why.
 Leave the other columns alone. `chunk_id` is a hash of the row's own text, so
 it's the same id on everyone's machine and our labels can be joined on it.
 
-Two of us labeling the *same* sheet independently is the point. `--sample` and
-`--seed` are fixed so we all get identical rows; don't change them without
-telling the group. Save your copy as `labels/label_sheet_<yourname>.csv`.
+Two of us labeling the *same* rows independently is the point, in separate
+copies so nobody sees anyone else's calls. `--sample` and `--seed` are fixed so
+we all get identical rows; don't change them without telling the group.
+
+Filled-in sheets go in `labels/` as `label_sheet_<yourname>.csv`, then
+`python merge_labels.py` joins them on `chunk_id`, writes the disagreements out,
+reports Fleiss' kappa, and scores each keyword by the share of its hits the group
+called commerce.
 
 ## Definition
 
