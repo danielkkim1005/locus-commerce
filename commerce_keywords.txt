@@ -1,99 +1,107 @@
-# Candidate commerce keywords, matched case-insensitively against a section HEADER.
+# Candidate commerce keywords, matched against a section HEADER, case-insensitively.
 # One per line. Blank lines and lines starting with # are ignored.
+#
+# Matching is on word boundaries, so 'sign' no longer matches 'design' or 'assigns'.
+#   word      whole word only.  tow      matches "tow", not "town" or "tower"
+#   word*     prefix match.      licens*  matches license, licenses, licensing, licensee
+# Use * when you want plurals and word endings, which is most of the time. Leave it
+# off for short words that start longer, unrelated ones.
+#
 # This list is for RECALL: it finds candidates for a human to read. It is not the
-# definition of commerce. Prune it with evidence (see keyword_hits.csv) and log
-# what changed and why.
+# definition of commerce. Prune it with evidence (labels/keyword_scores.csv after a
+# labeling round), and say in the commit message what changed and why.
 
 # entry: getting a business started
-license
-licens
-permit
+licens*
+permit*
 registration
-application fee
+registr*
+application fee*
 occupation tax
 business tax
-franchise
+franchis*
 certificate of occupancy
-home occupation
+home occupation*
 zoning certificate
 
 # who is regulated
-business
-merchant
-vendor
+business*
+merchant*
+vendor*
 vending
-peddler
-solicitor
-hawker
+peddler*
+solicitor*
+hawker*
 itinerant
 transient merchant
-contractor
-auction
+contractor*
+auction*
 farmers market
 
 # trades and sectors commonly licensed locally
-restaurant
+restaurant*
 food service
-food truck
+food truck*
 mobile food
-tavern
+tavern*
 liquor
 alcoholic
-beverage
+beverage*
 tobacco
 cannabis
 marijuana
-pawn
+pawn*
 secondhand
-junk dealer
+junk dealer*
 scrap
-taxicab
+taxicab*
 vehicle for hire
 rideshare
-short-term rental
-hotel
-motel
+short-term rental*
+hotel*
+motel*
 bed and breakfast
-amusement
-arcade
-billiard
+amusement*
+arcade*
+billiard*
 bowling
-theater
+theater*
 massage
-barber
-cosmetolog
-tattoo
+barber*
+cosmetolog*
+tattoo*
 day care
-kennel
-grooming
+kennel*
+groom*
 funeral
-laundry
+laundr*
 car wash
-service station
+service station*
 tow
 gambling
 bingo
-adult business
+adult business*
 adult entertainment
 
 # operation
 hours of operation
-sign
-advertising
+sign*
+advertis*
 outdoor display
 sidewalk cafe
 noise
 sanitation
-inspection
+inspection*
 weights and measures
-price
+price*
 solicitation
 
 # exit
 revocation
+revoke*
 suspension
 denial
 transfer of license
 nonrenewal
 going out of business
-closing out sale
+closing out sale*

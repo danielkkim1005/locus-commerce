@@ -42,6 +42,7 @@ Nothing here writes to the LOCUS-v1 folder.
 
 import argparse
 import pathlib
+import re
 import textwrap
 
 import duckdb
@@ -63,8 +64,25 @@ def load_keywords(path: pathlib.Path) -> list[str]:
     return words
 
 
+def keyword_regex(word: str) -> str:
+    """Match on word boundaries, so 'sign' stops matching 'design' and 'assigns'.
+
+    A trailing * means prefix match: 'licens*' catches license, licensing, licensee.
+    Without it the whole word must match: 'tow' will not match 'town'.
+    """
+    stem = word[:-1] if word.endswith("*") else word
+    body = re.escape(stem).replace("\\ ", " ")
+    return r"\b" + body if word.endswith("*") else r"\b" + body + r"\b"
+
+
 def sql_list(words: list[str]) -> str:
-    """A DuckDB list literal. Single quotes are doubled; nothing else is allowed in."""
+    """A DuckDB list literal of the patterns. Single quotes doubled; nothing else in."""
+    inner = ", ".join("'" + keyword_regex(w).replace("'", "''") + "'" for w in words)
+    return "[" + inner + "]"
+
+
+def sql_labels(words: list[str]) -> str:
+    """The keywords as written, in the same order as sql_list, for reporting."""
     inner = ", ".join("'" + w.replace("'", "''") + "'" for w in words)
     return "[" + inner + "]"
 
@@ -98,13 +116,20 @@ def main() -> None:
         CREATE OR REPLACE VIEW business AS
         SELECT * FROM locus WHERE topic = 'Business'
     """)
+    # Two stages, because running ~100 regexes over 2.2M rows is slow: one combined
+    # pattern narrows to candidate rows, then per-keyword matching runs only on those.
+    big = "(" + "|".join(keyword_regex(w) for w in words) + ")"
+    matched = (f"list_transform(list_filter(list_zip({sql_list(words)}, {sql_labels(words)}),"
+               f" z -> regexp_matches(lower(header), z[1])), z -> z[2])")
+    con.execute("DROP VIEW IF EXISTS boundary")
     con.execute(f"""
-        CREATE OR REPLACE VIEW boundary AS
-        SELECT *, list_filter({sql_list(words)}, w -> contains(lower(header), w))
-                    AS matched_keywords
-        FROM locus
-        WHERE topic IS DISTINCT FROM 'Business'
-          AND len(list_filter({sql_list(words)}, w -> contains(lower(header), w))) > 0
+        CREATE OR REPLACE TABLE boundary AS
+        WITH cand AS (
+            SELECT * FROM locus
+            WHERE topic IS DISTINCT FROM 'Business'
+              AND regexp_matches(lower(header), '{big.replace("'", "''")}')
+        )
+        SELECT *, {matched} AS matched_keywords FROM cand
     """)
 
     total = con.sql("SELECT count(*) FROM locus").fetchone()[0]
