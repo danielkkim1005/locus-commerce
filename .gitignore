@@ -1,0 +1,16 @@
+# Data stays out of the repo. Everyone downloads LOCUS-v1 themselves.
+LOCUS-v1/
+*.parquet
+*.duckdb
+out/
+commerce/
+
+# Labels people have filled in go in labels/, not out/
+out/label_sheet.csv
+
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+.DS_Store

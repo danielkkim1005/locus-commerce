@@ -1,0 +1,99 @@
+# Candidate commerce keywords, matched case-insensitively against a section HEADER.
+# One per line. Blank lines and lines starting with # are ignored.
+# This list is for RECALL: it finds candidates for a human to read. It is not the
+# definition of commerce. Prune it with evidence (see keyword_hits.csv) and log
+# what changed and why.
+
+# entry: getting a business started
+license
+licens
+permit
+registration
+application fee
+occupation tax
+business tax
+franchise
+certificate of occupancy
+home occupation
+zoning certificate
+
+# who is regulated
+business
+merchant
+vendor
+vending
+peddler
+solicitor
+hawker
+itinerant
+transient merchant
+contractor
+auction
+farmers market
+
+# trades and sectors commonly licensed locally
+restaurant
+food service
+food truck
+mobile food
+tavern
+liquor
+alcoholic
+beverage
+tobacco
+cannabis
+marijuana
+pawn
+secondhand
+junk dealer
+scrap
+taxicab
+vehicle for hire
+rideshare
+short-term rental
+hotel
+motel
+bed and breakfast
+amusement
+arcade
+billiard
+bowling
+theater
+massage
+barber
+cosmetolog
+tattoo
+day care
+kennel
+grooming
+funeral
+laundry
+car wash
+service station
+tow
+gambling
+bingo
+adult business
+adult entertainment
+
+# operation
+hours of operation
+sign
+advertising
+outdoor display
+sidewalk cafe
+noise
+sanitation
+inspection
+weights and measures
+price
+solicitation
+
+# exit
+revocation
+suspension
+denial
+transfer of license
+nonrenewal
+going out of business
+closing out sale
