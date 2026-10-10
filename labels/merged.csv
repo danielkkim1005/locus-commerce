@@ -1,0 +1,301 @@
+chunk_id,slice,state,function,topic,header,matched,commerce_ainesh,commerce_daniel,commerce_sachin,category_ainesh,category_daniel,category_sachin,commerce_majority,commerce_unanimous,category_majority,category_unanimous,n_labelers,notes
+bcab883403f29b012824eb78cedaa6c8,business,pa,Rules,Business,### Sec. 229-26. License status.,,yes,yes,yes,entry,entry,entry,yes,True,entry,True,3,This directly talks about the laws involving the issuing with licenses and the registration requirements. It could also be operation based on the fact that it tries to define what a business must do | Put in entry bc it's about initial issuance of a license but could bleed into operations with the section on not holding the township liable for actions performed by the licensee
+968378c97700d11d15291657385640c4,business,ms,Rules,Business,## Sec. 8-49. License application.,,yes,yes,yes,entry,entry,entry,yes,True,entry,True,3,Neccesary form that needs to be filled out for the purpose of establishing any slot amusement maching.
+6d3dbfd885c0e6e98fac0ea55d4cbf81,business,al,Rules,Business,# LICENSING AND REGULATIONS,,yes,yes,yes,operation,entry,entry,yes,True,entry,False,3,"Its more of like something that would need to be continousouly done while the business is still in operation. If it was a one time thing neccesary for the creation of the permit, I would say Entry otherwise I think its just a rule that business must fol"
+e7adcaf869fce2a38f91696f24fe5d71,business,ca,Rules,Business,## 11.92.160 Duration of permits issued.,,yes,yes,yes,entry,entry,entry,yes,True,entry,True,3,"Directly talking about logistics with Permits related to businesses and their rules | operator permit term/renewal, never says what biz, assuming commercial"
+8f120a49d20db63ac60dcc28d796fa6b,business,wi,Rules,Business,### § 3-2-3. Fee. [2016 Code],,yes,yes,yes,entry,entry,"entry,operation",yes,True,entry,False,3,"Registration Fee for machines | reg fee + tag display on premises, mostly entry | Covers both initial registration and re-registration"
+e2d02ca7004f1ba173172a52ba015905,business,ne,Rules,Business,## § 18-2-26 STANDARDS FOR DETERMINING WHETHER TO ISSUE PERMITS AND DETERMINING PERMIT CONDITIONS.,,yes,unsure,yes,operation,entry,entry,yes,False,entry,False,3,"Defines how a business should operate | sewer discharge permit for industrial users, utility/env more than commerce but tied to nature of biz | Conditions for initial permitting"
+84088340106dddf6504f0b46eb16ed13,business,va,Rules,Business,### Sec. 110-216. Use of energy by customer.,,unsure,unsure,yes,other,other,operation,unsure,False,other,False,3,"It doesnt really define what the customer is, it could be someone interacting with a business or the business itself, not sure | city electric tariffs/contracts w customers, q5 market actor, not just biz customers"
+7b68180dbedc19a4eb22342ee9d7fbaa,business,fl,Rules,Business,## Sec. 14-51. Receivership.,,unsure,yes,yes,other,exit,exit,yes,False,exit,False,3,"Leaning towards probably not because its just a business interacting with an individual its not a law that a business has to follow but still I could see how it could be seen as a business rule | franchise cancel on receivership so exit, franchise stuff is q5 tho"
+9b4d92e2b01c49152a3cc01b94ca8141,business,co,Rules,Business,## 2. Procedures.,,yes,no,unsure,operation,,,tie,False,operation,True,3,"Defines what a business must do for new designs | utility service request procedure resi customers, same q5 issue as r8 but resi so no | Talks about the process for residential service relocations for utilities not necessarily business licensing. Might be out of scope"
+81ff2297932377d6f7d060129df6a3fc,business,va,Rules,Business,### Sec. 48-120. Filing; contents of application.,,no,yes,yes,,entry,entry,yes,False,entry,True,3,This is the process involved with an individual who wants become a taxi driver not a business
+797f1326a63e5a739527732b0b349faa,business,ga,Rules,Business,## Sec. 3-207. [Micro-brewery—License required.],,yes,yes,yes,entry,entry,entry,yes,True,entry,True,3,Describes the process to starting or owning an micro-brewery
+05aaa78d4a0b8103d68e84b879b33525,business,tx,Rules,Business,## § 11.06. Regulation of Franchises.,,yes,yes,yes,operation,operation,operation,yes,True,operation,True,3,"Describes what the council of a business can do regarding grants | charter franchise powers, rates/audit = operation, repeal is exit, q5"
+9af85e20be07ba46cf56d1f304413181,business,nv,Rules,Business,### 3.12.190: EXEMPT TRANSACTIONS AND SALES:,,yes,unsure,unsure,other,other,,unsure,False,other,True,3,"It describes the taxation of local businesses regarding Motor Fuel so if that is defined in the scope of other then yes | fuel excise tax exemptions for dealers, q2 taxation | Not related to licensing"
+32fa4114b2b6e2959c426263e9b4d5c0,business,ga,Rules,Business,## Sec. 8-84. Applicability of article to existing businesses.,,no,yes,yes,,entry,operation,yes,False,tie,False,3,"In my opnion this is less of a law and more of a temporary article as it just discusses what existing businesses are required to do and thats only for 90 days, It would be entry if it also defined what the new Businesses would have to do but it doesn't. | grandfather temp license for existing adult biz, also nonconforming use angle"
+434a77b11c769fd7a5219d309d827831,business,fl,Rules,Business,## Sec. 15-11. Evidence of liability.,,no,yes,yes,,entry,operation,yes,False,tie,False,3,"I think this is just for any person interacting with a business and not a law for the business itself | who owes license fee if in business, prob tax (q2) but tied to being in biz"
+5971fa85cbe04ed78fa6d0bedcf9de6e,business,co,Rules,Business,# Franchises — Gas and Electric Franchise,,yes,unsure,yes,other,other,operation,yes,False,other,False,3,"This describes just a miscellaneous rule between franchises and the city | franchise fee carve out for city's own use, fee not conduct rule"
+425aa22899f472e08f647bf92d0190e7,business,il,Rules,Business,## Division 2. Public Passenger Vehicle License.,,no,yes,yes,,entry,operation,yes,False,tie,False,3,Just talks about the application for someone to get a license to operate a public passenger vehicle
+678c82c881ae99a7e9e1746a010a537b,business,ga,Rules,Business,## Sec. 24-9. Occupation tax certificate.,,yes,yes,yes,other,operation,operation,yes,True,operation,False,3,"Talks about taxes required by businesses | display of occupation tax cert, tax q2 but really a posting rule"
+945c50c369bde6a9c263c707ff5293af,business,ne,Rules,Business,## Sec. 4. License required.,,unsure,yes,yes,,entry,"entry,operation",yes,False,tie,False,3,It does talk about rules for businesses but it also just a general rule for anyone who wants to be employed by the business. Unsure... | Discusses both initial licensing and ongoing requirements
+45446d0430ed7a7e4bc57f4d7d53c20a,business,oh,Rules,Business,## § 443.11 Inspection Time and Reports; Fee,,yes,yes,yes,operation,operation,operation,yes,True,operation,True,3,"I think it is trying to establish the role that an individual in a business must do | Maintenance of ""hacks"" (taxicabs)"
+41eb0776b8c88d574cba54d077bf8b4d,business,nj,Enforcement,Business,### § 449-55. Enforcement; powers of Director of Taxicab Division. [Amended 4-11-2017 by Ord. No. 17-032],,yes,unsure,yes,operation,operation,operation,yes,False,operation,True,3,"Defines what the taxi-cab association has to do | taxi division enforcing general traffic law (seatbelt etc), speed limit example but scoped to taxi licensees"
+bfb034df98d9654518f4c5c54280a4a7,business,oh,Rules,Business,## 711.25 POSTING OF NOTICE.,,yes,yes,yes,operation,operation,operation,yes,True,operation,True,3,Signage and what the business has to display
+34a9eb727e9699a426198d0f4103e47a,business,il,Rules,Business,## 9-114-390 Advertising displays.,,yes,yes,yes,operation,operation,operation,yes,True,operation,True,3,Defines what and what-not public electric vehicles are allowed to advertise on their vehicles
+58851a95c602535ef512784094aa7def,business,oh,Rules,Business,## 539.06 GENERAL EXCEPTIONS.,,yes,unsure,yes,operation,operation,operation,yes,False,operation,True,3,"Allows businesses to do certain things like a seniority system | discrimination law exceptions, general law but employer reqs sit in operation, hmm"
+88018e78b6bd8595c32ad8a37ea5ba6f,business,wi,Rules,Business,# SECONDHAND GOODS,,yes,yes,yes,operation,operation,operation,yes,True,operation,True,3,Laws circuling around what Pawnbrokers have to do | Commerce ops bc dictates how pawnbrokers conduct
+3bcfa9f40561f0d7a30fcb4f3184f774,business,sd,Rules,Business,### D. Assisted living centers.,,unsure,yes,yes,,entry,"entry,operation",yes,False,tie,False,3,"It talks about like a business that would rent out land but it might just be land-use in general | cond use standards for several commercial uses, entry bc cond use approval but standards read operational | Beginning talks about allotted sqft for assisted living, bottom talks about auto service operations"
+fe26480e80a6a9e5fc95cf309277d766,business,tx,Rules,Business,### Sec. 4-80. Separate fee receipts for each business; nontransferable.,,yes,yes,yes,operation,entry,operation,yes,True,operation,False,3,"A law describing what a business must do | per location fee receipt + nontransferable, transfer part is exit-ish"
+705bf9e8db5069f498562bbe97a1e0f8,business,tx,Enforcement,Business,## Chapter 4: Business & Commerce,,yes,yes,yes,operation,operation,operation,yes,True,operation,True,3,Directly describes what gaming businesses must do
+989b1084d5d0f298c61d5cdad3153ee2,business,ga,Rules,Business,### Sec. 3-24. Display.,,yes,yes,yes,operation,operation,operation,yes,True,operation,True,3,Signage with what a business must do when they have an alcoholic license
+3a19869610ed9fe905156248725a8259,business,il,Rules,Business,### Sec. 10.5-8. Verification of identity.,,yes,yes,yes,operation,operation,operation,yes,True,operation,True,3,"What a cannabis business must do, nuisance rules aimed at businesses"
+dfe990721bc4ece45903cbb92a457c75,business,ga,Rules,Business,### Sec. 6-122. Responsibility for employee’s conduct.,,unsure,yes,yes,,operation,operation,yes,False,operation,True,3,Could be commerical but its not really aimed at the business as a whole and yet just an individual
+74b9b8fbdccbab21babc58f7d81854da,business,ga,Rules,Business,# ADMINISTRATION,,no,no,yes,,,operation,no,False,operation,True,3,"This is a rule on how county employees buy things and not aimed at commerical use | internal staff purchasing steps, no vendor duties, q5 procurement | About compliance with procurement and maintenance procedures"
+8f9f77b2c4b2da593628bec764b27456,business,ca,Enforcement,Business,### 4.76.770 Inspection of business tax certificates.,,yes,yes,yes,operation,operation,operation,yes,True,operation,True,3,"Kind of falls into taxes but it still defines what a director can do in relationship to a business | inspection of biz tax certs, tax q2 but its inspection so op"
+d925ed588ddadb705088a3da23fbcdd1,business,nc,Rules,Business,## Sec. 86-36. Display of name of certificate holder.,,yes,yes,yes,operation,operation,operation,yes,True,operation,True,3,Defines what a taxicab must do at all times; signage
+2a12588b69106ae0b59b9bbc6836cec1,business,va,Rules,Business,## Sec. 10-192. Certain permits.,,yes,yes,yes,entry,entry,entry,yes,True,entry,True,3,"Rules defining application and the neccesary requirements for it | denial grounds listed, def puts denial in exit but this is initial app so entry"
+d3e986022cd7da1d2846447cec10d4ff,business,ne,Rules,Business,## § 10-501 OCCUPATION TAX; AMOUNTS.,,yes,unsure,yes,other,other,operation,yes,False,other,False,3,"More rules on the taxes of alchol providers, doesn't really fit into entry or exit, could be operation | occupation tax amounts 'for raising revenue', q2"
+5d6d78820cff817d45f73073e0af83e3,business,ks,Rules,Business,### Sec. 4-213. License fees.,,unsure,yes,yes,,entry,"entry,operation",yes,False,tie,False,3,"Depends on if we define permit costs as commercial, right now im leading towards not commercial | license fee table, entry via q1 | Covers initial licensing and repeated charges yearly"
+016c002726fd81dd49f82c0263e1faae,business,pa,Rules,Business,## § 81-13. Amendment of franchise fee.,,no,unsure,unsure,,other,,unsure,False,other,True,3,"Talks about what the township is allowed to do, not related to commercial | board can amend franchise fees by resolution, procedural, franchise of what unclear | Doesn't specify what the fees are for"
+4d675c5b293b0da407875835030b219c,business,ok,Enforcement,Business,### Section 121. Posting of sales tax permit.,,yes,yes,yes,operation,operation,operation,yes,True,operation,True,3,"Talks about signage with food trucks and what they have to do | sales tax permit posting, tax-y q2 but posting rule"
+6386efbe07c7d2f89dc49eb5ad770b97,business,wi,Rules,Business,## Sec. 7-4-3. Exemptions.,,no,yes,yes,,entry,operation,yes,False,tie,False,3,"It doesn't talk about the actual article is just provides exceptions to a law about business but it isnt really a business law | exemptions from solicitor/merchant registration, scope of entry reqs, could be other"
+f2b05799e723978790f6f210de8d6722,business,ga,Enforcement,Business,### Sec. 4-79. Sunday sales.,,yes,yes,yes,operation,operation,"entry,operation",yes,True,operation,False,3,"Could be a form of entry as it talks about what you need inorder to get a permit but it also defines more operational things that you must constantly do | sunday sales eligibility, days of sale = operation but reads like extra authorization"
+d8c7e001a13445f496a9b0cac137736b,business,va,Rules,Business,### Sec. 80-58. Other exceptions to requirement for competitive procurement.,,no,unsure,yes,,other,entry,tie,False,tie,False,3,"Talks about what the city is allowed to do in relations to other businesses but not a direct law over businesses | exceptions to competitive procurement, q5, small/minority biz programs touch vendors | Inital contracts"
+7322f2009f6ad9ba525787604ac15041,business,id,Rules,Business,### 5.36.150: LICENSE FEES:,,yes,yes,yes,entry,entry,entry,yes,True,entry,True,3,"Types of fees that must be paid when doing an application for entry | adult biz fees/location + childcare license, multiple subjects all entry-ish"
+ef0888a7fd1ae3710333dbcd4f07d12a,business,al,Rules,Business,# CHARTER AND RELATED LAWS SCHEDULE,,no,unsure,yes,,other,entry,tie,False,tie,False,3,"Nothing really is towards businesses | table of charter acts, mentions license taxes but nothing rule-like | Licensing fees"
+2ab4cfc626350c11eaceaffa01e24fd7,business,ga,Rules,Business,### Sec. 6-131. Annual renewal; operation pending renewal.,,yes,yes,yes,operation,entry,"entry,exit,operation",yes,True,tie,False,3,"Talks about the application but really the requirments for the application so it wouldn't be entry. Does talk about the renewal requirments which is leaned more towards operation | renewal mechanics, lapse=nonrenewal which def puts in exit, went entry | Touches initial license, conduct with the license, and denial of license"
+d9830ecd3ef1ce20ac0a685c12a867ca,business,tx,Rules,Business,### Sec. 12-304. Notification of changes.,,yes,yes,yes,"entry,exit",operation,"entry,exit",yes,True,"entry,exit",False,3,"Describes both startup and discontinue, needs to further be discussed | notice of start/discontinue is entry/exit-ish but its a reporting duty"
+2107ecc9f24a1b5e60d50b45a343a71f,business,tn,Rules,Business,"## 6.21.3.4 Wayside stand, provided:",,yes,yes,yes,operation,operation,operation,yes,True,operation,True,3,"Discusses what should be sold and how big the structure should be | zoning use standards for roadside produce stand, commercial by nature, zoning tho"
+53ec563f365d5bc1263302bfab06d24d,business,ga,Rules,Business,## Sec. 10-137. Gambling prohibited.,,yes,yes,yes,operation,operation,operation,yes,True,operation,True,3,Doesn't talk about getting the license specifically so not really entry but it does talk about what you are not allowed to do hence operation
+ed48d4eddaab40a586c1bf94f085d3a5,business,ga,Rules,Business,### Sec. 1-10-38. Responsibility for specifications.,,unsure,no,yes,,,operation,tie,False,operation,True,3,"Don't really know if its talking about agency within the llcal government or what? Kind of confused | internal agency specs responsibility, procurement q5, no vendor duties"
+4b554a2139d40e20b7a1fc3bb95c07ef,business,tx,Enforcement,Business,## Sec. 30-107. Exceptions.,,unsure,yes,,,other,,tie,False,other,True,2,"Just says the article doesnt apply to certain businesses but doesn't have the rest of the article | exemption clause only, no rule itself, massage article prob licensing"
+1c2897fdd7547040810e3e8f437474d1,business,fl,Enforcement,Business,## Sec. 17-204. False statement or false information in applying for license.,,,,,,,,,False,,False,0,
+021bd00e51bf5d892eb924474ed636db,business,ca,Rules,Business,"## NURSE, REGISTERED",,,,,,,,,False,,False,0,
+c6bf1ffed7dd4bafa5b3e7f93f4c5a14,business,ga,Rules,Business,### Sec. 3-8. Approval and issuance.,,,,,,,,,False,,False,0,
+6096b24743591bc7a2026c8480d8d5b2,business,wa,Rules,Business,## 3.25.020: Classification of Lodging Businesses.,,,,,,,,,False,,False,0,
+92d4b6fce5fda05763c8b8a75ee84641,business,al,Rules,Business,## Article XI. Races,,,,,,,,,False,,False,0,
+fb67c1e71e18884c6b4fdee13216f13e,business,la,Enforcement,Business,## Section 9.10.,,,,,,,,,False,,False,0,
+63a8824c76d2a02f165d4f9228d564be,business,il,Enforcement,Business,# 2-32-070 Payments to the city – Records – Bad check fees.,,,,,,,,,False,,False,0,
+846c49d87da293dadaf4426a7f0ea063,business,id,Rules,Business,### 5.08.110: SALE OF BEER TO MINORS:,,,,,,,,,False,,False,0,
+7d8a1049aea91ff3e23762af786fb164,business,ga,Enforcement,Business,## Sec. 22-94. Time limit for commencement; forfeiture for non-use.,,,,,,,,,False,,False,0,
+54dbc2ce8d958b9a5883fa9d981275da,business,co,Rules,Business,## Sec. 11-10-305. Term of license.,,,,,,,,,False,,False,0,
+7661d5146742a13ae1bbbdeda3b881dc,business,ca,Rules,Business,### 19.94.030 Home occupations not permitted.,,,,,,,,,False,,False,0,
+21584a24830b81b7419543c574e0105f,business,nj,Rules,Business,## § 2:4-14. SURETY AGREEMENTS.$^{40}$ [R.O. 1966 C.S. § 2:4-16],,,,,,,,,False,,False,0,
+724efd0835d74eb48716a0202db916f0,business,al,Rules,Business,"## Sec. 14-98. Power supply exclusive, permission to sell by consumer.",,,,,,,,,False,,False,0,
+056adf9418582bbd07d292d16afc14e7,business,tx,Rules,Business,### Sec. 13-53. License.,,,,,,,,,False,,False,0,
+f0bcd61626f2fefc4e103ec9748aa1d4,business,ga,Rules,Business,### Sec. 4-401. Applications submitted to Tax Commissioner's Office.,,,,,,,,,False,,False,0,
+5df932738d471418d5df6c04d4209678,business,tx,Rules,Business,# OFFENSES AND MISCELLANEOUS PROVISIONS,,,,,,,,,False,,False,0,
+e9b8d493a3e5a01642363fd33e76ab08,business,ca,Rules,Business,## 6.36.030. Exemptions from Chapter.,,,,,,,,,False,,False,0,
+4c4c51ac37ada6f6a039aa2b95fb69d5,business,va,Rules,Business,### Sec. 26-17.6. Same—Operator’s log.,,,,,,,,,False,,False,0,
+b85959ff20144492410e483c77ec61b6,business,oh,Rules,Business,## 709.02 LICENSE FEE.,,,,,,,,,False,,False,0,
+2fb06123c5c2a32415cc680707c2e785,business,ga,Rules,Business,### Sec. 12-205. Limitations upon limited caterers.,,,,,,,,,False,,False,0,
+d11f01ba75ebd984b515441888c7ffe1,business,ca,Rules,Business,### §33.0310 Change of Location,,,,,,,,,False,,False,0,
+34ec332c299d7c131341d9475bf6ac65,business,la,Enforcement,Business,### Sec. 162-191. Existing CPNC may apply for other type of license.,,,,,,,,,False,,False,0,
+42bb17104effe8dfafe8c01a7c09adb3,business,nv,Rules,Business,### 3.24.170: EFFECT OF RESALE CERTIFICATE:,,,,,,,,,False,,False,0,
+71bd65e61c67cef5185c82b0905ec61a,business,il,Rules,Business,### § 116.02 FEES.,,,,,,,,,False,,False,0,
+1dd6e51c2618f0359b5f59044ae60b7c,business,mn,Rules,Business,### Sec. 11-52. Transferability.,,,,,,,,,False,,False,0,
+4f71c85b7aae6f3f79a50c508be70876,business,id,Rules,Business,### 6-2-7: KENNEL LICENSES:,,,,,,,,,False,,False,0,
+cd1fccc6aa984028e7fcef0fa822b237,business,ut,Rules,Business,### 5.20.040: RESPONSIBLE PARTY IDENTIFICATION:,,,,,,,,,False,,False,0,
+a217f304776eea8fc61f4d723050c5dd,business,tx,Rules,Business,## Sec. 3-84. License required.,,,,,,,,,False,,False,0,
+49696db804c811e090105d17b3e205d6,business,sc,Rules,Business,### Sec. 66-533. Payment of hospitality tax.,,,,,,,,,False,,False,0,
+d1ed67230d1806a25118e04851568401,business,ga,Rules,Business,### Sec. 6-45. Purpose and scope of tax and fees.,,,,,,,,,False,,False,0,
+2fb0784e21cf4bd052d61c1202dc2a90,business,va,Rules,Business,## 138-10 DOOR-TO-DOOR SALES—COMMERCIAL SOLICITOR,,,,,,,,,False,,False,0,
+acd2360e06f191ed0ed5009ed88c1e82,business,va,Rules,Business,## Article XXV. Failure of FCC approval.,,,,,,,,,False,,False,0,
+eba9aa707cbcf7eb087254bc88cced63,business,tx,Enforcement,Business,## § 4.03.012. Sealing of machines.,,,,,,,,,False,,False,0,
+619f4215e0dd152e0f16093d7fdf4616,business,tx,Rules,Business,## § 4.04.040. Amateur wireless facility.,,,,,,,,,False,,False,0,
+1fc6dc2a72bbd3ea3697b3ac7d4eefdf,business,co,Rules,Business,## 5.01.020 Franchise requirements—Application.,,,,,,,,,False,,False,0,
+d9133048d337b4f219ae704faaaf43c4,business,al,Rules,Business,"# OCCUPATIONAL LICENSES, TAXES AND REGULATIONS",,,,,,,,,False,,False,0,
+4fdd872b7e3deed4990fc93c907c4af7,business,il,Rules,Business,## § 110.22 POSTING LICENSE.,,,,,,,,,False,,False,0,
+bd4022927d50f6c1d3e14f42b8c398b2,business,il,Rules,Business,## § 31.141 DUTIES.,,,,,,,,,False,,False,0,
+13f5f117da521fc3b2d218db9082c0a9,business,il,Rules,Business,## 4-8-034 Automatic food vending machine identification.,,,,,,,,,False,,False,0,
+0d8976d87b0540892d276b6ba502bd5f,business,ne,Rules,Business,"## Sec. 18-527. Federal legislation, rules and regulations; franchise subject to amendment.",,,,,,,,,False,,False,0,
+e7e48641f94abd8b9cf9f147b86d4afe,business,ga,Rules,Business,### 6-1.11,,,,,,,,,False,,False,0,
+9309b74aa6530bac284d89e61f0950a5,business,la,Rules,Business,### Sec. 2-14. Prohibited salary history inquiry and use.,,,,,,,,,False,,False,0,
+93d2de39e38b87fc0dc636443872680c,business,ga,Rules,Business,"### Sec. 8-1. Registration, tax, license require.",,,,,,,,,False,,False,0,
+3ae1256819b159d455e55cca4010aa6c,business,or,Rules,Business,### 3-16-2 Exceptions.,,,,,,,,,False,,False,0,
+296adbab0268d10943297d5a19220baa,business,ca,Rules,Business,### 16.66.010 - General requirements.,,,,,,,,,False,,False,0,
+2d945b57cbcff04b4825cd1fa3fe143f,business,al,Rules,Business,# ZONING,,,,,,,,,False,,False,0,
+fc79506137426bad030a685be63f9ffc,business,wy,Rules,Business,## 5.09.020 State laws applicable.,,,,,,,,,False,,False,0,
+65f34b73ee551bfb32241a1b3f32f84b,business,ks,Rules,Business,### Sec. 5-128. Permit regulations.,,,,,,,,,False,,False,0,
+aa900743f543e04fdd1e2f1425830c20,business,wv,Rules,Business,## 761.03 EXCLUSIONS.,,,,,,,,,False,,False,0,
+52a21cc9d47bfb1acf208743d059ffe2,business,ga,Rules,Business,### 7.1.6. Legacy Uses,,,,,,,,,False,,False,0,
+5754e346ef9a048c318ed49d63209901,business,ga,Rules,Business,### Sec. 110-3. Fee schedule.,,,,,,,,,False,,False,0,
+cd153b7aa8b622ff02722fdd24cbfecd,business,il,Rules,Business,### 3.3.23: FEES AND COSTS FOR LIQUOR LICENSES:,,,,,,,,,False,,False,0,
+282bb71da3090c61125e5734a6c1b18e,business,ak,Rules,Business,## 10.54.080 - Tow vehicle inspections.,,,,,,,,,False,,False,0,
+5dec0167edcfbe65481a863cc98b26e9,business,ga,Rules,Business,## Sec. 10-27. Professionals.,,,,,,,,,False,,False,0,
+7c9d74b45c57278b4758f3d2ab211904,business,mo,Rules,Business,### Sec. 62-23. Insurance.,,,,,,,,,False,,False,0,
+f0f325f9d40af325097edb435eaa5b47,business,wi,Rules,Business,### Sec. 111-87. Institutional signs and campus and aggregate business property signs.,,,,,,,,,False,,False,0,
+891ac59af79b1c87b8124993e4f6c9a7,business,ks,Rules,Business,# APPENDIX A—DEVELOPMENT REGULATIONS,,,,,,,,,False,,False,0,
+cfb7e5fcfdae974e8de0e36e873bbd00,business,mn,Rules,Business,## Sec. 16-187. Pawnshop location.,,,,,,,,,False,,False,0,
+6ce131278d07c89b2a4f324e2efe6779,business,tx,Enforcement,Business,## DIVISION 1,,,,,,,,,False,,False,0,
+18799ec15faa500d8a45d0e5d10f06bf,business,va,Rules,Business,## Sec. 5.1-10. Performance bond.,,,,,,,,,False,,False,0,
+74a11bb07af290676d390359c14a2544,business,va,Rules,Business,### Sec. 94-3. Duty of police chief to make inspections of taxicabs and other motor vehicles performing a taxicab servic,,,,,,,,,False,,False,0,
+1ba4030e7b35c3b027e413dbfd3ec7af,business,wi,Rules,Business,## Sec. 113-70. Home occupations and professional offices in dwellings.,,,,,,,,,False,,False,0,
+39f13bb676173220eea0d2549fd6b288,business,wa,Rules,Business,### § 5.48.370. Record inspection.,,,,,,,,,False,,False,0,
+17bfc68f0859d7d35b28e70ffbc33bd8,business,ca,Enforcement,Business,## § 4.06.220. Finality of Determination.,,,,,,,,,False,,False,0,
+a77d618ebc35e851e2e07cc8802da17f,business,wv,Rules,Business,### Sec. 757.03. License fees; term; State license.,,,,,,,,,False,,False,0,
+cf260d96a74784ed69123706721ef250,business,ms,Rules,Business,### Sec. 14-221. Application.,,,,,,,,,False,,False,0,
+ab154f85f8e0c49bbbbde7932b510144,business,sc,Rules,Business,### Sec. 24-124. Transfer.,,,,,,,,,False,,False,0,
+7f56297acf5644988cb002524d0236b3,business,mi,Rules,Business,"### Sec. 41-6-65. Use of streets, sidewalks, other parts of public highways, and non-designated property prohibited.",,,,,,,,,False,,False,0,
+891b078e11e7b239cfb3c000482e7fe6,business,ga,Rules,Business,## Sec. 3-3-141. Daily report to police.,,,,,,,,,False,,False,0,
+a35f72c8f2be9458f9cfc7df1534542e,business,wy,Rules,Business,## § 113.05 APPLICATION REVIEW AND ISSUANCE OF LICENSE.,,,,,,,,,False,,False,0,
+9afe0827cc87f266df52312d1336ac94,business,al,Rules,Business,## Sec. 7-223. Delivery license.,,,,,,,,,False,,False,0,
+a2b2e569588bcbce4d45ef1fd07cd140,business,la,Rules,Business,"### Sec. 42-72. Issuance, fee.",,,,,,,,,False,,False,0,
+03d13004aded3f89300ce4361cd5c417,business,wi,Rules,Business,#### b.,,,,,,,,,False,,False,0,
+ee32e369e27ec2110b66d7fe975c3ad7,business,ga,Rules,Business,## Sec. 4-24. Visibility of front entrance.,,,,,,,,,False,,False,0,
+53a5be0ce4be86cadff78af742751755,business,va,Rules,Business,## Sec. 62-13. Council approval required for rates for transportation of passengers and baggage.,,,,,,,,,False,,False,0,
+aafea7bf9d324a91f931835ebee9c987,business,ks,Rules,Business,### Sec. 3.04.090. Display.,,,,,,,,,False,,False,0,
+88ab4ef0d60044647adcc3ce7a234bfd,business,sd,Rules,Business,## Sec. 5.16.130. Licenses not transferrable.,,,,,,,,,False,,False,0,
+d2940b2a6d530dd249e18a2b9c4078f6,business,ga,Rules,Business,"# LICENSES, TAXATION AND MISCELLANEOUS REGULATIONS § 30-109",,,,,,,,,False,,False,0,
+8b6010c42fcf9617a64969ecfba40635,business,tx,Rules,Business,## Sec. 90.126. Rates of fare; rate card required.,,,,,,,,,False,,False,0,
+e213bb91b00ea5ddadd954e7e09c85af,business,nh,Rules,Business,## Sec. 34-54. Permit fees.,,,,,,,,,False,,False,0,
+5f7cea5669db406f14b685d8eb61e102,business,ok,Rules,Business,## Section 9-210 DISPLAY.,,,,,,,,,False,,False,0,
+6d286247d514090bb30b3e73ff01ea82,business,ca,Rules,Business,### 5.32.030 Business tax certificate required.,,,,,,,,,False,,False,0,
+7c1b7650695025a2020d456a5e8539a5,business,ia,Rules,Business,### 128.07 INSPECTION.,,,,,,,,,False,,False,0,
+ad99cc957c74570b78ce7d81a3b2b5a9,business,ca,Rules,Business,### § 5.36.090. Certificate—Posting.,,,,,,,,,False,,False,0,
+c701c102979abb41945ce3f1f9ffe129,business,il,Enforcement,Business,## 4-4-322 License or registration – Suspension or revocation by building commissioner.,,,,,,,,,False,,False,0,
+671e97220c6d27787c08eb82936fc7c6,business,tn,Rules,Business,# ALCOHOLIC BEVERAGES,,,,,,,,,False,,False,0,
+10328a8fe0218934fce2534236c6afb1,business,ny,Enforcement,Business,## § 19-17. Appeals to Control Commission.,,,,,,,,,False,,False,0,
+b59be21e6eb16ec99e31e49d81285ff1,business,il,Rules,Business,### Sec. 3-34-6. Time limit/restrictions.,,,,,,,,,False,,False,0,
+ec03b80375735a2f4633d126f61cbd5f,business,tx,Rules,Business,## Sec. 38-101. Gross receipts tax.,,,,,,,,,False,,False,0,
+7300c5ec885ddeb2a643b8ad955c1368,business,ca,Rules,Business,## 5.04.100 Transferability.,,,,,,,,,False,,False,0,
+8b988902297358cccc05cd359b804b21,business,mo,Rules,Business,### 3.97.030 Committee—Members—Disclosure.,,,,,,,,,False,,False,0,
+0f6b9e2657b607411890acf5cc2378e6,business,tx,Rules,Business,### Sec. 17-29. Denial.,,,,,,,,,False,,False,0,
+657b5be5fd8e5ebe6566ee22ab6e9547,business,ga,Rules,Business,## Sec. 10-64. Persons engaging in more than one enterprise.,,,,,,,,,False,,False,0,
+cefe197eafbfc6ad602f520d0929b60b,business,co,Rules,Business,## 6-36-070 License; fee.,,,,,,,,,False,,False,0,
+2dad9e8951b7fc86e990d2c39f9817d2,business,ga,Rules,Business,### Sec. 6-423. License fees.,,,,,,,,,False,,False,0,
+7d8d13aba61cd09a8ef0f962abdef017,business,va,Rules,Business,## Sec. 10-1. Dance halls.,,,,,,,,,False,,False,0,
+f17dbab19eaea61cbfff0beec70160be,business,al,Rules,Business,## AMENDMENT 15.,,,,,,,,,False,,False,0,
+85f7fdcbfa769070615c084912526393,business,ca,Rules,Business,### 7.06.310 - Transfers—Withdrawal of partner.,,,,,,,,,False,,False,0,
+b21ef03934da408e2bd66444caeccd72,business,ak,Rules,Business,## § 4.20.040. Confidentiality.,,,,,,,,,False,,False,0,
+62f749b81456c5d793dee17e0a0d00ab,business,va,Enforcement,Business,### Sec. 27-5. Daily reports by junk dealers and pawnbrokers of purchases or pledges.,,,,yes,,,operation,yes,True,operation,True,1,
+9f0814045a5a81d1114ec92b9b6e4454,boundary,ny,Enforcement,Other,## § 410-6. Certificate of registration; fee.,registr*,unsure,no,no,,,,no,False,,False,3,Is the chapter a business or not? | About marriage licenses not necessarily commerce
+40067be209adfb92673a4c84a0055b97,boundary,fl,Context,,"# LICENSES, TAXATION AND MISCELLANEOUS BUSINESS REGULATIONS",licens*; business*,yes,yes,yes,other,other,operation,yes,True,other,False,3,"Defines a business type | definitions only, q7"
+ae10c07ee28308a1a571fc3784f60e12,boundary,fl,Rules,Nuisance,### Sec. 2.02.08.06. Restrictions in airport noise impact area.,noise,no,no,yes,,,operation,no,False,operation,True,3,Just talks about schools or housing near airports
+330b52603ebebbadae08663bd0702861,boundary,ne,Context,,### Sec. 38. Franchise application.,franchis*,no,yes,yes,,entry,entry,yes,False,entry,True,3,"Talks about what the city is allowed to do, not neccesarily what a business must follow or do | rules for franchise applications, q5 but entry"
+62cbf813902ee326f0a9468f1b4f8a98,boundary,ny,Rules,Zoning,"### Sec. 10.22. Adult bookstores, adult entertainment establishments, adult cabarets, adult theaters and adult motion pi",theater*; adult entertainment,yes,yes,yes,,entry,operation,yes,True,tie,False,3,"Could be Entry as some of this stuff talks about where the business should be located but also defines stuff that needs to be there like how it has to be enclosed | adult use spacing/siting, zoning-ish, picked entry"
+46d85edfaf8a33b674c564c99174d81f,boundary,in,Process,,## § 114.06 INSPECTION OF PREMISES.,inspection*,yes,unsure,unsure,entry,entry,,unsure,False,entry,True,3,Law pertaining what will happen to businesses after they file an application | premises inspection on application but never says what's licensed | Not enough info in this snippet
+545525620e87c74336640bbe341609c9,boundary,mo,Rules,Nuisance,### Sec. 6-214. Knowingly allowing minors to consume intoxicating liquor.,liquor,no,no,yes,,,operation,no,False,operation,True,3,"I think its more of a general law pertaining to everyone, not just business owners | any owner/occupant, social host not biz"
+77131dc31709f2e345ed93a29d8cea01,boundary,ca,Rules,Zoning,## 13.48.550 Automatic renewal or notice of nonrenewal.,nonrenewal,no,no,yes,,,exit,no,False,exit,True,3,"Talks about historical contracts, not really anything to do with businesses | nonrenewal keyword hit, historic property contract"
+080f2a9e5c89da1aefef9901f9832477,boundary,ga,Process,,"# OCCUPATIONAL LICENSES, TAXES AND REGULATIONS",licens*,unsure,yes,yes,,entry,entry,yes,False,entry,True,3,Don't really know if the application is talking about businesses
+bc07793e3f5baf90c0760bddf09c2f69,boundary,pa,Process,,### § 177-4. Registration list and inspections.,registr*; inspection*,no,yes,yes,,operation,operation,yes,False,operation,True,3,"Just the role of the building inspector | reg list is entry, inspections op, went op"
+265812ccf58f93cd5571fba411775381,boundary,ga,Rules,Zoning,## 98-4.6.3.2. Permitted uses.,permit*,yes,unsure,yes,operation,entry,operation,yes,False,operation,False,3,"Where businesses are allowed to operate | downtown zoning use list, mostly retail but apartments mixed in, zoning not biz reg"
+ff9584b8b2a4ea36a63398a9bac66236,boundary,ks,Context,,## Sec. 40-444. Sign regulations.,sign*,unsure,no,no,,,,no,False,,False,3,Just mentions where the law pertaining the businesses is | cross ref only to sign article | Redirects rather than specifying anything
+cdbffb14be8f827b56c20083046a8b66,boundary,wi,Rules,Other,"## 31.07 WALL, ROOF AND ABOVE-ROOF SIGNS.",sign*,no,unsure,yes,,operation,operation,tie,False,operation,True,3,"Law for buildings, not businesses | sign code q4, applies to all signs in district not just biz"
+7699322a48710d87b902b0ba26aa335c,boundary,oh,Enforcement,Nuisance,## 509.10 NOISE LIMIT ON PROPERTY.,noise,no,no,yes,,,operation,no,False,operation,True,3,"Noise limit on any premises | any use of property incl residential, general noise"
+0d5c9ceb0761272a29e20d5829f68282,boundary,ma,Rules,Buildings,"## Sec. 16-62. Connection to underground heating, fire sprinkler, etc., systems—Inspection and approval required.",inspection*,no,no,yes,,,"entry,operation",no,False,"entry,operation",True,3,"Law for anyone, not just businesses"
+8f67a4d58bf42274ac78a86fe0346b96,boundary,tx,Rules,Buildings,### $\S$ 3.05.034. Application for development permit; approval criteria.,permit*,no,no,yes,,,entry,no,False,entry,True,3,Rule for any floodplain development
+ac031783c1428bfc5f82beeecb92a1b7,boundary,ca,Process,,# BUSINESS LICENSES AND REGULATIONS,licens*; business*,yes,yes,yes,operation,operation,operation,yes,True,operation,True,3,"Talks about inspections with certain types of business I think | ambulance service inspections, chapter is biz licenses so yes"
+074981bb31fa5d2d373978135f23f9c4,boundary,fl,Enforcement,Buildings,## Sec. 6-156. Establishment and limited duties of fire departments to perform annual fire inspections of existing busin,business*; inspection*,yes,yes,yes,operation,operation,operation,yes,True,operation,True,3,"Inspections of commercial premises for fire safety | fire inspections of commercial occupancies, also multifamily/gov mixed in but title says businesses"
+fc21a696964ce4f21556c1f490e16045,boundary,co,Rules,Buildings,# General Provisions — Inspections,inspection*,no,no,unsure,,,,no,False,,False,3,For an individual and not a business | Not enough info
+22ba600bcc98882685ef6c7d8155c68c,boundary,ne,Rules,Nuisance,### Sec. 15-3. Open containers on licensed premises after closing hours.,licens*,yes,yes,yes,operation,operation,operation,yes,True,operation,True,3,Rules for open liquor at a retail establishment
+5d5c210b3b9df1bae2b127336aa1523b,boundary,co,Rules,Nuisance,### Sec. 49-571. Permit required.,permit*,yes,yes,yes,operation,entry,operation,yes,True,operation,False,3,"Talks about how businesses owners, specifically for sale, can't block public right of way"
+f73f84362b34df7692caf7c1d5ef0f4e,boundary,va,Rules,Zoning,## Sec. 11.3 Permitted uses.,permit*,unsure,unsure,unsure,,,,unsure,True,,False,3,"The list is missing | intro sentence only, list cut off, cant tell what uses | Cut off"
+2dfab79ae843f85566e21ca40b4442fd,boundary,mo,Rules,Other,## Sec. 29-6. Inspections.,inspection*,no,no,yes,,,operation,no,False,operation,True,3,"Utility inspections for all dischargers | wastewater inspection access, env/utility not biz specific"
+7fdc0c91b7d3bd1b6810b22f22c739cd,boundary,fl,Rules,Other,## Section 17. County Rights in Franchise.,franchis*,no,unsure,unsure,,operation,,unsure,False,operation,True,3,"Either cut off or just doesn't contain any information | franchise reserved rights clause, cut off mid sentence, q5 | Cut off"
+b7f6e9a0abab6e21626775676db3aeea,boundary,wa,Rules,Buildings,### 13.56.230 Compliance with Permit.,permit*,unsure,unsure,,,operation,,unsure,True,operation,True,2,"Unsure if its for commercial contractors of construction in general | facilities permit compliance prob ROW telecom, text never says"
+033beee3d9941230c7d304ead8577e27,boundary,nc,Rules,Nuisance,## Sec. 9-36. Permits.,permit*,no,no,no,,,,no,True,,False,3,"For any individual not just businesses | noise permit for events, any person | Noise permits not necessarily commerce"
+3f6fa74700547b8d13077bced982fac1,boundary,ut,Rules,Buildings,## 6.22.540 Council/Franchising Authority’s Policy with Respect to Safety Requirements.,franchis*,unsure,yes,yes,,operation,operation,yes,False,operation,True,3,"Are MCS provides and commericial or not? If they are then yes with category as Operational because it describes saftey standards with them | cable provider safety reqs, q5 franchise but binds provider ops"
+985f8cb76390d69e698c2fecf169da31,boundary,va,Rules,Other,### § 175-6.7. Sign regulations.,sign*,unsure,no,no,,,,no,False,,False,3,Sign rules for what? | cross ref only to sign article | Redirects
+39f9285539323e6ff65e5fe3da521c67,boundary,sc,Rules,Nuisance,## Section 9.8. Removal of Signs.,sign*,unsure,unsure,yes,,operation,operation,unsure,False,operation,True,3,"Rules pertaining to everyone. not just businesses but it is important for Businesses like signage and False Advertising | sign removal, false ad bit is commercial, rest general sign code q4"
+97e3bbe00cab297841a2c3469383f6b2,boundary,ne,Rules,Zoning,## § 113.11 POSTED NOTICE; SOLICITORS TO COMPLY.,solicitor*,yes,yes,yes,operation,operation,operation,yes,True,operation,True,3,"Defines what soliciters must do | door to door solicitors conduct, could be charity not just sales"
+7a17746a508495d84ed3c15930a6785a,boundary,fl,Rules,Nuisance,### Sec. 62-604. Mural permit required; application for a mural permit by a qualified applicant.,permit*,no,unsure,no,,entry,,no,False,entry,True,3,"Talks about how many murals are allowed and the application process for a mural permit, not really commercial | mural permit, nothing says commercial/ad, q4 sign-ish | Not necessarily commerce"
+a924a8f4e301ed2475712878b503518e,boundary,ne,Rules,Zoning,## 6.04.080 Issuance of Permit.,permit*,no,no,no,,,,no,True,,False,3,"Applies to anybody trying to have animal keepings | animal keeping permit, no commercial element in text, q6 | Not necessarily commerce"
+aad694aba337a0c994e7c6e79f09c962,boundary,ca,Rules,Other,## 35.80.040 Application Fees,application fee*,unsure,no,yes,,,entry,tie,False,entry,True,3,"Doesn't directly saw whether or not it's for commericial applications | general land use app fees not biz specific, q1"
+8fdf063ddc6703f5bd1f03e7da4c9c8b,boundary,ca,Process,,### Sec. 34B-6. Permit procedure for state small water systems.,permit*,no,no,yes,,,entry,no,False,entry,True,3,"Application process for establishing and maintaining state water systems | water system permits, utility/health not a trade"
+97282ac2d862881aea73ec5abd3b72c3,boundary,tx,Rules,Buildings,## Sec. 46-64. Permit procedures.,permit*,no,no,yes,,,entry,no,False,entry,True,3,Rule for any floodplain development
+ed91949ef1eed0f00e82abae3989f706,boundary,ga,Rules,Zoning,### 9.3.6. Permitted Uses in Designated Areas.,permit*,yes,unsure,yes,operation,entry,entry,yes,False,entry,False,3,"Mixes some residential and commercial but I think it would be beneficial to have anyways in the dataset as it still has some usefull commericial laws | overlay use table, grocery/laundromat etc by right but mostly zoning"
+ec15878bc0e4ec4810a2a915df493945,boundary,in,Enforcement,Buildings,"## § 53.30 INSPECTION, MAINTENANCE AND REPORTING.",inspection*,no,no,yes,,,operation,no,False,operation,True,3,Applies to all construction
+b466abf1e4a823541c6624c3416b4cb6,boundary,co,Rules,Other,## Sec. 4-57. To be worn only by licensed dogs.,licens*,no,no,yes,,,operation,no,False,operation,True,3,"Nothing to do with commerce | dog license = pet reg, licens* hit"
+1c0614c8e83a46ab439f1a8e4ff0b930,boundary,nc,Rules,Other,## Sec. 10-295. Lot prices and other charges.,price*,yes,unsure,yes,operation,other,operation,yes,False,operation,False,3,"Describes the prices that certain Cemetery's must adopt based on | city sets own cemetery prices, gov selling not regulating biz, q5"
+f2fb9514925f791a9b7ac48bed9e4e4d,boundary,la,Rules,Zoning,### Sec. 74-50. Permitted uses; prohibited uses; height regulations; area regulations; off-street parking.,permit*,no,unsure,yes,,entry,operation,tie,False,tie,False,3,"Applies to all parking trailers | zoning district for trailer sales/parking, setbacks, land use not trade reg"
+923739b23613f0ba4ac1a54fe223dddf,boundary,md,Rules,Buildings,### (A) Inspection frequency and reports.,inspection*,no,no,yes,,,operation,no,False,operation,True,3,Applies to all development
+b156ec3c51861396e03c81b7e6e42404,boundary,mt,Rules,Zoning,### § 154.036 PERMITTED USES.,permit*,unsure,unsure,unsure,,entry,,unsure,True,entry,True,3,"Permitted uses for what? Also includes some commercial applications and some residential | residential district use list, home occ/bnb/childcare are the commerce bits q3 | Not enough info"
+0dc3ab4846ed917e91c0e28c9c281d8e,boundary,tx,Rules,Other,## Sec. 5-369. Permit modification.,permit*,no,unsure,yes,,operation,operation,tie,False,operation,True,3,"Talks about what the city is allowed to do | pretreatment permit mods for user ops, env/utility, same as r7"
+91a94bf936a3e9e526d789ecef09d930,boundary,sd,Rules,Buildings,### 15.12.080 Permits required.,permit*,yes,yes,yes,operation,operation,operation,yes,True,operation,True,3,"Applies to rules commercial plumbers must follow | building permit rule but duty is on plumber as trade, leaning yes"
+177e980596c1bf0d589b875f508193a7,boundary,ca,Enforcement,Nuisance,### (c) Issuance of Permit.,permit*,no,no,yes,,,entry,no,False,entry,True,3,"What the Chief Adminstrative Officer must do | noise permit issuance/revoke, general not biz"
+61ad7a29e33e7628d1a22ea6fe0cc818,boundary,wa,Rules,Zoning,### A. Districts permitted.,permit*,no,unsure,unsure,,,,unsure,False,,False,3,"Just a list of five districts; it doesn;t say anything else | list of zones only, no idea what use is permitted | Not enough info"
+4efcb652dcf35273bd3373d4861858c0,boundary,wy,Rules,Other,"## § 90.24 PROHIBITED SALE OF COMMERCIAL BRED DOGS, CATS AND RABBITS IN PET STORES, RETAIL BUSINESSES AND OTHER COMMERCI",business*,yes,yes,yes,operation,operation,operation,yes,True,operation,True,3,What a business is allowed to do; they are not allowed to sell dogs for eating
+3921045b1142af0c470b05c23a58df5c,boundary,ia,Rules,Nuisance,"### Sec. 32-207. Duty of contractors to erect, maintain barricades, signal lights, keep watchman.",contractor*; sign*,yes,yes,yes,operation,operation,operation,yes,True,operation,True,3,"Rules pertaining to contractors | duty on street contractors, deducted from city contract pay, bit of q5"
+4e262f29dfcbcdce2392cefd50fb8c4b,boundary,wa,Rules,Other,### § 3.16.070. Revenue bonds – Form – Terms – Interest – Execution and signature.,sign*,no,no,yes,,,operation,no,False,operation,True,3,"Talks about the terms of county revenue bonds, not really commercial | gov bond terms, sign* hit on 'signature'"
+e1adcb6bac1b16854c8abfbb56f592a6,boundary,al,Context,,# ALCOHOLIC BEVERAGES,alcoholic; beverage*,unsure,yes,,,other,,tie,False,other,True,2,"Defines some commercial definitions, leading towards Yes | defs only for alc chapter, q7"
+66c1c5f8a7a1500449ff81a722094579,boundary,in,Process,,### 2.04.320 Ordinances and resolutions—Public inspection and publication.,inspection*,no,,,,,,no,True,,False,1,Describes the job of the clerk
+7f424a4df890283c352b3bedf5bf0630,boundary,oh,Enforcement,Other,## Sec. 331.19. Operation of vehicle at stop signs.,sign*,,,,,,,,False,,False,0,
+6b4af24b41e3118eb0460a55ec8a0f54,boundary,va,Rules,Zoning,### § 325-27.3. Permitted uses.,permit*,,,,,,,,False,,False,0,
+fa6c2c48dd4b987bf6dd4e1b623111a3,boundary,in,Process,,## § 152.31 INSPECTIONS BY FIRE DEPARTMENT.,inspection*,,,,,,,,False,,False,0,
+c67d440de9c9bcd6d3e5cf365f9a1b02,boundary,ok,Process,,"### Sec. 7-112. Notice, requests for consideration; selection of contractor.",contractor*,,,,,,,,False,,False,0,
+9aeeff764c78f35002a292e22216813c,boundary,oh,Rules,Other,### 373.11 REGISTRATION.,registr*,,,,,,,,False,,False,0,
+582bd4277663adc714badaf454851fa0,boundary,fl,Rules,Nuisance,## Sec. 50-54. Noise disturbance prohibited.,noise,,,,,,,,False,,False,0,
+4340eb6f9ede94430b63106364ac9e31,boundary,in,Enforcement,Nuisance,### § 130.03 ALCOHOLIC BEVERAGES PROHIBITED IN CITY PARKS.,alcoholic; beverage*,,,,,,,,False,,False,0,
+7185949f0aa3349ec9b200c69378259b,boundary,md,Rules,Buildings,### 17.08.110 Permit—Denial.,permit*; denial,,,,,,,,False,,False,0,
+33b8193b7a8463c3664d8b022ad38636,boundary,co,Rules,Zoning,## § 116.08 ADVERTISING.,advertis*,,,,,,,,False,,False,0,
+60179e81c8ce75638ce1cb1c1a522c00,boundary,mn,Process,,### Sec. 134A.04. Small cell permit application processing.,permit*,,,,,,,,False,,False,0,
+43bbcf7b6bcdb5481c6fc15905a75538,boundary,ok,Rules,Zoning,### Sec. 5-210. Standards and sanitation.,sanitation,,,,,,,,False,,False,0,
+f616cf60d946c436c58a668b00070214,boundary,tx,Process,,### Sec. 20-123. Inspection and abatement warrants.,inspection*,,,,,,,,False,,False,0,
+d0785fa7c217358e10339d8d00e8751c,boundary,il,Enforcement,Nuisance,# 9-64-041 Temporary signs – Other uses.,sign*,,,,,,,,False,,False,0,
+518b2349838be6734c03f53226002fcd,boundary,wv,Rules,Nuisance,## 343.09 STOPPING FOR PASSENGER VAN; SIGNS AND WARNING LIGHTS.,sign*,,,,,,,,False,,False,0,
+5a20efd0fbc39df3869570e22135e802,boundary,tx,Rules,Buildings,### Sec. 49-40-5. - Additional excavation permit.,permit*,,,,,,,,False,,False,0,
+6053dbde0011ac9e1fe329221096f185,boundary,co,Rules,Nuisance,### Sec. 24-5. Spraying and trimming permit required.,permit*,,,,,,,,False,,False,0,
+b346ea34b7417bc333a74cdf11dcebbc,boundary,va,Rules,Nuisance,# AMUSEMENTS AND ENTERTAINMENTS,amusement*,,,,,,,,False,,False,0,
+7548dea9cc2097d8381171f9bb4d8da1,boundary,al,Enforcement,Nuisance,### Sec. 38-50. Contents of permit application.,permit*,,,,,,,,False,,False,0,
+656330bca25cb44ff525251b348020d2,boundary,la,Rules,Nuisance,# APPENDIX A—FRANCHISES,franchis*,,,,,,,,False,,False,0,
+aa077ec2c141d8a61fc212e5cf992725,boundary,wa,Rules,Zoning,### 17.12.080 Signs.,sign*,,,,,,,,False,,False,0,
+467c3713547ea81727aaf548d2f16465,boundary,sc,Rules,Buildings,### Sec. 6-20. Adoption of county buildings inspection code.,inspection*,,,,,,,,False,,False,0,
+6fb6b35fb2fadff3b5ce5e00157b4159,boundary,ok,Rules,Buildings,### § 150.106 PERMIT REQUIRED.,permit*,,,,,,,,False,,False,0,
+80e265006de280fedf9771cfd6a955cc,boundary,ak,Rules,Nuisance,## 9.14.015 - Drug free school zone signs.,sign*,,,,,,,,False,,False,0,
+843ba5e891c255a55c19a9d1200c4da1,boundary,tx,Rules,Buildings,## Sec. 27-47. Inspection of installation.,inspection*,,,,,,,,False,,False,0,
+4068c8de59d166b89144d53ae01b230a,boundary,tn,Rules,Nuisance,### Sec. 62-29. Amplified noise from motor vehicles.,noise,,,,,,,,False,,False,0,
+415e556a69cb7248b3eec7b823e28933,boundary,nc,Rules,Nuisance,### Sec. 22-69. Noise producing activities—Motor vehicles.,noise,,,,,,,,False,,False,0,
+b8b7b6eb83aaa859cb6867fda3591c23,boundary,ca,Rules,Nuisance,### 13.14.200 Permit - Required.,permit*,,,,,,,,False,,False,0,
+4261782a7de943ce18e2ce0fa3333c5c,boundary,nj,Process,,## § 54-6. Issuance of permits.,permit*,,,,,,,,False,,False,0,
+10e41bb7a6e3c871a0f5bc3e4994f194,boundary,il,Rules,Nuisance,## SEC. 35-4217. STREET SIGNS AND TRAFFIC CONTROL DEVICES.,sign*,,,,,,,,False,,False,0,
+a085824e22b12e3e96f2527d76706d90,boundary,wa,Rules,Nuisance,## 10.32.020 Posting signs.,sign*,,,,,,,,False,,False,0,
+43b1effbdd89abc75ba8e54ddde0b708,boundary,co,Rules,Other,## 6-16-060 Cats and ferrets; complete registration designated.,registr*,,,,,,,,False,,False,0,
+f11d84ec9cf5ae79bd50f7f5eee83136,boundary,nc,Rules,Zoning,### D. Suspension of statute of limitations.,suspension,,,,,,,,False,,False,0,
+ba8599f724f48320a81734c7b4ab555f,boundary,ut,Rules,Buildings,### 7-1H-3: REQUIRED INSPECTIONS:,inspection*,,,,,,,,False,,False,0,
+a35af8dc4e4b6989818d31b6aaaa5ed9,boundary,ga,Rules,Buildings,## Sec. 36-256. Inspection authority.,inspection*,,,,,,,,False,,False,0,
+689923fcb8080d1b5d0c372d95a5a9a9,boundary,tx,Rules,Zoning,## Sec. 16-43. Development permit—Required.,permit*,,,,,,,,False,,False,0,
+8a9b2ca2999612af3ad9d6a418bcc0df,boundary,va,Context,,# BUSINESS REGULATIONS,business*,,,,,,,,False,,False,0,
+d66a82bec10c61fbde0d30ae347cc54d,boundary,va,Context,,# BUSINESS LICENSES AND REGULATIONS § 5.20.040,licens*; business*,,,,,,,,False,,False,0,
+d16326c8e867c2ad70dbbedc1aea932c,boundary,mn,Rules,Other,## § 123.03 PERMIT REQUIRED.,permit*,,,,,,,,False,,False,0,
+589f71bba827763f02602df240f5a21f,boundary,tx,Rules,Nuisance,## Sec. 3.924 Traffic Movement Control Signs,sign*,,,,,,,,False,,False,0,
+d4011a2997a84b97c92f5e78a63f152b,boundary,il,Enforcement,Other,## 10-32-055 Managed native and pollinator garden registry.,registr*,,,,,,,,False,,False,0,
+e0bddfcdf17bef9de204f3cd0c9ac33c,boundary,wa,Rules,Nuisance,## 11.50.060 Green arrow signal.,sign*,,,,,,,,False,,False,0,
+aa4052286d256313120c548b0161f9b1,boundary,mo,Rules,Buildings,## Article VII. General Guidelines for SWPPP Inspection Requirements and SWPPP Observation Report.,inspection*,,,,,,,,False,,False,0,
+19cc0343c091122863121da094b0a11b,boundary,nc,Rules,Buildings,## Sec. 10-48. Requests for inspection; re-inspection; notice of approval or rejection.,inspection*,,,,,,,,False,,False,0,
+7b38b1f9b4d3eb859af0db587bc2e24c,boundary,ga,Context,,### Sec. 226. Illuminated sign.,sign*,,,,,,,,False,,False,0,
+b359c9af1d08808c66ad1c9fee7a6714,boundary,ga,Rules,Nuisance,### Sec. 23-52. Overnight parking in business districts.,business*,,,,,,,,False,,False,0,
+48075c8bd462992c0313feb0f09ca5ae,boundary,sd,Enforcement,Other,## 8.34.130 Additional fee for failing to obtain permit.,permit*,,,,,,,,False,,False,0,
+4f88915c6924779eda0a2c8f9e96429b,boundary,nc,Rules,Nuisance,"## Sec. 12-101. Authority of city to prohibit loud, disturbing and unnecessary noise.",noise,,,,,,,,False,,False,0,
+0d6975992457ebb3435702ebce6558cd,boundary,ak,Rules,Zoning,## 16.125.060 - Operations under an approved license.,licens*,,,,,,,,False,,False,0,
+af2d6f21533e110f8e008b9023bd63ca,boundary,wi,Rules,Nuisance,### 5.64.150 Enclosure required-Picnic licenses.,licens*,,,,,,,,False,,False,0,
+3862bf3af2e3e6e9a94a757a13e2c4a4,boundary,wi,Rules,Nuisance,## 5. PERMITTED USE.,permit*,,,,,,,,False,,False,0,
+2830ffc78b832680d59b3a4273c7fa5e,boundary,ca,Rules,Zoning,## BILLIARD HALL,billiard*,,,,,,,,False,,False,0,
+30eee045824a6e3d8644ac3fbe1c23c6,boundary,ok,Rules,Zoning,### C. Building Mounted Signs.,sign*,,,,,,,,False,,False,0,
+8e6a9580424a1d4e12fc019b10d74e5c,boundary,tn,Rules,Nuisance,### Sec. 8-109. Health and sanitation nuisances.,sanitation,,,,,,,,False,,False,0,
+1491ecdc3c74618d095ae2e5ecd6dfcd,boundary,md,Rules,Zoning,## § 34-1. Inspections required.,inspection*,,,,,,,,False,,False,0,
+beccbbc7ea7f458b7b6d2bdb27e5d997,boundary,oh,Rules,Other,### § 1040.01 PERMIT REQUIRED.,permit*,,,,,,,,False,,False,0,
+8bd7e36518fca8d71812b09ea777901b,boundary,ut,Process,,"## 2-2-2: TERMINATION – SUSPENSION WITHOUT PAY, OR INVOLUNTARY TRANSFER – APPEAL PROCEDURE:",suspension,,,,,,,,False,,False,0,
+55651a7abcda3c5fddbc1576a8f816b0,boundary,ca,Process,,## Chapter 4: Health and Sanitation,sanitation,,,,,,,,False,,False,0,
+2ed64515a95a681e7cb76452f594ef26,boundary,wi,Rules,Nuisance,### Sec. 50-327. Permits.,permit*,,,,,,,,False,,False,0,
+c22128abf48ba77e3feaf94cd16d883c,boundary,mn,Rules,Nuisance,### Sec. 10-795. Prohibited signs.,sign*,,,,,,,,False,,False,0,
+56de79debd9ea52d005f1eb5b23f61b5,boundary,wi,Process,,### Sec. 52-891. Solar collector permit applications.,permit*,,,,,,,,False,,False,0,
+aad8fc38da9c1ff041e7468f033d60b8,boundary,oh,Enforcement,Zoning,## § 122.06 GROUNDS FOR DENIAL.,denial,,,,,,,,False,,False,0,
+f934de1435778aaed3d8342126e5f0c8,boundary,va,Enforcement,Other,## Sec. 62-45. Accessories to gambling activity; penalty.,gambling,,,,,,,,False,,False,0,
+33c8159d0d941040037408ede17dc197,boundary,wi,Rules,Nuisance,# LICENSES AND PERMITS,licens*; permit*,,,,,,,,False,,False,0,
+72722ab2d4eacf462aae06f99406a16d,boundary,in,Rules,Nuisance,### § 78.02 INSPECTIONS.,inspection*,,,,,,,,False,,False,0,
+b0531b2e450fa2b95f7f3fe5be47adb5,boundary,ut,Rules,Nuisance,### 14.56.060 Permits section.,permit*,,,,,,,,False,,False,0,
+ae2cd02ecf33b4ac87e10e2ba0496f88,boundary,in,Rules,Other,## § 50.07 REMOVAL OF CERTAIN DEBRIS BY CONTRACTORS.,contractor*,,,,,,,,False,,False,0,
+86d44a8e7d51d21c7bdb99be7821d6cc,boundary,co,Enforcement,Nuisance,"## Sec. 16-685. Authority to remove, tow or impound vehicles.",tow,,,,,,,,False,,False,0,
+598af72f2521a78fe5acceff49b1c7c7,boundary,ga,Process,,"### Sec. 4-2-24. New processes, materials or occupancies which may require permits.",permit*,,,,,,,,False,,False,0,
+604bbe8b1bfd4e973e4e82d68ce78465,boundary,va,Rules,Other,## Sec. 78-370. Permit not transferable.,permit*,,,,,,,,False,,False,0,
+ff22f834c3ed94d51ac69c206784beee,boundary,tx,Rules,Other,### Sec. 70-20. Validity of permits.,permit*,,,,,,,,False,,False,0,
+df9b80f53fb3ae8ce8c2c4c521b8be2c,boundary,ky,Rules,Zoning,### (B) Permitted districts.,permit*,,,,,,,,False,,False,0,
+c1465bd813e9987305da035768b640b5,boundary,sc,Rules,Buildings,## Sec. 18-63. Responsibility of permittee.,permit*,,,,,,,,False,,False,0,
+62f24447a4194a56a456da2770eae8b8,boundary,ks,Enforcement,Buildings,## § 4-316 INSPECTION; CONCEALMENT OF PRIOR WORK.,inspection*,,,,,,,,False,,False,0,
+6c259afac0e7276492deda6807b5d42d,boundary,sd,Enforcement,Zoning,## § 152.031 REVOCATION OR REFUSAL.,revocation,,,,,,,,False,,False,0,
+4f88d476ff40d42438eb14fce557bab8,boundary,sc,Enforcement,Zoning,## 11.2.8. Permit revocation.,permit*; revocation,,,,,,,,False,,False,0,
+29e120bf1fef30d5eea0f405cd5f73dc,boundary,il,Rules,Other,## § 53.061 SIGNATORIES AND CERTIFICATION.,sign*,,,,,,,,False,,False,0,
+cc67ea77e07f38c30ab6776e44142948,boundary,oh,Enforcement,Nuisance,## § 92.09 PROHIBITIONS; MINORS UNDER 18 YEARS; LOW-ALCOHOL BEVERAGES.,beverage*,,,,,,,,False,,False,0,
+9bc176da6d4c6c019d849e453b84ef40,boundary,mi,Context,,### Sec. 18-291. Definition of alcoholic liquor.,liquor; alcoholic,,,,,,,,False,,False,0,
+4c79035c52a19e4a81cd3085b762f30d,boundary,tn,Rules,Buildings,## Sec. 9-76-2. Well digger’s permit.,permit*,,,,,,,,False,,False,0,
+757eb4d96940283cd46287af85baa475,boundary,oh,Enforcement,Other,"### 331.14 SIGNALS BEFORE CHANGING COURSE, TURNING OR STOPPING.",sign*,,,,,,,,False,,False,0,
+ba5357f52c46b727ab4d095ad3d74dba,boundary,mi,Rules,Buildings,"### Sec. 8-5-4. Additions to Section 103 of 2015 Michigan Plumbing Code, Department of Plumbing Inspection.",inspection*,,,,,,,,False,,False,0,
+6cedc3a60b725bef2c681b62eeda9383,boundary,ok,Rules,Nuisance,## § 73.11 SIGNS AT THROUGH STREETS.,sign*,,,,,,,,False,,False,0,
+e6243781713b3299af5f2ab471800b52,boundary,ms,Rules,Nuisance,## Sec. 8-7. Noise restrictions—Generally.,noise,,,,,,,,False,,False,0,
+ccd0896e8345589fd32d156a77aa7151,boundary,tn,Rules,Buildings,"### Sec. 7-215. Compression, storage and dispensing of compressed natural gas restricted; building, businesses restricte",business*,,,,,,,,False,,False,0,
+fdca004cfc8bc090db93fc0493c8e3cc,boundary,mi,Rules,Nuisance,### Sec. 54-34. Permit.,permit*,,,,,,,,False,,False,0,
+2c885939733d41533aaaca2d2fae0c9b,boundary,tx,Rules,Buildings,## Sec. 21-178. Issuance of permit.,permit*,,,,,,,,False,,False,0,
+7ec86c9357762b028e0c23bca12b71eb,boundary,fl,Rules,Nuisance,### Sec. 11-52. Noise sensitive zones.,noise,,,,,,,,False,,False,0,
+c20eb6a00d7a637b6347727fd657b399,boundary,mo,Rules,Nuisance,## Section 315.110. Interference With Official Traffic Control Devices Or Railroad Signs Or Signals.,sign*,,,,,,,,False,,False,0,
+9c95be0bfcefebdcbbf88cab362282b0,boundary,az,Enforcement,Other,### 10.36.080 Special permit denial.,permit*; denial,,,,,,,,False,,False,0,
+9ae5151d238ce51e16a462ca10c83602,boundary,ga,Rules,Nuisance,## Sec. 747. Sandwich board signs.,sign*,,,,,,,,False,,False,0,
+965565c9429a1b2767ec0fca129b7bdd,boundary,tx,Process,,## § 106-185. Wastewater discharge permit issuance process.,permit*,,,,,,,,False,,False,0,
+9a7a558fd565373c55d73dca51d18b9b,boundary,tn,Rules,Other,### 9-301. Signals.,sign*,,,,,,,,False,,False,0,
+ff356ab15fcea38ea1f19f90a5197606,boundary,il,Enforcement,Nuisance,### Sec. 19-17. Unauthorized signs and signals.,sign*,,,,,,,,False,,False,0,
+bfd450555dd393b3cf88f2bbdcf95d94,boundary,nv,Rules,Other,"### 8.32.080 Openings, closings and funeral times.",funeral,,,,,,,,False,,False,0,
+cda69785cf8275cb168894cbdcf3bd35,boundary,ut,Enforcement,Other,## 4.12.050 Grounds for denial.,denial,,,,,,,,False,,False,0,
+83fd0f5f5794ba38dcc00f27c1a775b1,boundary,ms,Rules,Buildings,### Sec. 22-315. Permit required to make opening into or connection with sewer line.,permit*,,,,,,,,False,,False,0,
+c31368891081b91468194afc72c8f6b4,boundary,tx,Rules,Buildings,## § 20.07.111. Private sewage disposal permit.,permit*,,,,,,,,False,,False,0,
+9cbc8d7212a3519efd9fd449a890f087,boundary,ga,Context,,# ALCOHOLIC BEVERAGES,alcoholic; beverage*,,,,,,,,False,,False,0,
+ba221aefe2df68766bfc9c1b96b6cc3a,boundary,ne,Rules,Nuisance,## 8.22.140 Distribution of Handbills Where Signs Posted.,sign*,,,,,,,,False,,False,0,

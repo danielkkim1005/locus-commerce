@@ -1,0 +1,1315 @@
+chunk_id,slice,state,city,county,function,topic,matched,header,content_first_2000,ainesh_commerce,daniel_commerce,sachin_commerce,ainesh_category,daniel_category,sachin_category,commerce_majority,commerce_unanimous,n_yes,n_no,n_unsure,category_agreement,ainesh_notes,daniel_notes,sachin_notes
+ac031783c1428bfc5f82beeecb92a1b7,boundary,ca,,yuba_county,Process,,licens*; business*,# BUSINESS LICENSES AND REGULATIONS,"6.05.220
+
+tained in this Chapter with respect to the unit inspected. The report shall set a time period for correction of each violation or omission. A copy of the report shall be given to the permittee of the service concerned.
+
+(c) In addition to the routine inspections required in Section 6.05.211, the Local EMS Agency may make unannounced non-routine inspections of any unit, attendant, volunteer, pilot or air attendant, station or substation regulated hereunder, for the purpose of determining whether or not any aspect of a service subject to this Chapter is, or is not, in compliance with this Chapter. A written report shall be prepared and forwarded to the Board of Supervisors.
+
+(Prior Code, § 6.05.211; Ord. No. 1338)",yes,yes,yes,operation,operation,operation,yes,True,3,0,0,unanimous,Talks about inspections with certain types of business I think,"ambulance service inspections, chapter is biz licenses so yes",
+77131dc31709f2e345ed93a29d8cea01,boundary,ca,san_jose,,Rules,Zoning,nonrenewal,## 13.48.550 Automatic renewal or notice of nonrenewal.,"A. Each historical property contract shall provide that on the anniversary date of the contract, or such other annual date as is specified in the contract, a year shall automatically be added to the initial term of the contract unless notice of nonrenewal is given.
+
+B. In order to avoid automatic renewal of the contract, the owner(s) must serve written notice of nonrenewal to the city's director of planning at least ninety days prior to the renewal date.
+
+C. If the city council determines not to renew the contract, it must serve its written notice of nonrenewal upon the owner(s) at least sixty days prior to the renewal date. The owner(s) may make a written protest of the City of San José's notice of nonrenewal and the city may at any time prior to the renewal date, rescind its notice of nonrenewal.
+
+D. If the city or the owner(s) serve a notice of nonrenewal, the existing contract shall remain in effect for the balance of the contract period then remaining.
+
+(Ords. 23651, 29098.)",no,no,yes,,,exit,no,False,1,2,0,split,"Talks about historical contracts, not really anything to do with businesses","nonrenewal keyword hit, historic property contract",
+aad694aba337a0c994e7c6e79f09c962,boundary,ca,,santa_barbara_county,Rules,Other,application fee*,## 35.80.040 Application Fees,"**A. Fee schedule.** The Board shall establish by resolution a schedule of fees and/or deposits for the processing of the various applications required by this Development Code, hereafter referred to as the Board's Fee Resolution.
+
+**B. Timing of payment.** Required fees and/or deposits shall be paid at the time of filing the application with the Director and no processing shall commence until the fee/deposit is paid.
+
+**C. Refunds and withdrawals.** The required application fees and/or deposits cover County costs for public hearings, mailings, staff time, and the other activities involved in processing applications. Therefore, a refund due to a denial is not required. In the case of an expiration or withdrawal of an application, the Director shall have the discretion to authorize a partial refund based upon the pro-rated costs to-date and the status of the application at the time of expiration or withdrawal.",unsure,no,yes,,,entry,tie,False,1,1,1,split,Doesn't directly saw whether or not it's for commericial applications,"general land use app fees not biz specific, q1",
+177e980596c1bf0d589b875f508193a7,boundary,ca,fresno,,Enforcement,Nuisance,permit*,### (c) Issuance of Permit.,"The Chief Administrative Officer shall issue the requested permit unless he finds, considering the aforementioned criteria, that the public interest will suffer thereby and that such public detriment exceeds the hardship to be suffered by the applicant if the permit is not issued. In the event the Chief Administrative Officer disapproves the application, he shall return same to the applicant with a statement of the reasons for such action. In approving a permit hereunder, the Chief Administrative Officer may impose such conditions as he deems necessary to protect the public interest.
+
+CD10:9
+§ 10-110 MUNICIPAL CODE CITY OF FRESNO
+
+(d) **Revocation or Suspension.** Any permit issued hereunder shall be revocable and may be revoked by the Chief Administrative Officer when a fact is found to exist which would have been a ground for refusal to approve same or when there has been a violation of any of the terms or conditions thereof.
+
+(e) **Repealed.**
+
+(f) **Repealed.** (Added Ord. 72-163, 1972; Am. Ord. 80-171, §§ 75, 76, eff. 12-26-80; Am. Ord. 81-157, § 28, eff. 12-11-81).
+
+**SEC. 10-111. INJUNCTION.**
+
+In addition to other remedies provided by law, the operation or maintenance of any device, instrument, vehicle or machinery in violation of any provision of this article, which operation or maintenance causes discomfort or annoyance to reasonable persons or normal sensitiveness or which endangers the comfort, repose, health or peace of residents in the area, shall be deemed, and is declared to be, a public nuisance and may be subject to abatement summarily by a restraining order or injunction issued by a court of competent jurisdiction. (Added Ord. 72-163, 1972).
+
+CD10:10
+PUBLIC NUISANCES, REAL PROPERTY CONDUCT AND USE § 10-203",no,no,yes,,,entry,no,False,1,2,0,split,What the Chief Adminstrative Officer must do,"noise permit issuance/revoke, general not biz",
+8fdf063ddc6703f5bd1f03e7da4c9c8b,boundary,ca,,santa_barbara_county,Process,,permit*,### Sec. 34B-6. Permit procedure for state small water systems.,"(a) Applications for state small water systems shall meet the requirements of 22 CCR Sections 64211 through 64217.
+
+(b) Applications for state small water system permits shall be made to the administrative authority and shall contain all information that the administrative authority requires to achieve the purpose of this chapter. This application shall be made in writing and signed by the applicant or designated agent on such forms as may be prescribed by the administrative authority. A fee in an amount specified in the current board of supervisors fee resolution adopted pursuant to this chapter shall accompany the application. An application for the construction or modification of state small water systems shall include the following information:
+
+(1) All items required for a multiple-parcel water system application as specified in section 34B-5;
+
+709
+
+Supp. No. 28
+34B-6
+
+(2) For new state small water systems not in existence on November 12, 1991, legal documentation indicating that the record owners of the properties to be served by the proposed water system have incorporated into an association organized under the Corporations Code Sections 18000 through 18420.
+
+(c) The design, supervision and certification of the construction or modification of a state small water system shall be performed by a California registered civil engineer with registration that is active and in good standing from the appropriate state licensing or certification board.
+
+(Ord. No. 12-4843, 9-11-2012)",no,no,yes,,,entry,no,False,1,2,0,split,Application process for establishing and maintaining state water systems,"water system permits, utility/health not a trade",
+fc21a696964ce4f21556c1f490e16045,boundary,co,elizabeth,,Rules,Buildings,inspection*,# General Provisions — Inspections,"$\S 1-5-20$
+
+from the occupant of the residence at any time such person has reasonable grounds to believe a medical emergency is in progress within the subject premises and the occupant of such premises is incapable of consenting to the entry because of such medical emergency. (Ord. 01-20)",no,no,unsure,,,,no,False,0,2,1,none given,For an individual and not a business,,Not enough info
+b466abf1e4a823541c6624c3416b4cb6,boundary,co,dove_creek,,Rules,Other,licens*,## Sec. 4-57. To be worn only by licensed dogs.,"No person shall affix to the collar or harness of any dog or permit to remain so affixed, a tag evidencing licensing and rabies inoculation except to the dog for which said license was intended at the time of issue.
+
+(Ord. No. 132(Series 1979), § 2-11, 6-21-1979)
+
+CD4:5
+§ 4-58
+
+DOVE CREEK TOWN CODE",no,no,yes,,,operation,no,False,1,2,0,split,Nothing to do with commerce,"dog license = pet reg, licens* hit",
+5d5c210b3b9df1bae2b127336aa1523b,boundary,co,denver,,Rules,Nuisance,permit*,### Sec. 49-571. Permit required.,"It shall be unlawful for any person to close off, obstruct or encumber any public right-of-way by displaying goods for sale or by utilizing any structure for the purpose of displaying goods for sale; provided, however, the manager of transportation and infrastructure may, subject to such reasonable conditions as the manager may impose, issue permits for said activities. The manager of transportation and infrastructure has authority to promulgate rules and regulations relating to such permits.
+
+(Ord. No. 292-88, § 1, 5-16-88; Ord. No. 39-20, § 179, 2-3-20)
+
+Cross reference—Vendors not to obstruct public ways, § 38-95.",yes,yes,yes,operation,entry,operation,yes,True,3,0,0,split,"Talks about how businesses owners, specifically for sale, can't block public right of way",,
+40067be209adfb92673a4c84a0055b97,boundary,fl,,flagler_county,Context,,licens*; business*,"# LICENSES, TAXATION AND MISCELLANEOUS BUSINESS REGULATIONS","§ 19-75
+
+h. Persons licensed as physical therapists under the laws of the State of Florida.
+
+i. Persons holding current Florida or federal licenses when lawfully performing the specific services authorized under such license and such services do not involve any sexual theme or purpose.
+
+**Commercial bodily contact establishments means**: Any establishment, business, place operated for commercial or pecuniary gain or where for any form of consideration workers or customers engage in commercial bodily contact or any establishment, business or place any portion of which is set aside, advertised, promoted or used as a place where commercial bodily contact occurs or which is described or depicted as a ""body scrub salon"", ""body wash salon"", ""body relaxation salon"".
+
+**Commercial or pecuniary gain means** the receiving (directly or indirectly) of money or other valuable consideration for an act or service. Operated for commercial or pecuniary gain shall be presumed for any establishment which has received an occupational license. For the purposes of this article, operation for commercial or pecuniary gain shall not depend on actual profit or loss. An establishment which has an occupational license or an establishment which advertises itself as a type of adult entertainment establishment shall be presumed to be ""operated for commercial or pecuniary gain.""
+
+**Commercial establishment** means any business, location, or place which conducts or allows to be conducted on its premises any activity for commercial or pecuniary gain.
+
+**Conviction** means a determination of guilt resulting from plea or trial, regardless of whether adjudication was withheld or whether imposition of sentence was suspended.
+
+**Customer means**:
+
+(1) Any person present at an adult entertainment establishment or sexually oriented business, other than operators or workers, regardless of whether the person has given or paid any consideration to be present at the adult entertainment establishment or sexuall",yes,yes,yes,other,other,operation,yes,True,3,0,0,split,Defines a business type,"definitions only, q7",
+074981bb31fa5d2d373978135f23f9c4,boundary,fl,,sumter_county,Enforcement,Buildings,business*; inspection*,## Sec. 6-156. Establishment and limited duties of fire departments to perform annual fire inspections of existing businesses.,"(a) The respective fire departments operating within the jurisdiction of Sumter County, Florida shall develop a system and schedule inspections for all existing places of assembly, multi-family housing, commercial, local government occupancies, and temporary structures to confirm their compliance with the Florida Fire Prevention Code.
+
+The chief or other officer of the respective fire department shall be responsible for the inspection of all commercial and municipal occupancies within Sumter County. Inspections shall take place during normal business hours for determining any life and fire safety issues and educating business owners and residents in fire and life safety. Inspections include the review of fire protection equipment required by code and serviced by fire equipment dealers, automatic or manual, including kitchen suppression systems, sprinkler systems, engineered systems, and fire alarms.
+
+Supp. No. 109
+
+311
+§ 6-156
+
+SUMTER COUNTY CODE
+
+Minor deficiencies that are declared in a notice of violation by a fire inspector, which can be corrected by the building occupant within forty-five (45) calendar days, may be handled within the respective fire department's reoccurring fire inspection process, provided the correction does not require permitted work. Upon the discovery of a fire or life safety violation that imminently endangers occupants, customers or hinders the operations of fire department personnel, or a notice of violation that is not remedied by the building occupant with in the specified period, the chief or other officer of the respective fire department shall provide, in writing, the identification of the violation and code reference to the building official for review. The building official shall provide the follow-up inspections to verify all hazards were corrected. A letter indicating compliance to the applicable codes shall be provided to the customer.
+
+(b) The AHJ shall retain its rights to perform, or cause to be performed, plans review for ",yes,yes,yes,operation,operation,operation,yes,True,3,0,0,unanimous,Inspections of commercial premises for fire safety,"fire inspections of commercial occupancies, also multifamily/gov mixed in but title says businesses",
+7fdc0c91b7d3bd1b6810b22f22c739cd,boundary,fl,,clay_county,Rules,Other,franchis*,## Section 17. County Rights in Franchise.,"(a) The right shall be reserved to the county to adopt, in addition to the provisions contained herein, such additional regula-
+
+Supp. No. 12 1444
+APPENDIX D—FRANCHISES",no,unsure,unsure,,operation,,unsure,False,0,1,2,split,Either cut off or just doesn't contain any information,"franchise reserved rights clause, cut off mid sentence, q5",Cut off
+ae10c07ee28308a1a571fc3784f60e12,boundary,fl,zephyrhills,,Rules,Nuisance,noise,### Sec. 2.02.08.06. Restrictions in airport noise impact area.,"(A) Construction of any new educational facility, with the exception of aviation school facilities, or residential construction, shall not be permitted within an airport noise impact area until such time as the city amends this section. The provisions of this subsection do not apply to existing residential or new residential construction within platted residential areas established on or before September 1, 2007.
+
+(B) Construction of any educational facility within an area extending five miles along the runway centerline of the airport and which has a width measuring one-half the length of the runway shall be prohibited. The continued use or adjacent expansion of existing structures or new structures for which a site has been determined as provided in F.S. § 235.19 as of July 1, 1993 are excluded.
+
+(Ord. 1358-18, passed 4-23-2018)
+
+LDCII:42",no,no,yes,,,operation,no,False,1,2,0,split,Just talks about schools or housing near airports,,
+7a17746a508495d84ed3c15930a6785a,boundary,fl,miami,,Rules,Nuisance,permit*,### Sec. 62-604. Mural permit required; application for a mural permit by a qualified applicant.,"Murals may not be erected, hung, placed, posted, painted, displayed, or maintained in the city except as provided by this division. The city shall issue no more than 45 mural permits at any one time; however, no more than 25 mural permits may be issued at any one time and in any one city commission district. An applicant shall submit to the city manager or designee a single permit application listing each and every site sought to be permitted at such time.
+
+A qualified applicant’s permit application shall contain the following for each site sought to be permitted:
+
+(1) Dimensioned elevation drawing and photo of the wall where the mural is to be located.
+
+(2) A colored drawing or colored computer simulation depicting the mural face.
+
+(3) Two photographs or two computer simulations depicting the wall and the mural superimposed on the wall.
+
+(4) A certified spacing survey showing compliance with this article, if applicable.
+
+(5) Copy of the city’s zoning atlas where the mural is to be located.
+
+(6) Payment of a non-refundable administrative fee in the amount of $500.00.
+
+(7) A memorandum of lease, sworn to by affidavit, of an executed and enforceable lease for the site sought to be permitted.
+
+(8) The address and the folio number of the subject building and the specific wall on the building upon which the mural would be attached.
+
+(9) Proof that the building where the mural is to be placed is in compliance with applicable laws, as defined herein, and does not have any outstanding civil violations of this Code or any liens due to the city.
+
+(10) Completion by the applicant of the city indemnity and hold harmless agreement as defined in this division, in a form approved to by the city attorney.
+
+(11) Mural permits shall require the applicant notify: the abutting property owner(s) of the new location, the homeowner and neighborhood associations registered with the neighborhood enhancement team responsible for the new location, and the city commissioner of the district whe",no,unsure,no,,entry,,no,False,0,2,1,split,"Talks about how many murals are allowed and the application process for a mural permit, not really commercial","mural permit, nothing says commercial/ad, q4 sign-ish",Not necessarily commerce
+080f2a9e5c89da1aefef9901f9832477,boundary,ga,,liberty_county_,Process,,licens*,"# OCCUPATIONAL LICENSES, TAXES AND REGULATIONS","§ 28-235
+
+thereof to the applicant. He shall promptly give notice of hearing and copies of the application to the sheriff, the county health office, and the county building official (or their designee), who shall investigate the application and report to the board of county commissioners on or before the date of hearing, with appropriate recommendations related to their official functions as to granting a license and conditions thereof.
+
+(Code 1987, § 11-136; Ord. of 6-3-1997, § 1(11-22))",unsure,yes,yes,,entry,entry,yes,False,2,0,1,split,Don't really know if the application is talking about businesses,,
+265812ccf58f93cd5571fba411775381,boundary,ga,thomaston,,Rules,Zoning,permit*,## 98-4.6.3.2. Permitted uses.,"The following uses are permitted in the DT downtown district. Any use not specifically named as permitted shall be prohibited.
+
+A. Antique shops.
+
+B. Apartments.
+
+C. Appliance stores.
+
+D. Art dealers, including commercial studios and galleries.
+
+E. Art supply stores.
+
+F. Artist, dance and music schools and other educational facilities.
+
+G. Auction houses.
+
+H. Bakeries, retail.
+
+I. Banks, credit unions and savings institutions.
+
+J. Barber shops, beauty salons and other personal services.
+
+K. Bars.
+
+L. Beauty supply stores.
+
+M. Bed and breakfast inns.
+
+N. Beer and wine sales, retail, subject to chapter 6, alcoholic beverages.
+
+O. Book stores.
+
+P. Breweries, consumption on the premises.
+
+Q. Brewpubs.
+
+R. Business incubator.
+
+S. Cafeterias and buffets.
+
+T. Candy stores.
+
+U. Cigar and tobacco shops, excluding hookah bars and vape shops.
+
+V. Clothing and clothing accessories stores.
+
+W. Coffee shops.
+
+X. Convention and visitors bureaus.
+
+Y. Cosmetic stores.
+
+Z. Coworking space.
+
+AA. Craft distillery.
+
+Supp. No. 64
+
+CD98:73
+§ 98-4.6
+
+THOMASTON CODE
+
+BB. Crafts studios (pottery, jewelry, woodworking, etc.)
+
+CC. Day spas.
+
+DD. Delicatessens.
+
+EE. Diet and weight reducing centers.
+
+FF. Drinking establishments, with music entertainment.
+
+GG. Dry cleaning establishments.
+
+HH. Dressmaking shops.
+
+II. Electrical transformer or distribution stations, or gas regulator stations, provided such uses are essential for service to the zoning district in which these uses are proposed and provided further that compliance with subsection 98-5.3.2.32 is achieved.
+
+JJ. Electronics stores.
+
+KK. Entertainment venues excluding sexually oriented businesses as defined in chapter 68 of this Code and subsection 98-5.3.2.41 of this chapter.
+
+LL. Florists.
+
+MM. Furniture and home furnishings.
+
+NN. Game stores.
+
+OO. Garden equipment stores.
+
+PP. General merchandise stores.
+
+QQ. Gift, novelty and souvenir shops.
+
+RR. Growler service.
+
+SS. Hair braiding salons.
+
+TT. Hair salons.
+
+UU. Hardware stores.
+
+VV",yes,unsure,yes,operation,entry,operation,yes,False,2,0,1,split,Where businesses are allowed to operate,"downtown zoning use list, mostly retail but apartments mixed in, zoning not biz reg",
+ed91949ef1eed0f00e82abae3989f706,boundary,ga,rome,,Rules,Zoning,permit*,### 9.3.6. Permitted Uses in Designated Areas.,"a. The uses permitted by right and by special use permit, with or without limitations, of the applicable underlying zoning district shall apply to all development within the boundary of the Overlay District; however, if regulations conflict, the applicable Overlay District regulations shall prevail.
+
+b. Variations in use from those permitted in each underlying zoning district are shown in Table 9-4.
+
+Supp. No. 14
+
+CDB:183
+Art. 9, § 9.3.6
+
+ROME CITY CODE
+
+TABLE 9-4
+
+PERMITTED USES IN DESIGNATED AREAS
+
+<table>
+  <thead>
+    <tr>
+      <th>UNDERLYING ZONING DISTRICT</th>
+      <th>USE VARIATIONS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>H-TR, L-TR, S-R, D-R</td>
+      <td>Passive parks, as defined in Article 8, shall be permitted by right</td>
+    </tr>
+    <tr>
+      <td>M-R</td>
+      <td>Nursing homes, convalescent homes, and assisted living facilities shall be permitted by right on lots of less than two acres if all other development standards are accommodated</td>
+    </tr>
+    <tr>
+      <td>N-O-C</td>
+      <td>In addition to the uses that are permitted by right as listed in Article 3 of this Code, grocery stores, laundromats, beauty and barber shops, and custom service restaurants with no drive through service (cafe, coffee shop, bakery) shall be permitted by right if they otherwise meet the standards required by Article 3 and 9 of this Code, with no variances or special exceptions available.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>In addition to the uses that are permitted by right as listed in Article 3 of this Code, and the uses listed elsewhere in this overlay district document, artisan and craft studios as defined in Article 8 of this Code, art galleries, and retail sale of arts and craft items shall be permitted by right within the Etowah Terrace Arts Village area of the EHA if they otherwise meet the standards required by Articles 3 and 9 of this Code, with no variances or special exceptions available.</td>
+    </tr>
+    <tr>
+     ",yes,unsure,yes,operation,entry,entry,yes,False,2,0,1,split,Mixes some residential and commercial but I think it would be beneficial to have anyways in the dataset as it still has some usefull commericial laws,"overlay use table, grocery/laundromat etc by right but mostly zoning",
+3921045b1142af0c470b05c23a58df5c,boundary,ia,ottumwa,,Rules,Nuisance,contractor*; sign*,"### Sec. 32-207. Duty of contractors to erect, maintain barricades, signal lights, keep watchman.","It shall be the duty of any contractor engaged in the construction of paving or repairs to erect and maintain at his own expense barricades and signal lights as provided in this article, and, whenever so ordered by the city council, to also keep upon such work a watchman during such hours as shall be prescribed, who shall be charged with the duty of properly guarding and protecting all barricades and signal lights erected as herein provided, and who shall have the powers of a policeman for the proper enforcement the provisions of this article. Upon the failure of any contractor to maintain barricades, signal lights or a watchman as herein provided, the city council shall cause the same to be done and the cost thereof shall be charged to such contractor and deducted from the amount payable under his contract.
+
+(Code 1961, § 41-70; Code 1970, § 32-149)",yes,yes,yes,operation,operation,operation,yes,True,3,0,0,unanimous,Rules pertaining to contractors,"duty on street contractors, deducted from city contract pay, bit of q5",
+46d85edfaf8a33b674c564c99174d81f,boundary,in,seymour,,Process,,inspection*,## § 114.06 INSPECTION OF PREMISES.,"Upon receipt of the application, as mentioned above, the Clerk-Treasurer shall cause the application to be forwarded to the Chief of Police of the city, who shall inspect the premises to ascertain if all requirements of this chapter are complied with and file, within ten days thereafter, his or her written report of that inspection.
+
+(1987 Code, §§ 4-37, 6-159) (Ord. 1469, passed 6-27-1966)",yes,unsure,unsure,entry,entry,,unsure,False,1,0,2,split,Law pertaining what will happen to businesses after they file an application,premises inspection on application but never says what's licensed,Not enough info in this snippet
+ec15878bc0e4ec4810a2a915df493945,boundary,in,fort_wayne,,Enforcement,Buildings,inspection*,"## § 53.30 INSPECTION, MAINTENANCE AND REPORTING.","(A) Upon the approval of the SWP3 and the issuance of all other required permits and approvals by the DSM the following shall occur during the period of construction activities:
+
+(1) The BSM, or its designee, shall have the authority to conduct inspections of the site to ensure full compliance with the provisions of this chapter, the design standards and technical specifications by the BSM and the terms and conditions of the approved SWP3.
+
+(2) A self-monitoring program shall be implemented by the project site owner to ensure the stormwater pollution prevention plan is working effectively. The program must include the following:
+
+(a) A trained individual shall perform an inspection and prepare a written evaluation of the project site:
+
+1. By the end of the next business day following each 0.5 inch of rain; and
+
+2. At a minimum of one time per week.
+
+(b) The evaluation must:
+
+1. Address the maintenance of existing stormwater quality measures to ensure they are functioning properly; and
+
+2. Identify additional measures necessary to remain in compliance with all applicable laws and ordinances.
+
+(c) Written evaluation reports must include:
+
+1. The name of the individual performing the evaluation;
+
+2. The date of the evaluation;
+
+3. Problems identified at the project site; and
+
+4. Details of corrective actions recommended and completed.
+
+(d) All evaluation reports for the project site must be made available to the inspecting authority within 48 hours of a request.
+
+(e) Sites that are issued a Notice of Violation (NOV) for non-compliance with an approved SWP3 will be charged for time spent on each re-inspection until the site is brought into compliance in accordance with the table set forth in § 53.63.
+
+(B) Upon completion of the construction activities the following shall occur perpetually in accordance with the SWP3 regardless of site usage and land ownership:
+
+(1) All constructed stormwater quality facilities shall be maintained by the property owner, or per agreements",no,no,yes,,,operation,no,False,1,2,0,split,Applies to all construction,,
+ff9584b8b2a4ea36a63398a9bac66236,boundary,ks,wellington,,Context,,sign*,## Sec. 40-444. Sign regulations.,"The sign regulations for the C-3 central business district are in article III of this chapter.
+
+(Ord. No. 3826(1), art. XVIII, § 7, 7-3-2001)",unsure,no,no,,,,no,False,0,2,1,none given,Just mentions where the law pertaining the businesses is,cross ref only to sign article,Redirects rather than specifying anything
+f2fb9514925f791a9b7ac48bed9e4e4d,boundary,la,leesville,,Rules,Zoning,permit*,### Sec. 74-50. Permitted uses; prohibited uses; height regulations; area regulations; off-street parking.,"(a) Permitted uses. Parking or sale of mobile home type trailers and travel trailers. Uses permitted in an A-8 area provided minimum A-8 area and yard regulations are met.
+
+(b) Prohibited uses. All uses not permitted herein.
+
+(c) Height regulations. No building shall exceed 45 feet in height.
+
+(d) Area regulations.
+
+(1) Yards.
+
+a. Front yard. Trailers and structures shall be set back from the front lot line of the park a minimum distance of 20 feet.
+
+Supp. No. 33
+
+3290.2",no,unsure,yes,,entry,operation,tie,False,1,1,1,split,Applies to all parking trailers,"zoning district for trailer sales/parking, setbacks, land use not trade reg",
+0d5c9ceb0761272a29e20d5829f68282,boundary,ma,new_bedford,,Rules,Buildings,inspection*,"## Sec. 16-62. Connection to underground heating, fire sprinkler, etc., systems—Inspection and approval required.","No person shall directly or indirectly connect to, or remain connected to, or in any way use a city water supply, well or other water supply, public or private, with any underground heating system, any fire sprinkler system or any other system, without first having made application therefor and having received, after inspection, the approval of the water board.
+
+(Code 1963, § 3-2325; Ord. of 3-12-64; Ord. of 7-14-66)
+
+**State law reference—Right of entry, M.G.L.A. c. 111, § 173B.**",no,no,yes,,,"entry,operation",no,False,1,2,0,split,"Law for anyone, not just businesses",,
+923739b23613f0ba4ac1a54fe223dddf,boundary,md,,garrettcounty,Rules,Buildings,inspection*,### (A) Inspection frequency and reports.,"(1) The owner/developer shall maintain a copy of the approved erosion and sediment control plan on site.
+
+(2) Every active site having a designed erosion and sediment control plan should be inspected for compliance with the plan on average once every 2 weeks.
+
+(3) A written report shall be prepared by the inspection agency after every inspection. The report shall describe:
+
+(a) The date and location of the site inspection;
+
+(b) Whether the approved plan has been properly implemented and maintained;
+
+(c) Practice deficiencies or erosion and sediment control plan deficiencies;
+
+(d) If a violation exist, the type of enforcement action taken; and
+
+(e) If applicable, a description of any modifications to the plan.
+
+(4) The inspection agency shall notify the on-site personnel or the owner/developer in writing when violations are observed, describing:
+
+(a) The nature of the violation;
+
+(b) The required corrective action; and
+
+(c) The time period in which to have the violation corrected.",no,no,yes,,,operation,no,False,1,2,0,split,Applies to all development,,
+2dfab79ae843f85566e21ca40b4442fd,boundary,mo,jefferson_city,,Rules,Other,inspection*,## Sec. 29-6. Inspections.,"The Director of Public Works shall be permitted to enter properties at any reasonable time for the purposes of inspection, observation, measurement, and sampling of the wastewater discharge to ensure that the discharge to the City's POTW is in accordance with the provisions of the chapter.
+
+(Ord. No. 9979, § 2(32-2.1(g)), 6-6-83)",no,no,yes,,,operation,no,False,1,2,0,split,Utility inspections for all dischargers,"wastewater inspection access, env/utility not biz specific",
+545525620e87c74336640bbe341609c9,boundary,mo,branson,,Rules,Nuisance,liquor,### Sec. 6-214. Knowingly allowing minors to consume intoxicating liquor.,"It shall be unlawful for any owner, occupant or other person or legal entity with the right to permit use and enjoyment of any property, except for a parent or guardian, to knowingly allow any person under the age of 21 years to consume intoxicating liquor on such property or to knowingly fail to stop any person under the age of 21 years from consuming intoxicating liquor on such property.
+
+(Code 2005, § 10-76; Ord. No. 2008-100, § 1, 10-14-2008)
+
+Secs. 6-215—6-237. Reserved.",no,no,yes,,,operation,no,False,1,2,0,split,"I think its more of a general law pertaining to everyone, not just business owners","any owner/occupant, social host not biz",
+b156ec3c51861396e03c81b7e6e42404,boundary,mt,bigtimber,,Rules,Zoning,permit*,### § 154.036 PERMITTED USES.,"Permitted uses include:
+
+(A) Accessory uses;
+
+(B) Bed and breakfast inns;
+
+(C) Childcare facilities;
+
+(D) Home occupations;
+
+(E) Manufactured homes, Class A; located in a manufactured home park;
+
+(F) Modular homes;
+
+(G) Single-family dwellings; and
+
+(H) Temporary buildings for and during construction only.
+
+(2015 Code, § 11-5-2) (Ord. 454, passed 6-19-2000)",unsure,unsure,unsure,,entry,,unsure,True,0,0,3,split,Permitted uses for what? Also includes some commercial applications and some residential,"residential district use list, home occ/bnb/childcare are the commerce bits q3",Not enough info
+1c0614c8e83a46ab439f1a8e4ff0b930,boundary,nc,laurinburg,,Rules,Other,price*,## Sec. 10-295. Lot prices and other charges.,"The prices of all lots in the cemetery and the charges for opening graves and for other work carried on in the cemetery, not specified in this article, shall be as fixed by the city council from time to time and maintained on file in the office of the city clerk. A true copy of such charges shall also be maintained on file in the office of the cemetery supervisor.
+
+(Code 1987, § 6-185; Code 2003, § 10-295)",yes,unsure,yes,operation,other,operation,yes,False,2,0,1,split,Describes the prices that certain Cemetery's must adopt based on,"city sets own cemetery prices, gov selling not regulating biz, q5",
+033beee3d9941230c7d304ead8577e27,boundary,nc,,currituck_county,Rules,Nuisance,permit*,## Sec. 9-36. Permits.,"(a) *Who may apply.* A person or group of persons may produce or cause to be produced sound more than the limits set in Table 1 only if a ""permit to exceed"" has been obtained. With a permit granted pursuant to this section, maximum sound levels shall be as set out in Table 2.
+
+(b) *Application for permit.* Any person or group of persons desiring an ""outdoor amplified sound permit"" or a ""permit to exceed"" shall apply as provided in this section and shall provide all information required. All applications for a ""permit to exceed"" shall be submitted to the sheriff or sheriff’s designee at least 72 hours prior to the scheduled event. Failure to comply with this requirement shall be grounds for denying the permit.
+
+(c) *Action by sheriff.* The sheriff or sheriff’s designee shall act upon all requests for permits. In considering and acting on all requests for permits pursuant to this article, the sheriff shall consider, but shall not be limited to the following, in issuing or denying such permit: The timeliness of the application; the nature of the requested activity; previous experience with the applicant; the time of the event; other activities in the vicinity of the location proposed; the frequency of the application; the cultural or social benefits of the proposed activity; the effect of the activity on any residential area of the county and, previous violations, if any, of the applicant.
+
+(d) *Fee for permit.* Every application for a permit or permits shall require payment of $25.00 administrative fee.
+
+(e) *Conditions on permits.* ""Permits to exceed"" and ""outdoor amplified sound permits"" shall specify the duration for which noncompliance shall be permitted and shall prescribe the conditions or requirements necessary to minimize adverse effects upon the community or surrounding neighborhood. The sheriff or sheriff’s designee may require, but shall not be limited to, the following:
+
+(1) No sound speakers may be set up more than ten feet off the ground;
+
+(2) That permi",no,no,no,,,,no,True,0,3,0,none given,For any individual not just businesses,"noise permit for events, any person",Noise permits not necessarily commerce
+a924a8f4e301ed2475712878b503518e,boundary,ne,lincoln,,Rules,Zoning,permit*,## 6.04.080 Issuance of Permit.,"Prior to the issuance of any permit for the keeping of large or small animals or fowl the Animal Control Division shall investigate the application for the permit and determine whether said premises conform to the requirements of this chapter
+
+360 of 1381
+
+5/1/26, 9:08 AM
+and other ordinances of the city with respect to zoning and building regulations, sanitation, and location of enclosures and shelters. No permit shall be issued by Director until proper facilities are provided for the care and protection of the large or small animals or fowl to be cared for on the premises and the location of the premises is deemed to be proper and suitable for the keeping of such large or small animals or fowl and the application has been approved as to proper zoning. (Ord. 15515 §8; April 9, 1990: P.C. §8.71.080: Ord. 14955 §8; August 22, 1988).",no,no,no,,,,no,True,0,3,0,none given,Applies to anybody trying to have animal keepings,"animal keeping permit, no commercial element in text, q6",Not necessarily commerce
+97e3bbe00cab297841a2c3469383f6b2,boundary,ne,weepingwater,,Rules,Zoning,solicitor*,## § 113.11 POSTED NOTICE; SOLICITORS TO COMPLY.,"(A) It shall be the duty of every solicitor, upon going onto any premises in the city upon which a residence is located, to first examine the notice provided for in § 113.10, if any is attached, and be governed by the statement contained on the notice. If the notice states “NO SOLICITORS INVITED,” then the solicitor, whether registered or not, shall immediately and peacefully depart from the premises.
+
+(B) Any solicitor who has gained entrance to any residence, whether invited or not, shall immediately and peacefully depart from the premises when requested to do so by the occupant.
+
+Penalty, see § 10.99",yes,yes,yes,operation,operation,operation,yes,True,3,0,0,unanimous,Defines what soliciters must do,"door to door solicitors conduct, could be charity not just sales",
+22ba600bcc98882685ef6c7d8155c68c,boundary,ne,omaha,,Rules,Nuisance,licens*,### Sec. 15-3. Open containers on licensed premises after closing hours.,"It shall be unlawful for any person on any property licensed to sell alcoholic liquor at retail to allow alcoholic liquor in open containers to remain on the tables, bar or any surface where such alcoholic liquor is consumed by the public or to be in the possession or control of any person therein for purposes of consumption between the hours of 15 minutes after the closing hour applicable to the licensed premises and 6:00 a.m. on any day.
+
+(Code 1980, § 15-3; Ord. No. 33785, § 1, 1-9-96; Ord. No. 38787, § 1, 8-17-10)
+
+State law reference—Similar provisions, R.R.S. 1943, § 53-179(4).",yes,yes,yes,operation,operation,operation,yes,True,3,0,0,unanimous,Rules for open liquor at a retail establishment,,
+330b52603ebebbadae08663bd0702861,boundary,ne,minden,,Context,,franchis*,### Sec. 38. Franchise application.,"The City may develop rules and regulations with respect to the submission and processing of applications for a franchise. The rules and regulations shall primarily be aimed at determining the legal, financial, technical and character qualifications of the applicant.",no,yes,yes,,entry,entry,yes,False,2,1,0,split,"Talks about what the city is allowed to do, not neccesarily what a business must follow or do","rules for franchise applications, q5 but entry",
+9f0814045a5a81d1114ec92b9b6e4454,boundary,ny,,suffolk_county,Enforcement,Other,registr*,## § 410-6. Certificate of registration; fee.,"A. The County Clerk shall issue a certificate of domestic partnership registration to persons who have
+County of Suffolk, NY
+
+§ 410-6
+
+SUFFOLK COUNTY CODE
+
+registered pursuant to this chapter. Such a certificate shall constitute notice of a registered domestic partnership when persons apply for rights or benefits available to domestic partners.
+
+B. The application fee for the processing of the request for such a certificate of domestic partnership registration shall be $20 and must be paid before any such certificate may be issued.
+
+§ 410-7. Scope of benefits.
+
+As a matter of County policy:
+
+A. Nothing in this chapter shall be deemed to supersede, alter, affect or conflict with any applicable state or federal statutes, laws, regulations, or rules; nor shall anything in this chapter be construed to confer any right, privilege, or benefit not explicitly provided for herein.
+
+B. Nothing in this chapter requires, or is intended to require, any religious or denominational institution or organization operated for charitable or educational purposes to recognize or provide health benefits to domestic partners.
+
+§ 410-8. Applicability.
+
+This chapter shall apply to domestic partners who apply for a domestic partnership registration on or after the effective date of this chapter.
+
+§ 410-9. Penalties for offenses.
+
+Any person who willfully makes a material misrepresentation under § 410-3 of this chapter shall be guilty of a violation punishable by a fine not to exceed $500.
+County of Suffolk, NY",unsure,no,no,,,,no,False,0,2,1,none given,Is the chapter a business or not?,,About marriage licenses not necessarily commerce
+62cbf813902ee326f0a9468f1b4f8a98,boundary,ny,olean,,Rules,Zoning,theater*; adult entertainment,"### Sec. 10.22. Adult bookstores, adult entertainment establishments, adult cabarets, adult theaters and adult motion picture theaters.","Where permitted, adult bookstores, adult entertainment establishments, adult cabarets and adult theaters and adult motion picture theaters, meeting the definition of this law, shall conform to the following standards which shall be regarded as minimum standards.
+
+10.22.1 All adult uses shall be operated in a manner that is consistent with the New York State Penal Law relating to exposure, obscenity or lewdness.
+
+10.22.2 No adult use shall be operated within 1,000 feet of:
+
+a. A church, synagogue or place of worship;
+
+b. A public or private elementary or secondary school, day care, pre-school or other uses of a similar nature;
+
+c. A boundary of any residence or residential district; or
+
+d. A public park, municipal building or community center.
+
+10.22.3 No adult use shall be operated within 1,000 feet of another adult use.
+
+10.22.4 For the purpose of this law, measurement shall be made in a straight line, without regard to intervening structures or objects, from the nearest portion of the building or structure as part of the premises where an adult use is conducted, to the nearest property line of the premises of any of the uses specified in subsections 10.22.2a. through d. identified above or to another adult use as defined by this law.
+
+10.22.5 No more than one adult use shall be operated on any single parcel of land.
+
+10.22.6 No adult use shall be operated in the same building, structure, or portion thereof, which contains another adult use.
+
+10.22.7 All adult uses shall be conducted in an enclosed building. Regardless of location or distance, no one who is passing by an enclosed building having a use governed by this section shall be able to hear any activities within the building.
+
+10.22.8 All building openings, entries, windows, doors, etc. associated with an adult use shall be located,
+City of Olean, NY",yes,yes,yes,,entry,operation,yes,True,3,0,0,split,Could be Entry as some of this stuff talks about where the business should be located but also defines stuff that needs to be there like how it has to be enclosed,"adult use spacing/siting, zoning-ish, picked entry",
+7699322a48710d87b902b0ba26aa335c,boundary,oh,warren,,Enforcement,Nuisance,noise,## 509.10 NOISE LIMIT ON PROPERTY.,"(a) No person owning, or in possession or control of any building or premises, shall use the same, permit the use of the same, or rent the same to be used for any business or employment or residential use, or for any purpose of pleasure or recreation, if such use shall by its boisterous nature, disturb or destroy the peace of the neighborhood in which such building or premise is situated, or be dangerous or detrimental to health.
+
+(Ord. 8176-75. Passed 2-24-75.)
+
+(b) Whoever violates this section is guilty of a minor misdemeanor.",no,no,yes,,,operation,no,False,1,2,0,split,Noise limit on any premises,"any use of property incl residential, general noise",
+bc07793e3f5baf90c0760bddf09c2f69,boundary,pa,lancaster_city,,Process,,registr*; inspection*,### § 177-4. Registration list and inspections.,The Building Inspector shall keep a registration list of all existing and future junkyards in the city. He shall periodically inspect such junkyards for compliance with these regulations and shall inspect each junkyard upon each annual application for a license.,no,yes,yes,,operation,operation,yes,False,2,1,0,split,Just the role of the building inspector,"reg list is entry, inspections op, went op",
+39f9285539323e6ff65e5fe3da521c67,boundary,sc,santee,,Rules,Nuisance,sign*,## Section 9.8. Removal of Signs.,"A. **False Advertising.** It shall be unlawful for a person to display false or misleading statements upon signs, or other public places, calculated to mislead the public as to anything sold, any services to be performed, or information disseminated.
+
+B. **Unsafe Signs/Dilapidated.** Signs which have fallen into disrepair (dilapidated), are not properly maintained, are insecure or otherwise structurally unsound, have defective parts in the support, guys and/or anchors, or which are unable to meet minimum safety requirements of the Standard Building Code.
+
+C. **Public Right-of-Way.** No sign shall be allowed in the public right-of-way, except for the following:
+
+1. Public sign erected by or on behalf of a government body to post legal notices, identify public property, convey public information and direct or regulate pedestrian or vehicular traffic;
+
+2. Informational signs of a public agency or utility;
+
+3. Church signs, in accord with state law;
+
+4. Historic signs and markers;
+
+5. Emergency signs; and
+
+6. Directional signs of a temporary nature not to exceed three (3) sq. ft. in area and 24 hours in duration for such events as yard sales, auctions, public gatherings, etc. and must not be closer than 500 feet apart.
+
+D. **Non-Conforming.** Signs existing at the time of the enactment of this Ordinance may be continued although such use does not conform with the provisions of this Ordinance, except those declared abandoned or unsafe which shall be removed or remedial action take upon notification by the Zoning Administrator.
+
+Non-conforming signs shall be removed or brought into conformity whenever the following occurs:
+
+1. The property changes ownership
+
+2. The name of the business changes
+
+3. The occupancy classification of the building is changed",unsure,unsure,yes,,operation,operation,unsure,False,1,0,2,split,Rules pertaining to everyone. not just businesses but it is important for Businesses like signage and False Advertising,"sign removal, false ad bit is commercial, rest general sign code q4",
+91a94bf936a3e9e526d789ecef09d930,boundary,sd,belle_fourche,,Rules,Buildings,permit*,### 15.12.080 Permits required.,"It is the plumber’s duty to ascertain, before commencing work, that the owner or person having the work done has secured a necessary permit. Work shall not proceed until a proper permit has been secured from the Building Inspector or City designee. (Ord. 28-2005 (part))",yes,yes,yes,operation,operation,operation,yes,True,3,0,0,unanimous,Applies to rules commercial plumbers must follow,"building permit rule but duty is on plumber as trade, leaning yes",
+97282ac2d862881aea73ec5abd3b72c3,boundary,tx,jefferson,,Rules,Buildings,permit*,## Sec. 46-64. Permit procedures.,"(a) Application. Application for a development permit shall be presented to the floodplain administrator on forms furnished by him and may include, but not be limited to, plans in duplicate drawn to scale showing the location, dimensions, and elevation of proposed landscape alterations, existing and proposed structures, and the location of the foregoing in relation to areas of special flood hazard. Additionally, the following information is required:
+
+(1) Elevation, in relation to mean sea level, of the lowest floor (including the basement) of all new and substantially improved structures.
+
+(2) Elevation in relation to mean sea level to which any nonresidential structure shall be floodproofed.
+
+(3) A certificate from a registered professional engineer or architect that the nonresidential floodproofed structure shall meet the floodproofing criteria of section 46-92(2).
+
+(4) Description of the extent to which any watercourse or natural drainage will be altered or relocated as a result of proposed development.
+
+(5) Maintain a record of all such information in accordance with section 46-62(1).
+
+CD46:7
+§ 46-64
+
+JEFFERSON CODE
+
+(b) Approval or denial. Approval or denial of a development permit by the floodplain administrator shall be based on all of the provisions of this article and the following relevant factors:
+
+(1) The danger to life and property due to flooding or erosion damage.
+
+(2) The susceptibility of the proposed facility and its contents to flood damage and the effect of such damage on the individual owner.
+
+(3) The danger that materials may be swept onto other lands to the injury of others.
+
+(4) The compatibility of the proposed use with existing and anticipated development.
+
+(5) The safety of access to the property in times of flood for ordinary and emergency vehicles.
+
+(6) The costs of providing governmental services during and after flood conditions including maintenance and repair of streets and bridges, and public utilities and facilities such as sewer,",no,no,yes,,,entry,no,False,1,2,0,split,Rule for any floodplain development,,
+0dc3ab4846ed917e91c0e28c9c281d8e,boundary,tx,sugar_land,,Rules,Other,permit*,## Sec. 5-369. Permit modification.,"The city may modify an individual wastewater discharge permit for good cause, including, but not limited to, the following reasons:
+
+(1) To incorporate any new or revised federal, state, or local pretreatment standards or pretreatment requirements;
+
+(2) To address significant alterations or additions to the user's operation, processes, or wastewater volume or character since the time of the individual wastewater discharge permit issuance;
+
+(3) A change in the POTW that requires either a temporary or permanent reduction or elimination of the authorized discharge;
+
+(4) Information indicating that the permitted discharge poses a threat to the city's POTW, city personnel, or the receiving waters;
+
+(5) Violation of any terms or conditions of the individual wastewater discharge permit;
+
+(6) Misrepresentations or failure to fully disclose all relevant facts in the wastewater discharge permit application or in any required reporting;
+
+(7) Revision of or a grant of variance from categorical pretreatment standards pursuant to 40 CFR § 403.13;
+
+(8) To correct typographical or other errors in the individual wastewater discharge permit; or
+
+(9) To reflect a transfer of the facility ownership or operation to a new owner or operator where requested in accordance with section 5-370.
+
+(Ord. No. 1824, § 1, 8-16-2011)
+
+Supp. No. 29
+
+CD5:120
+PUBLIC PROPERTY AND SERVICES
+
+§ 5-371",no,unsure,yes,,operation,operation,tie,False,1,1,1,split,Talks about what the city is allowed to do,"pretreatment permit mods for user ops, env/utility, same as r7",
+8f67a4d58bf42274ac78a86fe0346b96,boundary,tx,mexia,,Rules,Buildings,permit*,### $\S$ 3.05.034. Application for development permit; approval criteria.,"**(a)** Application for a development permit shall be presented to the floodplain administrator on forms furnished by the administrator and may include, but not be limited to, plans in duplicate drawn to scale showing the location, dimensions and elevation of proposed landscape alterations, existing and proposed structures, and the location of the foregoing in relation to areas of special flood hazard. Additionally, the following information is required:
+
+1. Elevation in relation to mean sea level of the lowest floor, including basement, of all new and substantially improved structures;
+
+2. Elevation in relation to mean sea level to which any nonresidential structure shall be floodproofed;
+
+3. A certificate from a registered professional engineer or architect that the nonresidential floodproofed structure shall meet the floodproofing criteria of section 3.05.062(2);
+
+4. Description of the extent to which any watercourse or natural drainage will be altered or relocated as a result of proposed development;
+
+5. Maintain a record of all such information in accordance with section 3.05.032(1).
+
+**(b)** Approval or denial of a development permit by the floodplain administrator shall be based on all of the provisions of this article and the following relevant factors:
+
+1. The danger to life and property due to flooding or erosion damage;
+
+2. The susceptibility of the proposed facility and its contents to flood damage and the effect of such damage on the individual owner;
+
+3. The danger that materials may be swept onto other lands to the injury of others;
+
+4. The compatibility of the proposed use with existing and anticipated development;
+
+5. The safety of access to the property in times of flood for ordinary and emergency vehicles;
+
+6. The costs of providing governmental services during and after flood conditions, including maintenance and repair of streets and bridges, and public utilities and facilities such as sewer, gas, electrical and water systems;
+
+7. The expected h",no,no,yes,,,entry,no,False,1,2,0,split,Rule for any floodplain development,,
+3f6fa74700547b8d13077bced982fac1,boundary,ut,provo_city,,Rules,Buildings,franchis*,## 6.22.540 Council/Franchising Authority’s Policy with Respect to Safety Requirements.,"(1) The Council/franchising authority requires that the MCS provider’s construction, operation, and maintenance of the multi-channel system meet certain threshold safety levels which are designed to protect the public and lessen the likelihood of interruption of multi-channel service.
+
+(2) Consequently, the Council/franchising authority requires any non-exempt MCS provider to adopt the following safety requirements:
+
+The Provo City Code is current through Ordinance 2026-09, passed March 10, 2026.
+(a) emergency alert override activation in the manner set forth in this Chapter;
+
+(b) minimum standby power as noted in this Chapter;
+
+(c) implementing a periodic preventative maintenance program as set forth in this Chapter;
+
+(d) follow all FCC rules and regulations concerning maximum cumulative leakage index (CLI) limits; and
+
+(e) comply with, and abide by, any construction, safety or fire codes as noted in this Chapter.
+
+(Enacted 1990-55)",unsure,yes,yes,,operation,operation,yes,False,2,0,1,split,Are MCS provides and commericial or not? If they are then yes with category as Operational because it describes saftey standards with them,"cable provider safety reqs, q5 franchise but binds provider ops",
+f73f84362b34df7692caf7c1d5ef0f4e,boundary,va,,albemarle_county,Rules,Zoning,permit*,## Sec. 11.3 Permitted uses.,"The following uses shall be permitted in the MHD, subject to the regulations in this section and section 8 of this chapter, the approved application plan, and any accepted proffers:",unsure,unsure,unsure,,,,unsure,True,0,0,3,none given,The list is missing,"intro sentence only, list cut off, cant tell what uses",Cut off
+985f8cb76390d69e698c2fecf169da31,boundary,va,,mathews_county,Rules,Other,sign*,### § 175-6.7. Sign regulations.,Sign regulations shall conform to Article 13 of this chapter.,unsure,no,no,,,,no,False,0,2,1,none given,Sign rules for what?,cross ref only to sign article,Redirects
+61ad7a29e33e7628d1a22ea6fe0cc818,boundary,wa,chelan,,Rules,Zoning,permit*,### A. Districts permitted.,"1. R-L Single-Family Residential District;
+
+2. R-M Multi-Family Residential District;
+
+3. DMR Downtown Mixed Residential;
+
+4. DSF Downtown Single-Family;
+
+5. C-HS Highway Service Commercial District.",no,unsure,unsure,,,,unsure,False,0,1,2,none given,Just a list of five districts; it doesn;t say anything else,"list of zones only, no idea what use is permitted",Not enough info
+4e262f29dfcbcdce2392cefd50fb8c4b,boundary,wa,,whatcom_county,Rules,Other,sign*,### § 3.16.070. Revenue bonds – Form – Terms – Interest – Execution and signature.,"Revenue bonds may be either registered as to principal only or shall be bearer bonds; shall be in such denominations, numbered, bear such date, be payable at such time or times up to a maximum period of not to exceed 30 years and payable at the office of the county treasurer, and such other places as determined by the county council; shall bear interest payable semiannually and evidence to maturity by coupons attached to the bonds; the coupons shall bear interest at rate or rates authorized by the county council; bonds shall be executed by the county executive and attested by the clerk of the county council, and the seal of the county council shall be affixed to each bond, but not to the coupon; and facsimile signatures of the executive and clerk may be imprinted on the coupons in lieu of original signatures.
+
+(Ord. 79-30 § 2(2))",no,no,yes,,,operation,no,False,1,2,0,split,"Talks about the terms of county revenue bonds, not really commercial","gov bond terms, sign* hit on 'signature'",
+cdbffb14be8f827b56c20083046a8b66,boundary,wi,madison,,Rules,Other,sign*,"## 31.07 WALL, ROOF AND ABOVE-ROOF SIGNS.","(1) Wall and roof signs may be displayed in the Group 2 and 3 districts, subject to the requirements of the Tables of Permitted Signs, Sec. 31.15(1) (Table 1). Wall signs may be attached flat to, or affixed parallel to and at a distance of not more than fifteen (15) inches from the wall, however no wall sign shall project into the right-of-way except as authorized by Sec. 31.04(6). No sign affixed flat against a building wall shall extend beyond any edge of such wall. Wall and roof signs may be illuminated subject to Sec. 31.04(5)(k).
+
+(2) **Wall and Roof Signable Area.** All wall and roof signs shall be displayed within the selected signable area, except as provided in subs (4) and (5) below.
+
+(a) **Number of Signable Areas.** There shall be one (1) signable area, whether on the wall or the roof, for each facade facing a street. There shall be no more than four (4) signable areas per building, except:
+
+1. For buildings with more than one occupant side-by-side: the signable area may be divided for building occupants when the building facade is divided by architectural details or internal segmentation that designating separate horizontal occupancies or tenant spaces. Each occupant/tenant will be allowed a signable area as reasonably close to its space as possible.
+
+2. For multi-story buildings with more than one vertical occupancy, there may be up to two (2) additional signable areas per façade displayed above the first story, with no limitation on the height of placement, but a total of only one (1) sign per occupant, per façade, will be allowed.
+
+(b) **How to Select and Measure Signable Area:** The signable area for wall and roof signs shall be determined as follows:
+
+1. **Wall Signs.** The signable area for a wall signs is determined by the area of the facade of the building that is free of doors, windows (for purposes of this definition, spandrel panels or other non-vision glass used as an exterior building material are not considered windows) or other major arch",no,unsure,yes,,operation,operation,tie,False,1,1,1,split,"Law for buildings, not businesses","sign code q4, applies to all signs in district not just biz",
+4efcb652dcf35273bd3373d4861858c0,boundary,wy,rocksprings,,Rules,Other,business*,"## § 90.24 PROHIBITED SALE OF COMMERCIAL BRED DOGS, CATS AND RABBITS IN PET STORES, RETAIL BUSINESSES AND OTHER COMMERCIAL ESTABLISHMENTS.","(A) It shall be unlawful for any person to sell any live dog, cat or rabbit in any pet store, retail business or other commercial establishment located in the city unless the animal was obtained from an animal shelter or a nonprofit rescue
+and humane organization.
+
+(B) This section shall not affect a consumer’s ability to obtain a dog or cat of his or her choice directly from a breed-specific or other rescue organization, or directly from a breeder of breed-specific pedigreed dogs or cats where the consumer can see the conditions in which the dogs or cats are bred or can confer with the breeder concerning those conditions.
+
+(C) For the purpose of this section, the following definitions shall apply unless the context clearly indicates or requires a different meaning.
+
+**ANIMAL SHELTER.** A public animal shelter operated by any city or any county or other public agency, or an entity operating under contract with any city of county, such as a Humane Society, whose mission and practice is, in whole or significant part, the rescue and placement of animals in permanent homes or rescue organizations.
+
+**PERSON.** An individual, firm, association, partnership, corporation, joint venture or combination of individuals.
+
+**RESCUE AND HUMANE ORGANIZATION.** A nonprofit corporation that is exempt from taxation under I.R.C. § 501(c)(3), 26 U.S.C. § 501(c)(3) and which participates in early age spay/neuter of animals; complies with state and local laws regarding the humane treatment of animals; and whose mission and practice is, in whole or insignificant part, the rescue and placement of animals in permanent homes.
+
+**SALE or SELL.** To sell, auction, barter or otherwise transfer for money or other compensation.
+
+(Prior Code, § 3-544) (Ord. 2018-05, passed 4-17-2018) Penalty, see § 90.99",yes,yes,yes,operation,operation,operation,yes,True,3,0,0,unanimous,What a business is allowed to do; they are not allowed to sell dogs for eating,,
+ef0888a7fd1ae3710333dbcd4f07d12a,business,al,selma,,Rules,Business,,# CHARTER AND RELATED LAWS SCHEDULE,"<table>
+  <thead>
+    <tr>
+      <th>Act No.</th>
+      <th>House or Senate Session Law</th>
+      <th>Bill No.</th>
+      <th>Page No.</th>
+      <th>Approval Date</th>
+      <th>Act Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>city, additional special privilege or license taxes paralleling, with like provisions in said city, such State of Alabama taxes as are levied by said State by Section 752 through Section 786, Article 10 of Chapter 20 of Title 51 of the 1940 Code of Alabama, and amendments thereto, except that only fifty per cent (50%) of the State levy provided by subdivisions (a), (b) and (c) of said Section 753 shall be made and shall be collected by said city; to provide a lien in favor of the City against the property of taxpayers liable for such taxes and to make the provisions of the Revenue Laws of the State of Alabama applicable to the enforcement of such liens; to provide that taxes which may be levied hereunder shall constitute a debt due said City and to provide methods of collection; to provide for the collection of such taxes by the Treasurer of said city and for reports to be made by taxpayers liable for such taxes; to provide that the Treasurer of said city as to the collection of such taxes shall have the same powers, duties and obligations as are imposed</td>
+    </tr>
+  </tbody>
+</table>
+
+7
+SELMA CODE
+
+<table>
+  <tr>
+    <th>Act No.</th>
+    <th>House or Senate Session Law Bill No.</th>
+    <th>Page No.</th>
+    <th>Approval Date</th>
+    <th>Act Title</th>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>upon the Commissioner of Revenue of the State of Alabama by Section 752 through Section 786, Article 10 of Chapter 20 of Title 51 of the 1940 Code of Alabama, and amendments thereto; to provide for expenses of clerk hire and other expenses incurred by said city in collecting, handling and disbursing such taxes; to p",no,unsure,yes,,other,entry,tie,False,1,1,1,split,Nothing really is towards businesses,"table of charter acts, mentions license taxes but nothing rule-like",Licensing fees
+6d3dbfd885c0e6e98fac0ea55d4cbf81,business,al,birmingham,,Rules,Business,,# LICENSING AND REGULATIONS,"§ 12-22-11
+
+required by law and shall provide additional insurance and comply with any revised indemnification provision specified in the system permit.
+
+(e) The system operator shall provide proof of all required insurance prior to receiving a system permit for a share micromobility device system and upon each renewal thereafter.
+
+(f) A system operator may not be self-insured.
+
+(g) Any insurance policy required by this chapter must be on file with the city within 45 days following the issuance of the initial operating system permit, and thereafter within 45 days following the expiration or termination of a previously issued policy.
+
+(Ord. No. 20-24, § 2, 2-12-2020)",yes,yes,yes,operation,entry,entry,yes,True,3,0,0,split,"Its more of like something that would need to be continousouly done while the business is still in operation. If it was a one time thing neccesary for the creation of the permit, I would say Entry otherwise I think its just a rule that business must fol",,
+e7adcaf869fce2a38f91696f24fe5d71,business,ca,san_jose,,Rules,Business,,## 11.92.160 Duration of permits issued.,"Permits issued pursuant to this Chapter shall be effective for up to one (1) year. An Operator who meets all requirements of this Chapter may apply for permit renewal.  
+(Ord. 30205.)",yes,yes,yes,entry,entry,entry,yes,True,3,0,0,unanimous,Directly talking about logistics with Permits related to businesses and their rules,"operator permit term/renewal, never says what biz, assuming commercial",
+8f9f77b2c4b2da593628bec764b27456,business,ca,san_jose,,Enforcement,Business,,### 4.76.770 Inspection of business tax certificates.,"The director and all of his or her deputies shall have the power and authority to enter, free of charge, during business hours, any place of business taxed by the provisions of this chapter and to demand exhibition of a business tax certificate and evidence of amount of tax paid. Any person to whom a business tax certificate has been issued and who fails to exhibit the business tax certificate or to provide evidence of the amount of the business tax paid in response to a lawful demand shall be guilty of a misdemeanor.
+
+(Measure G (Ord. 2016.2), adopted by electorate, 12-13-16)",yes,yes,yes,operation,operation,operation,yes,True,3,0,0,unanimous,Kind of falls into taxes but it still defines what a director can do in relationship to a business,"inspection of biz tax certs, tax q2 but its inspection so op",
+5971fa85cbe04ed78fa6d0bedcf9de6e,business,co,black_hawk,,Rules,Business,,# Franchises — Gas and Electric Franchise,"§5-48
+
+the same amount of franchise fees paid to the City as of the date that such initiatives and changes adversely impact franchise fee revenues.
+
+(d) Utility service provided to the City. No franchise fee shall be charged to the City for utility service provided directly or indirectly to the City for its own consumption, including street lighting service and traffic signal lighting service. (Ord. 2017-2 §1(Exh. A))",yes,unsure,yes,other,other,operation,yes,False,2,0,1,split,This describes just a miscellaneous rule between franchises and the city,"franchise fee carve out for city's own use, fee not conduct rule",
+9b4d92e2b01c49152a3cc01b94ca8141,business,co,longmont,,Rules,Business,,## 2. Procedures.,"a. To initiate the design and cost estimating process for residential service relocations, upgrades or other modifications the customer or designee shall submit the applicable request for electric service. Supporting documents shall be included with the request and a project coordination meeting scheduled with LPC.
+
+b. All project design and cost estimates will be scheduled by LPC based upon the date of submittal of the request for service, accompanied by the required project information.
+
+c. All electrical services over 400 amps, single-phase, three-phase, 120/240 and 120/208 volts require CTs. All services over 200 amps, three-phase, 277/480 and 240/480 volts will require CTs and PTs. Meter housings, CTs, and PTs are required to be obtained from LPC, 1100 S. Sherman Street. The customer will be charged for this service.
+
+d. For relocation of the electric service, the customer must provide written easements to the city for all properties which the service line will cross. The city will furnish the standard form for these easements and will designate width of easements and acceptable line routes.
+
+e. All required procedures must be satisfied before the project work order will be scheduled for construction.
+
+f. The following site preparation must be completed prior to LPC construction start:
+
+i. Lot corners or other requested references must be marked by the customer. This may include locating associated electric easement granted for access to and construction within the project site.
+
+ii. If the service modification requires a new installation and the city determines that it passes through a rocky area, the customer must provide a six-foot deep hole for each pole and a seven-foot deep hole for each anchor for overhead construction or a 42-inch deep trench for underground construction. LPC engineering division personnel, or the customer if so required in LPC’s sole discretion, will stake the required location of each pole and anchor or the route of each trench.
+
+iii.",yes,no,unsure,operation,,,tie,False,1,1,1,split,Defines what a business must do for new designs,"utility service request procedure resi customers, same q5 issue as r8 but resi so no",Talks about the process for residential service relocations for utilities not necessarily business licensing. Might be out of scope
+7b68180dbedc19a4eb22342ee9d7fbaa,business,fl,,jackson_county,Rules,Business,,## Sec. 14-51. Receivership.,"The Grantor shall have the right to cancel the franchise 120 days after the appointment of a receiver, or trustee, to take over and conduct the business of a Grantee under this chapter, whether in receivership, reorganization, bankruptcy or other action or proceeding, unless such receivership or trusteeship shall have been vacated prior to the expiration of such 120-day period, or unless:
+
+(1) Within 120 days after the receiver or trustee’s election or appointment, such receiver or trustee shall have fully complied with all the provisions of the franchise and remedied all defaults thereunder; and
+
+(2) Such receiver or trustee, within such 120-day period, shall have executed an agreement, duly approved by the Court having jurisdiction in the premises, whereby such receiver or trustee assumes and agrees to be bound by each and every provision of this chapter and the franchise granted to such Grantee.
+
+(Code 1996, § 26-51; Ord. No. 88-6, § 141, 8-9-1988)",unsure,yes,yes,other,exit,exit,yes,False,2,0,1,split,Leaning towards probably not because its just a business interacting with an individual its not a law that a business has to follow but still I could see how it could be seen as a business rule,"franchise cancel on receivership so exit, franchise stuff is q5 tho",
+434a77b11c769fd7a5219d309d827831,business,fl,madison,,Rules,Business,,## Sec. 15-11. Evidence of liability.,"The fact that any person representing himself as engaged in any business, calling, profession or occupation for the transaction of which a license is required or that such a person exhibited a sign or advertisement indicating such business, calling, profession or occupation shall be evidence of the liability of such person to pay a license.
+
+(Code 1957, § 12.10)",no,yes,yes,,entry,operation,yes,False,2,1,0,split,I think this is just for any person interacting with a business and not a law for the business itself,"who owes license fee if in business, prob tax (q2) but tied to being in biz",
+74b9b8fbdccbab21babc58f7d81854da,business,ga,,lumpkin_county,Rules,Business,,# ADMINISTRATION,"§ 2-707
+
+Purchases $0.01 to $999.99. The user shall use his/her judgment to source, supply, and determine the appropriate number of quotations to obtain. The user shall submit the request via the request for procurement form located on the employees only section of the county website. The user must use approved vendors.
+
+For routine maintenance, building repairs, and planned projects, the department head or their designee may request to purchase items necessary to keep their department functioning, with prior approval by purchasing, provided they ensure funds are available in the appropriate budget line item. Purchasing has the right to substitute like items if a comparable, less costly item can be found. Purchasing also has the right to request additional justification for the expenditure. Once approved, each receiving receipt must be signed by the department head or their designee and coded to the correct line item before submittal to the finance department. A list of approved designees for each department must be on file in the purchasing department and approved by the department head.
+
+If funds are not available, it is the department head's responsibility to make arrangements with the budget and grant analyst to transfer funds to the appropriate line item before any purchase is made.
+
+Purchases $1,000.00 to $9,999.99. The user shall get written quotations for not fewer than three prospective bidders. (Exception: Proprietary items and sole source items.) If purchased as a proprietary or sole source item, it should be indicated on the request for procurement form, and all supporting documents should be attached. (Approval of purchases to be made by the budget and grant analyst or director of finance and purchasing prior to notification of bidders.)
+
+Purchases $10,000.00 to $19,999.99. These typically require informal (non-advertised) sealed bids. (Exceptions: Proprietary items and sole source items) If purchased as a proprietary or sole source item, it should be i",no,no,yes,,,operation,no,False,1,2,0,split,This is a rule on how county employees buy things and not aimed at commerical use,"internal staff purchasing steps, no vendor duties, q5 procurement",About compliance with procurement and maintenance procedures
+53ec563f365d5bc1263302bfab06d24d,business,ga,jasper,,Rules,Business,,## Sec. 10-137. Gambling prohibited.,"No licensee shall permit on the premises any gambling, betting, games of chance, punch boards, vending machines, slot machines, pinball machines, video machines or similar machines which are in violation of the gambling provisions of the state. Pinball, electronic, or similar machines not in violation of the gambling laws of the state are permitted in outlets authorized to sell alcoholic beverages by the drink, provided there are no more than three such machines in any outlet where alcoholic beverages are served or consumed. Pool or billiards may not be played in any room where alcoholic beverages are sold or consumed.  
+(Code 1979, § 37-1.11(Q))",yes,yes,yes,operation,operation,operation,yes,True,3,0,0,unanimous,Doesn't talk about getting the license specifically so not really entry but it does talk about what you are not allowed to do hence operation,,
+678c82c881ae99a7e9e1746a010a537b,business,ga,eastman,,Rules,Business,,## Sec. 24-9. Occupation tax certificate.,"Every business, practitioner and location subject to payment of the occupation tax levied by this chapter shall display a current occupation tax certificate in a conspicuous place at the location for which such certificate was issued. If the taxpayer does not have a permanent location within the city, the occupation tax certificate shall be shown to any police officer (or person charged with enforcing this chapter) upon request.
+
+(Ord. of 9-11-1995, § 11-4)",yes,yes,yes,other,operation,operation,yes,True,3,0,0,split,Talks about taxes required by businesses,"display of occupation tax cert, tax q2 but really a posting rule",
+797f1326a63e5a739527732b0b349faa,business,ga,toccoa,,Rules,Business,,## Sec. 3-207. [Micro-brewery—License required.],"No individual shall be permitted to own or operate a micro-brewery without first obtaining a proper micro-brewery license from the city. Each micro-brewery licensee shall comply with City of Toccoa city code, ordinances, and adopted rules and regulations of the city and applicable state law and requirements. A micro-brewery shall be exempted from requirements pertaining to food sales and required cooking and kitchen equipment except those pertaining to sewage and waste discharge requirements or other requirement expressly noted herein.
+
+(Ord. of 01-01-2025 (2), § I, 1-1-25)",yes,yes,yes,entry,entry,entry,yes,True,3,0,0,unanimous,Describes the process to starting or owning an micro-brewery,,
+32fa4114b2b6e2959c426263e9b4d5c0,business,ga,albany,,Rules,Business,,## Sec. 8-84. Applicability of article to existing businesses.,"*Existing business licenses*. All existing sexually oriented businesses are hereby granted a de facto temporary license to continue operation or employment for a period of 90 days following the effective date of this article. By the end of said 90 days, all sexually oriented businesses must conform to and abide by the requirements of this article.
+
+*Existing building permits*. All landowners and property owners who possess a legally obtained and valid building permit prior to the enactment of this article shall not be required to relocate their businesses to the land parcels C-3, M-1, and M-2, if such landowners’ and property owners’ businesses constitute sexually oriented businesses under this article. All other regulations and requirements set forth in this article shall apply to such landowners and property owners of sexually oriented businesses.
+
+(Ord. No. 10-120, § 14, 6-22-2010)
+
+Supp. No. 1
+
+CD8:12
+AMUSEMENTS
+
+§ 8-108",no,yes,yes,,entry,operation,yes,False,2,1,0,split,"In my opnion this is less of a law and more of a temporary article as it just discusses what existing businesses are required to do and thats only for 90 days, It would be entry if it also defined what the new Businesses would have to do but it doesn't.","grandfather temp license for existing adult biz, also nonconforming use angle",
+ed48d4eddaab40a586c1bf94f085d3a5,business,ga,,augusta-richmond_county,Rules,Business,,### Sec. 1-10-38. Responsibility for specifications.,"The using agency shall be responsible for acquiring specifications data for it’s procurements. Procurement Department personnel may assist with this task by providing copies of previously used specifications, brochures, or other reference materials. However, the Procurement Director shall have the primary responsibility to develop the data provided by the using agency head into the proper format for the solicitation of bids, proposals, or quotations and ensure that all specifications comply with federal laws, state laws and court ordered enjoinments. All specifications shall be drafted so as to promote free and open competition in satisfying the using agency’s needs and shall not be unduly restrictive.
+
+(Ord. No. 6939, § 16, 1-2-2007; Ord. No. 7271, § 1(1-10-38), 6-30-2011)",unsure,no,yes,,,operation,tie,False,1,1,1,split,Don't really know if its talking about agency within the llcal government or what? Kind of confused,"internal agency specs responsibility, procurement q5, no vendor duties",
+989b1084d5d0f298c61d5cdad3153ee2,business,ga,brunswick,,Rules,Business,,### Sec. 3-24. Display.,"The alcoholic beverage license shall at all times be displayed in plain view at the licensed premises.
+
+(Ord. No. 1060, § 1, 10-17-2018)",yes,yes,yes,operation,operation,operation,yes,True,3,0,0,unanimous,Signage with what a business must do when they have an alcoholic license,,
+f2b05799e723978790f6f210de8d6722,business,ga,,bryan_county,Enforcement,Business,,### Sec. 4-79. Sunday sales.,"(a) The intent of this section is to allow for the regulated, retail package sale of alcoholic beverages for consumption off premises, and to permit those full service restaurants that serve the public to sell alcoholic beverages with meals on Sunday. It is not the intent of this section to encourage local taverns and bars to serve alcoholic beverages on Sunday via the mechanism of serving incidental meals on Sunday. Therefore, there shall be no Sunday sales of alcoholic beverages in the unincorporated areas of the county, except as provided in section 4-77(6), and in compliance with the following.
+
+(b) In order to be eligible to pour or serve alcohol for consumption on the premises, the licensed establishment must satisfy each of the following requirements:
+
+(1) Food service establishments shall:
+
+a. Be licensed to sell distilled spirits, malt beverages or wine;
+
+b. Derive at least 50 percent of their total annual gross food and beverage sales from the sale of prepared meals or food, as demonstrated by the establishment's gross receipts, all records and reports of which shall be made available for inspection and audit as needed upon reasonable demand by such officers designated by the county for the enforcement of this section;
+
+c. Have an area specifically designed, set aside, set up and operating to serve meals and food on the premises and shall have a fully-equipped commercial kitchen to include an appropriate stove, refrigerator, food preparation area, sink, and other items required by the county health department and inspections department for the preparation of foods;
+
+d. Have a printed or posted menu from which selections of prepared meals can be made; and
+
+e. Have a valid county health department food service permit and any other applicable local, state or federal permits, licenses, etc., required for food service establishments.
+
+(2) Lodging establishments shall:
+
+a. Be licensed to sell distilled spirits, malt beverages, or wine; and
+
+b. Derive at least 50",yes,yes,yes,operation,operation,"entry,operation",yes,True,3,0,0,split,Could be a form of entry as it talks about what you need inorder to get a permit but it also defines more operational things that you must constantly do,"sunday sales eligibility, days of sale = operation but reads like extra authorization",
+dfe990721bc4ece45903cbb92a457c75,business,ga,calhoun,,Rules,Business,,### Sec. 6-122. Responsibility for employee’s conduct.,"Every person issued an alcoholic beverage license is responsible for the conduct or actions of his employees while they remain actively employed at that licensed establishment. (Code 1988, §§ 3-91, 3-147; Ord. No. 656, § 5.17, 11-23-1998; Ord. No. 862, § 1, 7-9-2007; Ord. No. 1026, § 1, 9-27-2021; Ord. No. 1055, § 9, 4-24-2023)
+
+Editor’s note—Ord. No. 1055, § 9, adopted Apr. 24, 2023, amended the title of § 6-122 to read as herein set out. The former § 6-122 title pertained to employee identification cards.
+
+State law reference—Fingerprinting, O.C.G.A. § 3-3-2.",unsure,yes,yes,,operation,operation,yes,False,2,0,1,split,Could be commerical but its not really aimed at the business as a whole and yet just an individual,,
+2ab4cfc626350c11eaceaffa01e24fd7,business,ga,moultrie,,Rules,Business,,### Sec. 6-131. Annual renewal; operation pending renewal.,"(a) The licenses provided for in this article are annual based upon the calendar year and expire at midnight on December 31 of the year issued, except as otherwise set forth in this article. Upon the timely receipt of a renewal application and payment of the required fee between December 20 of the year preceding the renewal year and January 10 of the renewal year, the applicant may continue to operate under the prior license until a new license is issued or issuance of notice of denial of the renewal.
+
+(b) Renewal applications must be received by the planning and community development department between December 20 of the year preceding the renewal year and January 10 of the renewal year. Failure of any licensee to file such application for renewal by such time and to pay together therewith the required applicable annual license fee for the ensuing year shall render the license void, lapsed, and non-renewed effective as of the last minute of December 31 of that year; provided however, that for providential cause shown to the
+
+Supp. No. 21
+
+CD6:25
+§ 6-131
+
+MOULTRIE CODE
+
+satisfaction of the city manager, the city manager may, in his sole discretion, extend the time for filing of such application for renewal and payment of such license fee for a period of time not later than January 31 of such ensuing year. If the licensee fails to renew his license in accordance with this section, he shall immediately cease and desist any and all activity granted by said license, including, but not limited to, the sale and/or dispensing, storage, consumption or handling of alcoholic beverages. Any application received after January 10 shall be treated as a new application and all the requirements of a new application shall apply.
+
+(c) All alcoholic beverage licenses in this chapter may be renewed by payment of the required fees, provided that:
+
+(1) The license and location are the same; and,
+
+(2) The licensee is still in compliance with the requirements of state and municipal laws an",yes,yes,yes,operation,entry,"entry,exit,operation",yes,True,3,0,0,split,Talks about the application but really the requirments for the application so it wouldn't be entry. Does talk about the renewal requirments which is leaned more towards operation,"renewal mechanics, lapse=nonrenewal which def puts in exit, went entry","Touches initial license, conduct with the license, and denial of license"
+7322f2009f6ad9ba525787604ac15041,business,id,payette,,Rules,Business,,### 5.36.150: LICENSE FEES:,"A. The following annual license fees must be paid to the city at the time the license application is submitted:
+
+1. Class A license: As set by resolution.
+2. Class B license: As set by resolution.
+
+3. Class C license: As set by resolution.
+
+4. Class D license: As set by resolution per adult arcade machine.
+
+5. Class E license: As set by resolution plus applicable fees for class A content and fees for each arcade machine under class D.
+
+B. The request for renewal of licenses must be made on forms supplied by the city clerk and such requests must be submitted by December 1 for renewal for the next calendar year. Each renewal application must be accompanied by the annual fee.
+
+C. Where an application for a new license is made after January 1, the applicable fee shall be apportioned in accordance with the number of days remaining in the calendar year. (Ord. 1371, 2012: Ord. 1207 § 1, 2001)
+
+5.36.160: LOCATION OF BUSINESS:
+
+No adult store, adult theater, adult arcade or adult entertainment establishment shall be located within three hundred (300) yards of any school, church, bar, hospital, nursing home, assisted living facility, adult or child daycare facility, liquor store or public park which is open to children. No adult store, adult theater, adult arcade or adult entertainment establishment shall be located in any area which has been zoned as A or B residential, C commercial, T trailer or as F unclassified or in any similarly designated zone if those zoning designations should be changed. (Ord. 1207 § 1, 2001)
+
+PA079 5.37
+
+<table>
+  <tr>
+    <th>CHAPTER 5.37</th>
+  </tr>
+  <tr>
+    <th>CHILDCARE</th>
+  </tr>
+</table>
+
+SECTION:
+
+5.37.010: License And Conditional Use Permit Required
+
+5.37.010: LICENSE AND CONDITIONAL USE PERMIT REQUIRED:
+
+No person shall operate a ""childcare center"", a family home childcare or a group childcare, as those terms are defined in section 17.08.010 of this code until that person has obtained a license from the state of Idaho and a conditiona",yes,yes,yes,entry,entry,entry,yes,True,3,0,0,unanimous,Types of fees that must be paid when doing an application for entry,"adult biz fees/location + childcare license, multiple subjects all entry-ish",
+34a9eb727e9699a426198d0f4103e47a,business,il,chicago,,Rules,Business,,## 9-114-390 Advertising displays.,"(a) It is unlawful for any low-speed electric public passenger vehicle licensee to display any advertising sign or device on or in such vehicle before the advertising sign or device is approved by the Commissioner and permitted pursuant to the elements specified in this section and rules promulgated thereunder.
+
+(b) Low-speed electric public passenger vehicle licensees or licensed advertising vendors may apply for permits to display an advertising sign or device on or in the vehicle. Separate permits are required for each advertising display. The Commissioner shall promulgate rules: (1) specifying the locations on the vehicle where advertising signs or devices may be displayed; (2) describing the permissible design, construction, and method of affixing the display to the vehicle; and (3) specifying insurance requirements for approving a permit to display an advertising sign or device on or in the vehicle. The rules also may include additional guidelines for such displays and the permit process. In establishing such criteria, considerations shall include:
+
+(i) visual clutter and aesthetics on the public way;
+
+(ii) the safety and comfort of passengers, low-speed electric public passenger vehicle chauffeurs, pedestrians, bicyclists, and motorists; and
+
+(iii) the visibility of all information required by this chapter, Department rules, or any other law to be displayed on the interior or exterior of low-speed electric public passenger vehicles, including, but not limited to, identifying numbers, ownership indicia, lights, and safety signals.
+
+(c) The fee for the issuance of any advertising display permit shall be $100.00 for each display, due at time of application. This fee shall be in addition to the personal property lease transaction tax that applies to lease or rental payments pursuant to Chapter 3-32 of the Code. An advertising display permit applicant shall have satisfied all debt, as defined in Section 4-4-150, to the City before the Department may issue the perm",yes,yes,yes,operation,operation,operation,yes,True,3,0,0,unanimous,Defines what and what-not public electric vehicles are allowed to advertise on their vehicles,,
+425aa22899f472e08f647bf92d0190e7,business,il,deerfield,,Rules,Business,,## Division 2. Public Passenger Vehicle License.,"**Sec. 18-8. Public passenger vehicle license required.**
+
+It shall be unlawful to operate a public passenger vehicle, as defined in Article 1 of this Chapter, for hire within the corporate limits of the Village of Deerfield unless said vehicle is licensed and operated in accordance with the provisions of this Chapter. (Ord. 0-91-55, 12-16-91)
+
+**Sec. 18-9. Public passenger vehicle license application.**
+
+Application for a public passenger vehicle license shall be made upon a form provided by the Village. Said application shall be filed with the Village Manager and shall contain the following:
+
+(a) The owner’s full name, residence address, residence phone number, business address, business phone number, for each individual applicant, partner, general partner of a limited partnership and principal officers of a corporation.
+
+(b) A complete description of the vehicle including the make, model, year, seating capacity, vehicle identification number, manufacturer’s identification number, State license number, vehicle engine horsepower; and color, color scheme, and/or insignia of the vehicle in accordance with the requirements of Section 18-16 of this Chapter.
+
+(c) Evidence of liability insurance coverage as required by Section 18-7 of this Chapter. (Ord. 0-91-55, 12-16-91)
+
+**Sec. 18-10. Issuance, display and registration of public passenger vehicle license.**
+
+(a) Subject to the fulfillment of the terms and provisions of this Chapter, including passing the vehicle inspection as required by
+Section 18-13, the Village Manager is hereby authorized to issue the public vehicle license to the applicant.
+
+(b) The Village Manager shall assign to the public passenger vehicle a public passenger vehicle license decal which shall be affixed to the certified inspection plate. Such inspection plate shall be visibly displayed on the left side of the rear bumper of the public passenger vehicle.
+
+(c) It shall be the duty of the Village Manager to keep a register of the names of persons ",no,yes,yes,,entry,operation,yes,False,2,1,0,split,Just talks about the application for someone to get a license to operate a public passenger vehicle,,
+3a19869610ed9fe905156248725a8259,business,il,champaign,,Rules,Business,,### Sec. 10.5-8. Verification of identity.,"(a) Before a cannabis business establishment sells cannabis to a purchaser, its agent or employee shall:
+
+(1) Verify the age of the purchaser by checking a government-issued identification card by use of an electronic reader or electronic scanning device to scan a purchaser’s government-issued identification, if applicable, to determine the purchaser’s age and the validity of the identification;
+
+(2) Verify the validity of the government-issued identification card;
+
+(3) Offer any appropriate purchaser education or support materials required pursuant to the Cannabis Regulation and Tax Act; and
+
+(4) Enter the required information into the State’s cannabis electronic verification system that is required pursuant to the Cannabis Regulation and Tax Act.
+
+(b) A cannabis business establishment shall refuse to sell cannabis to any person unless the person produces a valid identification showing that the person is 21 years of age or older.
+
+(c) A medical cannabis organization may sell cannabis to a person who is under 21 years of age if the sale complies with the provisions of the Compassionate Use of Medical Cannabis Program Act.
+
+(d) For the purposes of this section, valid identification must: (i) be valid and unexpired; and (2) contain a photograph and the date of birth of the person.
+
+(C.B. No. 2019-213, § 2(Exh. B), 12-17-19)",yes,yes,yes,operation,operation,operation,yes,True,3,0,0,unanimous,"What a cannabis business must do, nuisance rules aimed at businesses",,
+5d6d78820cff817d45f73073e0af83e3,business,ks,goodland,,Rules,Business,,### Sec. 4-213. License fees.,"Upon successful completion of prescribed examination for the type of license desired the applicant may be issued a license at the following rate per year:
+
+General contractor ………………………………………… $35.00  
+Building contractor ……………………………………… 35.00  
+Residential contractor ………………………………… 35.00  
+
+Supp. No. 90 4-10.6",unsure,yes,yes,,entry,"entry,operation",yes,False,2,0,1,split,"Depends on if we define permit costs as commercial, right now im leading towards not commercial","license fee table, entry via q1",Covers initial licensing and repeated charges yearly
+968378c97700d11d15291657385640c4,business,ms,batesville,,Rules,Business,,## Sec. 8-49. License application.,"Every person engaged in the business of owning or placing on location for the purpose of operation within the corporate limits of the city any slot amusement machine shall file an application for a license with the city clerk on forms furnished for that purpose. The application shall contain such information as may be required by the clerk and shall be accompanied by the remittance for the amount of the tax and any penalty required.
+
+(Ord. No. 83-125, § 3, 8-4-70)
+
+**State law reference**—State license, Miss. Code Ann. 1972, § 27-27-7.",yes,yes,yes,entry,entry,entry,yes,True,3,0,0,unanimous,Neccesary form that needs to be filled out for the purpose of establishing any slot amusement maching.,,
+d925ed588ddadb705088a3da23fbcdd1,business,nc,thomasville,,Rules,Business,,## Sec. 86-36. Display of name of certificate holder.,"The name and address of the holder of the certificate pursuant to which the ""for hire passenger transportation vehicle"" in question is operated shall be kept posted in each taxicab at all times when it is in operation.
+
+(Ord. of 5-19-03, § 1)",yes,yes,yes,operation,operation,operation,yes,True,3,0,0,unanimous,Defines what a taxicab must do at all times; signage,,
+945c50c369bde6a9c263c707ff5293af,business,ne,york,,Rules,Business,,## Sec. 4. License required.,"(a) It is unlawful:
+
+(1) For any person to operate a sexually oriented business without a valid sexually oriented business license issued by the city pursuant to this article.
+
+(2) For any person who operates a sexually oriented business to employ, contract with, arrange, or allow or permit a person to work for the sexually oriented business who is not licensed as a sexually oriented business employee by the city pursuant to this article.
+
+(3) For any person to obtain employment with a sexually oriented business without having secured a sexually oriented business employee license pursuant to this article.
+
+(b) An application for a license must be made on a form provided by the city.
+
+(c) All applicants must be qualified according to the provisions of this article. The application may request and the applicant shall provide such information (including fingerprints) as to enable the city to determine whether the applicant meets the qualifications established in this article.
+
+(d) A person, who wishes to operate a sexually oriented business, must sign the application for a license as an applicant. If a person other than an individual wishes to operate a sexually oriented business, all persons legally responsible for the operations of the sexually oriented business or who have power to control or direct its operations must sign the application for a license as applicant. Such persons include, but are not limited to, general partners, corporate officers, corporate directors, and controlling shareholder(s). Each application must be qualified under the following section and each applicant shall be considered a licensee if a license is granted.
+
+CDA:127
+Art. XXXV, § 4
+
+YORK CODE
+
+(e) The completed application for a sexually oriented business license shall contain the following information and shall be accompanied by the following documents:
+
+(1) If the applicant is:
+
+    (a) An individual, the individual shall state his/her legal name and any aliases and submit proof that h",unsure,yes,yes,,entry,"entry,operation",yes,False,2,0,1,split,It does talk about rules for businesses but it also just a general rule for anyone who wants to be employed by the business. Unsure...,,Discusses both initial licensing and ongoing requirements
+d3e986022cd7da1d2846447cec10d4ff,business,ne,plainview,,Rules,Business,,## § 10-501 OCCUPATION TAX; AMOUNTS.,"For the purpose of raising revenue an occupation tax is hereby levied on the following businesses:
+
+Alcoholic Beverages
+
+- Retailer of Beer, On and Off Sales, per year $ 50.00  
+  Plus $50.00 State License Fee.
+
+- Retailer of Alcoholic Liquors, including Beer, On and Off Sale (Class C) per year 250.00  
+  Plus $250.00 State License Fee.
+
+- Retailer of Alcoholic Liquors, including Beer, On Sale only, per year 200.00  
+  Plus $200.00 State License Fee
+
+- Retailer of Alcoholic Liquors, including Beer, Off Sale only, (Package Sales) per year 75.00
+
+Fire Insurance Companies, per year 5.00
+
+(Ref. 17-525 RS Neb.)(Amended by Ord. No. 545, 10/8/91)",yes,unsure,yes,other,other,operation,yes,False,2,0,1,split,"More rules on the taxes of alchol providers, doesn't really fit into entry or exit, could be operation","occupation tax amounts 'for raising revenue', q2",
+e2d02ca7004f1ba173172a52ba015905,business,ne,scottsbluff,,Rules,Business,,## § 18-2-26 STANDARDS FOR DETERMINING WHETHER TO ISSUE PERMITS AND DETERMINING PERMIT CONDITIONS.,"(A) In determining whether to issue any permit authorized by this chapter, and in determining any conditions to which the permittee shall be subject, the City Manager shall attempt to reconcile the following objectives of the city. No significance shall be given to the order in which these objectives are listed that:
+
+(1) Industrial users be able to operate their businesses efficiently and profitably;
+
+(2) Differences in the treatment of industrial users and of wholesale users be justified on the basis of differing circumstances;
+
+(3) The city’s sanitary sewer system and wastewater treatment plant be operated safely, efficiently, and in conformity with all applicable provisions of this code and any applicable laws or regulations of the state and the United States of America;
+
+(4) Revenues generated by the operation of the city sanitary sewer system and wastewater treatment plant be adequate to meet the needs described in Article 4 of this Title 18; and
+
+(5) Any excess capacity of the wastewater treatment plant be preserved for the accommodation of future growth and new industry.
+
+(B) In determining whether to issue any permit authorized by this chapter, and in determining any conditions to which the permittee shall be subject, the City Manager shall consider the following:
+
+(1) The nature of the permittee’s business in the case of an industrial user or, in the case of a wholesale user, the nature of the other users from whom the wholesale user collects sewage;
+
+(2) Relevant aspects of the past history of the permittee including, but not limited to:
+
+(a) Past violations of laws, permit conditions, or contract conditions, or the absence of such;
+
+(b) The characteristics of the sewage which has been discharged by the permittee in the past;
+
+(c) The volume of the sewage which has been discharged by the permittee in the past; and
+
+(d) The sporadic nature of discharges by the permittee in the past, or the absence of such.
+
+(3) The characteristics and volume of sewage disc",yes,unsure,yes,operation,entry,entry,yes,False,2,0,1,split,Defines how a business should operate,"sewer discharge permit for industrial users, utility/env more than commerce but tied to nature of biz",Conditions for initial permitting
+41eb0776b8c88d574cba54d077bf8b4d,business,nj,paterson,,Enforcement,Business,,### § 449-55. Enforcement; powers of Director of Taxicab Division. [Amended 4-11-2017 by Ord. No. 17-032],"A. The Taxicab Division, in conjunction with the Police Division, shall be charged, with regard to any person, business entity or vehicle that is licensed under this Part 2, or that is required to be licensed under this Part 2, with the duty of enforcing the following:
+
+(1) Provisions of this Part 2;
+
+(2) Violations of any state law specifically and expressly addressing autocabs, limousines, and rented motor vehicles, as defined above; and
+
+(3) Any City ordinance that may be applied to the use and operation of autocabs, limousines, and rented motor vehicles, as defined above.
+
+B. Additionally, with regard to any motor vehicle with which a driver generally or actually provides passenger transportation on a fee-per-ride or fee-per-mile basis along public streets, including but not limited to a taxi, bus, autobus, omnibus or jitney, or the owner or operator thereof, the Taxicab Division shall also be authorized to enforce the following:
+City of Paterson, NJ
+
+§ 449-55 TAXICABS, AUTOCABS AND RENTED MOTOR § 449-56
+
+(1) Any of the following provisions of Title 39 of the New Jersey Statutes entitled ""Motor Vehicles and Traffic"":
+
+(a) N.J.S.A. 39:3-4 (unregistered vehicle).
+
+(b) N.J.S.A. 39:3-29 (failure to exhibit license, registration and/or insurance).
+
+(c) N.J.S.A. 39:3-33 (unclear plates).
+
+(d) N.J.S.A. 39:3-66 (maintenance of lamps).
+
+(e) N.J.S.A. 39:3-76.2f (failure to wear seatbelt).
+
+(f) N.J.S.A. 39:4-81 (failure to observe signal).
+
+(g) N.J.S.A. 39:4-85 (improper passing).
+
+(h) N.J.S.A. 39:4-97 (careless driving).
+
+(i) N.J.S.A. 39:4-97.3 (improper use of cell phone while driving: talk and/or text).
+
+(j) N.J.S.A. 39:4-124 (failure to turn).
+
+(k) N.J.S.A. 39:4-144 (failure to stop or yield).
+
+(l) N.J.S.A. 39:8-1 (failure to inspect).
+
+(m) N.J.S.A. 39:8-4 (failure to make repairs).
+
+(2) Any successor statute that may in whole or in part replace any of the above-cited sections of Title 39.
+
+(3) Any law addressing impermissible motor vehicle parking, stopping or standin",yes,unsure,yes,operation,operation,operation,yes,False,2,0,1,unanimous,Defines what the taxi-cab association has to do,"taxi division enforcing general traffic law (seatbelt etc), speed limit example but scoped to taxi licensees",
+9af85e20be07ba46cf56d1f304413181,business,nv,,mineralcounty,Rules,Business,,### 3.12.190: EXEMPT TRANSACTIONS AND SALES:,"The provisions of this chapter requiring the payment of excise taxes do not apply to any of the following:
+
+A. Motor vehicle fuel so long as it remains in interstate or foreign commerce;
+
+B. Motor vehicle fuel exported from this state by a dealer;
+
+C. Motor vehicle fuel sold to the United States government for official use of the United States armed forces;
+
+D. Motor vehicle fuel distributed, or delivered on the order of the owner, to a dealer who has furnished bond and security in the amount prescribed and who has established to the satisfaction of the department that the bond is sufficient security to assure payment of all excise taxes as they may become due to the county from him under this chapter. Every dealer claiming exemption shall report the distributions to the department in such detail as the department may require, the exemptions granted in this subsection shall be void and all fuel shall be considered distributed in the county subject fully to the provisions of this chapter. (MC Ord. 96A §28, 1984)",yes,unsure,unsure,other,other,,unsure,False,1,0,2,split,It describes the taxation of local businesses regarding Motor Fuel so if that is defined in the scope of other then yes,"fuel excise tax exemptions for dealers, q2 taxation",Not related to licensing
+58851a95c602535ef512784094aa7def,business,oh,portsmouth,,Rules,Business,,## 539.06 GENERAL EXCEPTIONS.,"(a) Any practice which has a discriminatory effect and which would otherwise be prohibited by this chapter shall not be deemed unlawful if it can be established that the practice is not intentionally devised to contravene the prohibitions of this chapter and there exists no less discriminatory means of satisfying a business purpose.
+
+(b) Unless otherwise prohibited by law, nothing contained in this chapter shall be construed to prohibit promotional activities such as senior citizens discounts and other similar practices designed primarily to encourage participation by protected groups.
+
+(c) It shall not be an unlawful discriminatory practice for an employer to observe the conditions of a bona fide seniority system or a bona fide employee benefit system such as a retirement, pension or insurance plan which is not a subterfuge or pretext to evade the purposes of this chapter.
+
+(d) It shall not be an unlawful discriminatory practice for any person to carry out an affirmative action plan. An affirmative action plan is any plan devised to effectuate remedial or corrective action taken in response to past discriminatory practices, or as otherwise required by state or federal law.
+
+(e) Nothing contained in this chapter shall be deemed to prohibit selection or rejection based solely upon a bona fide occupational qualification or a bona fide physical requirement. Nothing contained in this chapter shall be deemed to prohibit a religious or denominational institution from selecting or rejecting applicants and employees for non- secular positions on the basis of the applicant’s or employee’s conformance with the institution’s religious or denominational principles. If a party asserts that an otherwise unlawful practice is justified as a permissible bona fide occupational qualification, or a permissible bona fide physical requirement, that party shall have the burden of proving:
+
+(1) That the discrimination is in fact a necessary result of such a bona fide condition; and
+
+(2) Th",yes,unsure,yes,operation,operation,operation,yes,False,2,0,1,unanimous,Allows businesses to do certain things like a seniority system,"discrimination law exceptions, general law but employer reqs sit in operation, hmm",
+bfb034df98d9654518f4c5c54280a4a7,business,oh,martinsferry,,Rules,Business,,## 711.25 POSTING OF NOTICE.,"The owner or exhibitor of every amusement arcade or skill pool table shall display at all times in a prominent place on the premises of every amusement arcade in the City and of every place in the City in which a skill pool table required by this chapter to be licensed is installed or used, a printed notice, which shall be furnished by the Chief of Police with the required license and which shall read substantially as follows:",yes,yes,yes,operation,operation,operation,yes,True,3,0,0,unanimous,Signage and what the business has to display,,
+45446d0430ed7a7e4bc57f4d7d53c20a,business,oh,cleveland,,Rules,Business,,## § 443.11 Inspection Time and Reports; Fee,"The Commissioner of Assessments and Licenses shall maintain constant vigilance over all public hacks, to see that they are kept in a condition of continued fitness for public use. To this end, the Commissioner, through his or her inspectors, shall periodically inspect all public hacks, or on the complaint of any citizen, as often as may be necessary. The Commissioner is authorized to set any number of mandatory inspections at such times and places as determined by the Commissioner for purposes of inspection. Failure to submit to a required inspection shall result in the revocation of license. The Commissioner is authorized to set the standards of any inspection conducted under this chapter. Copies of such standards shall be made available seven (7) days before the inspection, and upon request. The Commissioner is authorized to charge and collect an inspection fee of fifty dollars ($50.00) per hour, or any portion thereof, for any inspection performed under this section. Reports in writing of all inspections shall promptly be made to the Commissioner.
+
+(Ord. No. 598-13. Passed 5-20-13, eff. 5-23-13)",yes,yes,yes,operation,operation,operation,yes,True,3,0,0,unanimous,I think it is trying to establish the role that an individual in a business must do,,"Maintenance of ""hacks"" (taxicabs)"
+4d675c5b293b0da407875835030b219c,business,ok,tulsa,,Enforcement,Business,,### Section 121. Posting of sales tax permit.,"**B.** If sales are transacted from a mobile location, including but not limited to a vehicle, a trailer or other place from which the vendor conducts business, the vendor shall post the sales tax permit, or a legible copy thereof, conspicuously upon such mobile location.
+
+**C.** For all other sales transacted within the City, a legible copy of the vendor's sales tax permit shall be furnished each employee or contractor entitled to present invoices or collect monies from customers, to be presented upon request as part of the invoicing or collection process.
+
+**D.** Any person who violates any of the provisions of this section shall be guilty of a misdemeanor and, upon conviction thereof, shall be punished by a fine of not more than Five Hundred Dollars ($500.00), excluding costs, and upon conviction for a second or subsequent violation hereof, shall be punished by a fine of not more than Five Hundred Dollars ($500.00), excluding costs, and/or by incarceration in the City jail for a period of not more than sixty (60) days; provided, however, that any person producing proof to the court within two (2) business days after the violation that a current sales tax permit, which has been issued by the Oklahoma Tax Commission, was in force at the time of the alleged offense shall be entitled to dismissal of such charge upon payment of court costs.
+
+*(Ord. Nos. 21460, 21532)*
+
+43:13
+[THIS PAGE INTENTIONALLY LEFT BLANK]",yes,yes,yes,operation,operation,operation,yes,True,3,0,0,unanimous,Talks about signage with food trucks and what they have to do,"sales tax permit posting, tax-y q2 but posting rule",
+016c002726fd81dd49f82c0263e1faae,business,pa,penn_forest_township,,Rules,Business,,## § 81-13. Amendment of franchise fee.,The Board of Supervisors of Penn Forest Township shall have the power from time to time to amend the fees set forth in the foregoing § 81-9 of this chapter by a resolution duly adopted by a majority of said Supervisors at any regular or special meeting thereof.,no,unsure,unsure,,other,,unsure,False,0,1,2,split,"Talks about what the township is allowed to do, not related to commercial","board can amend franchise fees by resolution, procedural, franchise of what unclear",Doesn't specify what the fees are for
+bcab883403f29b012824eb78cedaa6c8,business,pa,bensalem,,Rules,Business,,### Sec. 229-26. License status.,"A towing license is issued by the Township conditioned upon, and with the express agreement of the licensee, that the licensee shall, at all times, act as an independent contractor, and not as an employee of the Township or its Police Department and the licensee shall, and by acceptance of the license hereby agrees to hold
+
+the Township harmless from any and all claims, suits, damages, injuries, or causes of action, whatsoever which may arise out of any towing or other activity performed by licensee. Payment for services rendered pursuant to the license shall be by the owner, operator, or custodian of the disabled, wrecked or abandoned vehicles, and not by the Township.
+
+(Ord. No. 92-6, § 106, 4-27-92)",yes,yes,yes,entry,entry,entry,yes,True,3,0,0,unanimous,This directly talks about the laws involving the issuing with licenses and the registration requirements. It could also be operation based on the fact that it tries to define what a business must do,,Put in entry bc it's about initial issuance of a license but could bleed into operations with the section on not holding the township liable for actions performed by the licensee
+3bcfa9f40561f0d7a30fcb4f3184f774,business,sd,rapid_city,,Rules,Business,,### D. Assisted living centers.,"Uses of this nature are subject to the following for conditional use approval:
+
+1. A lot area of not less than 5,000 square feet plus an additional 1,500 square feet for each assisted living suite or room. For those structures which provide all required off street parking within the main structure, the lot area required may be reduced to 280 square feet per unit; and
+
+The Rapid City Municipal Code is current through Ordinance 6701, passed December 23, 2025.
+2. There shall be usable open space provided for each suite/room of not less than 170 square feet. Open space does not include drives, parking, and service areas. Not more than 50% of the open space requirement shall be met with common interior spaces limited to community rooms, central dining areas, and craft rooms.
+
+E. Auto service and repair. Uses of this nature are subject to the following for conditional use approval:
+
+1. Auto sales are prohibited;
+
+2. All body and/or mechanical work shall be completed within an enclosed area;
+
+3. All inoperable vehicles shall be stored within a building or within a side rear yard which is screened with an opaque fence at least 6 feet height;
+
+4. The number of inoperable vehicles stored within a screened yard shall not exceed 1 per 400 square feet of building floor area used for vehicle repair;
+
+5. Building form that is compatible with the district; and
+
+6. Appropriate landscaping and screening is provided.
+
+F. Business and vocational schools. Uses of this nature are subject to the following requirements:
+
+1. Any toxic, explosive, flammable, corrosive, etiologic, radioactive or other restricted material shall be stored, used and disposed of in accordance with all applicable building, fire, and safety codes; and
+
+2. The programming shall not generate any offensive noise, odor, vibration, smoke, dust, blast, or heat noticeable beyond the premises.
+
+G. Business service establishments. Uses of this nature are subject to the following requirements:
+
+1. Such uses may not produce n",unsure,yes,yes,,entry,"entry,operation",yes,False,2,0,1,split,It talks about like a business that would rent out land but it might just be land-use in general,"cond use standards for several commercial uses, entry bc cond use approval but standards read operational","Beginning talks about allotted sqft for assisted living, bottom talks about auto service operations"
+2107ecc9f24a1b5e60d50b45a343a71f,business,tn,johnson_city,,Rules,Business,,"## 6.21.3.4 Wayside stand, provided:","A. The sale of agricultural products shall be limited to produce grown on the premises; and
+
+B. Structures shall not exceed 500 square feet in aggregate floor area.",yes,yes,yes,operation,operation,operation,yes,True,3,0,0,unanimous,Discusses what should be sold and how big the structure should be,"zoning use standards for roadside produce stand, commercial by nature, zoning tho",
+705bf9e8db5069f498562bbe97a1e0f8,business,tx,orange,,Enforcement,Business,,## Chapter 4: Business & Commerce,"(g) **Hours of Operation.** A game room shall operate only between the hours of 8:00 a.m. and 10:00 p.m. daily.
+
+(h) **Name Tags.** Each employee of a game room is required to wear a clearly displayed name tag affixed to the upper left chest area of the employee's clothing. The name tag shall be at least three (3) inches by five (5) inches in size and shall state the employee's correct legal first and last name, and shall state his/her position (e.g., manager) on a separate line. The lettering shall be clearly visible, in a font size of at least thirty-six (36).
+
+(i) **Inspection**
+
+(1) **Inspection.** Peace officers, fire safety officials, and designated city employees are authorized to inspect any business in the City of Orange for violations of this article. This article does not authorize a right of entry prohibited by law. Peace officers, fire safety officials, and designated city employees may enter a business with consent, with a warrant, or under exigent circumstances.
+
+(2) **Unpermitted Game Rooms.** An unpermitted business that holds itself out as a game room by sign, advertisement, word-of-mouth, by offering memberships, by offering for play or displaying six (6) or more gaming device located in the game room—or by any other means—is subject to inspection by any peace officer, fire safety official, and designated city employee and is a game room under this article.
+
+(A) Refusal to allow any peace officer, fire safety official, and designated city employee entry to inspect such unpermitted game rooms may be considered in establishing probable cause for the issuance of a search warrant to inspect for violations of this article.
+
+(B) An unpermitted game room is subject to this article and may be held liable for all civil and criminal penalties listed herein.
+
+(3) **Permitted Game Rooms.** A game room permit issued pursuant to this article gives peace officers, fire safety officials, and designated city employees implied consent to enter and to inspect the ga",yes,yes,yes,operation,operation,operation,yes,True,3,0,0,unanimous,Directly describes what gaming businesses must do,,
+05aaa78d4a0b8103d68e84b879b33525,business,tx,rockdale,,Rules,Business,,## § 11.06. Regulation of Franchises.,"All grants of franchises as authorized in this charter shall be subject to the right of the council to:
+
+(a) Determine, fix and regulate the charges, rates or compensation to be charged by the person or entity granted a franchise.
+
+(b) Repeal the franchise by ordinance at any time upon the failure or refusal of the franchisee to comply with the terms of the franchise, this charter, or any applicable city ordinance or state law, or any valid rule of any regulatory body.
+
+(c) Establish standards and quality of products or service.
+
+(d) Require such expansion, extension and improvement of plants and facilities as are necessary to provide adequate service to all the public and to require that maintenance of facilities be performed at the highest reasonable standard of efficiency.
+
+(e) Prescribe the method of accounting and reporting to the city so that the franchisee will accurately reflect the expenses, receipts, profits and property values used in rendering its service to the
+City of Rockdale, TX
+
+§ 11.06
+
+HOME RULE CHARTER
+
+§ 11.10
+
+public. It shall be deemed sufficient compliance with this requirement if the franchisee keeps its accounts in accordance with the uniform system established by an applicable federal or state agency for such service.
+
+(f) Examine and audit at any time the accounts and other records of any franchisee and to require annual and other reports prescribed in the franchise ordinance.
+
+(g) Require such compensation, regulatory, rental and franchise fees as may not be prohibited by law.
+
+(h) Impose such regulations and restrictions as may be deemed desirable or conducive to the health, safety, welfare and accommodation of the public.
+
+(i) Require the franchisee to restore at its expense all public or private property to a condition equal to or better than that before being damaged or destroyed by the franchisee.
+
+(Amended by Ordinance 2016-02-08 (8B) at an election held on May 7, 2016)
+
+§ 11.07. Penalty Authorized.
+
+The council shall have the powe",yes,yes,yes,operation,operation,operation,yes,True,3,0,0,unanimous,Describes what the council of a business can do regarding grants,"charter franchise powers, rates/audit = operation, repeal is exit, q5",
+d9830ecd3ef1ce20ac0a685c12a867ca,business,tx,pecos_city,,Rules,Business,,### Sec. 12-304. Notification of changes.,"Operators shall provide the city with 30 days' advance notice of its intention to start up or discontinue an authorized commercial aeronautical service. In addition, all operators must file within two weeks of receipt any changes to their own and their employees' FAA certificates and ratings.
+
+(Ord. No. 11-04-02, § 1.7(E), 4-27-2011)
+
+CD12:34",yes,yes,yes,"entry,exit",operation,"entry,exit",yes,True,3,0,0,split,"Describes both startup and discontinue, needs to further be discussed",notice of start/discontinue is entry/exit-ish but its a reporting duty,
+fe26480e80a6a9e5fc95cf309277d766,business,tx,san_antonio,,Rules,Business,,### Sec. 4-80. Separate fee receipts for each business; nontransferable.,"A separate city alcoholic beverage fee receipt shall be required for each place of business. Fee receipts issued under this article shall not be transferred.
+
+(Code 1950, § 30-16.1; Ord. No. 23954, § 1, 11-15-56; Ord. No. 27998, §§ 1, 2, 10-8-59; Code 1959, § 5-16; Ord. No. 68849, § 1, 2-16-89)",yes,yes,yes,operation,entry,operation,yes,True,3,0,0,split,A law describing what a business must do,"per location fee receipt + nontransferable, transfer part is exit-ish",
+2a12588b69106ae0b59b9bbc6836cec1,business,va,buena_vista,,Rules,Business,,## Sec. 10-192. Certain permits.,"(a) Upon the filing of an application for a permit under this division or division 3 of this article, the applicant shall provide a current criminal background check obtained by the state police. If the city manager, or his designee, shall determine, after such investigation, that the person filing the application in question is of good character and proposes to engage in a lawful and legitimate commercial or professional enterprise, he shall, subject to the payment of any permit fee, issue the permit applied for. Such permit shall be issued on forms prepared for such purpose and shall set forth identification of the holder, shall state the company represented and contain any other pertinent information deemed desirable by the city manager, or his designee.
+
+(b) Any of the following findings by the city manager, or his designee, shall constitute grounds for the denial of a permit required by this division or division 3 of this article:
+
+(1) The applicant has not properly completed the permit application or that he has falsified such application in a material manner.
+
+(2) The applicant has a criminal record which reveals a pattern of criminal misconduct involving moral turpitude.
+
+(3) The applicant has a history of taking orders for goods, wares and merchandise which are not subsequently delivered in accordance with the terms of the order or which are not of the quality represented by the seller, city manager, police department or commissioner of revenue.
+
+(4) The applicant consistently fails to cooperate with law enforcement officers in the performance of their official duties.
+
+(Code 1981, § 18-20)",yes,yes,yes,entry,entry,entry,yes,True,3,0,0,unanimous,Rules defining application and the neccesary requirements for it,"denial grounds listed, def puts denial in exit but this is initial app so entry",
+84088340106dddf6504f0b46eb16ed13,business,va,radford,,Rules,Business,,### Sec. 110-216. Use of energy by customer.,"(a) The tariffs for electric energy set out in this article are classified by the character of use of such energy and are not available for service except as provided therein.
+
+(b) When the customer desires delivery of energy at more than one point, a separate contract will be required for each separate delivery point. Service delivered at each delivery point will be billed separately under the applicable tariff.
+
+CD110:28
+UTILITIES
+
+§ 110-218
+
+(d) A customer may not change from one tariff to another during the term of a contract except by mutual agreement.
+
+(e) The service connections, transformers, meters and appliances supplied by the city for each customer have a definite capacity. The customer agrees to notify the city of any increase or decrease in his connected load so that the city may make suitable arrangements for the supply of the customer's load.
+
+(f) The customer shall install only motors, apparatus or appliances which are suitable for operation with the character of the service supplied by the city, and which shall not be detrimental to same, and the electric capacity and energy must not be used in such a manner as to cause unprovided for voltage fluctuations or disturbances in the city's transmission or distribution system. The city shall be the judge as to the suitability of apparatus or appliances to be connected to its lines, and also as to whether the operation of such apparatus or appliance will be detrimental to its general service. In case the customer continues to use equipment unsuitable for operation, service may be discontinued by the city until such time as the customer's use of the electric energy shall conform to these regulations. Such suspension of service by the city shall not operate as a cancellation of the contract.
+
+(g) No customer's radio, wireless telegraph, wireless telephone or television antennae may be connected to the city's lines, poles, crossarms, structures or other facilities.
+
+(h) The city will not supply service to ne",unsure,unsure,yes,other,other,operation,unsure,False,1,0,2,split,"It doesnt really define what the customer is, it could be someone interacting with a business or the business itself, not sure","city electric tariffs/contracts w customers, q5 market actor, not just biz customers",
+81ff2297932377d6f7d060129df6a3fc,business,va,covington,,Rules,Business,,### Sec. 48-120. Filing; contents of application.,"Every applicant for a taxicab driver's license shall make application for such license in writing under oath to the chief of police of the city, which application shall contain the following information about the applicant:
+
+(1) His full name.
+
+(2) Present address.
+
+(3) Age.
+
+(4) Place of birth.
+
+(5) His previous addresses and employment for the past five years.
+
+(6) Height.
+
+(7) Weight.
+
+(8) Color of eyes.
+
+(9) Color of hair.
+
+(10) Sex.
+
+(11) Whether married, single or divorced and, if married, whether living with or contributing to his spouse support or support of his children, if any, or both.
+
+(12) Whether or not he is in good physical condition.
+
+(13) Whether or not he has good hearing and good eyesight.
+
+(14) Whether or not he uses, or has used within the past five years, intoxicating liquors, drugs or any other form of narcotics and, if so, to what extent.
+
+*State law reference—Authority of city to license taxicab drivers, Code of Virginia, § 46.2-310.
+
+Supp. No. 8
+
+CD48:11
+§ 48-120 COVINGTON MUNICIPAL CODE
+
+(15) Whether or not he has ever been convicted of, pleaded guilty to or entered a plea of nolo contendere to the violation of any municipal, state, federal or other criminal law and, if so, the number of times, the kind of offenses and such other information as may be required by the chief of police.
+
+(16) Whether or not he has previously been employed or licensed as a driver or chauffeur and, if so, whether or not his license has ever been revoked or suspended for any reason.
+
+(17) What experience, if any, he has had in the operation of cars.  
+(Code 1975, § 31-72; Code 1992, § 34-88)
+
+**Sec. 48-121. Applicant to apply in person; fingerprints.**
+
+Each applicant for a taxicab driver's license shall apply for his license in person and have his fingerprints taken, which fingerprints shall constitute a part of his application.  
+(Code 1975, § 31-73; Code 1992, § 34-89)
+
+**Sec. 48-122. Photographs of applicant.**
+
+Each applicant for a taxicab driver's license",no,yes,yes,,entry,entry,yes,False,2,1,0,split,This is the process involved with an individual who wants become a taxi driver not a business,,
+d8c7e001a13445f496a9b0cac137736b,business,va,radford,,Rules,Business,,### Sec. 80-58. Other exceptions to requirement for competitive procurement.,"(a) The city reserves to itself the right and option to enter into contracts without competition for the purchase of goods or services:
+
+(1) Which are performed or produced by persons, or in schools or workshops, under the supervision of the state department for the visually handicapped; or
+
+(2) Which are performed or produced by non-profit sheltered workshops serving the handicapped.
+
+(b) The city reserves to itself the right and option to enter into contracts for legal services, expert witnesses and other services associated with legal representation, litigation or regulatory proceedings without competitive sealed bidding or competitive negotiations.
+
+(c) The industrial development authority of the city may enter into contracts without competition with respect to any item of ""cost"" of ""authority facilities"" or ""facilities"" as defined in Code of Virginia, § 15.2-4902, as amended.
+
+(d) Upon a determination by the purchasing agent, in writing, that there is only one source practicably available for that which is to be procured, a contract may be negotiated and awarded to that source without competitive sealed bidding or competitive negotiation, notwithstanding any other provision of this chapter. Such writing shall document the basis for such determination. In addition, the procedures, provisions and requirements of section 80-156 shall apply to such purchases.
+
+(e) The purchasing agent, in consultation with the city manager, shall establish programs consistent with all provisions of this chapter to facilitate the participation of small businesses and businesses owned by women and minorities in procurement transactions. Such programs shall be in writing, and shall include cooperation with the state office of minority business enterprise, the United States Small Business Administration, and other public or private agencies.
+
+(f) Nothing in this chapter shall be deemed to apply, nor shall competitive procurement be required, as to the acquisition of real estate by the ",no,unsure,yes,,other,entry,tie,False,1,1,1,split,Talks about what the city is allowed to do in relations to other businesses but not a direct law over businesses,"exceptions to competitive procurement, q5, small/minority biz programs touch vendors",Inital contracts
+88018e78b6bd8595c32ad8a37ea5ba6f,business,wi,peshtigo_city,,Rules,Business,,# SECONDHAND GOODS,"§ 34-49
+
+days after the date of purchase or receipt, unless the person known by the pawnbroker to be the lawful owner of the secondhand article or secondhand jewelry recovers it.
+
+(2) Except as provided in Subsection (d)(5) of this section, any secondhand article purchased or received by a secondhand article dealer shall be kept on the secondhand article dealer’s premises or other place for safekeeping for not less than ten days after the date of purchase or receipt.
+
+(3) Except as provided in Subsection (d)(5) of this section, any secondhand jewelry purchased or received by a secondhand jewelry dealer shall be kept on the secondhand jewelry dealer’s premises or other place for safekeeping for not less than 15 days after the date of purchase or receipt.
+
+(4) During the period set forth in Subsections (d)(1), (2) and (3) of this section, the secondhand article or secondhand jewelry shall be held separate and apart and may not be altered in any manner. The pawnbroker, secondhand article dealer or secondhand jewelry shall permit any law enforcement officer to inspect the secondhand article or secondhand jewelry during this period. Within 24 hours after a written request of a law enforcement officer during this period, a pawnbroker, secondhand article dealer or secondhand jewelry dealer shall make available for inspection any secondhand article or secondhand jewelry which is kept off the premises for safekeeping. Any law enforcement officer who has reason to believe any secondhand article or secondhand jewelry was not sold or exchanged by the lawful owner may direct a pawnbroker, secondhand article dealer or secondhand jewelry dealer to hold that secondhand article or secondhand jewelry for a reasonable length of time which the law enforcement officer considers necessary to identify it.
+
+(5) Subsections (d)(1) through (4) of this section do not apply to any of the following:
+
+a. A coin of the United States, any gold or silver coin or gold or silver bullion.
+
+b. A second",yes,yes,yes,operation,operation,operation,yes,True,3,0,0,unanimous,Laws circuling around what Pawnbrokers have to do,,Commerce ops bc dictates how pawnbrokers conduct
+6386efbe07c7d2f89dc49eb5ad770b97,business,wi,oconto,,Rules,Business,,## Sec. 7-4-3. Exemptions.,"The following shall be exempt from all provisions of this Chapter:
+
+(a) Any person delivering newspapers, fuel, dairy products or bakery goods to regular customers on established routes;
+
+(b) Any person selling goods at wholesale to dealers in such goods;
+
+(c) Any permanent merchant or employee thereof who takes orders away from the established place of business for goods regularly offered for sale by such merchant within this City and who delivers such goods in their regular course of business;
+
+(d) Any person who has an established place of business where the goods being sold are offered for sale on a regular basis, and in which the buyer has initiated contact with, and specifically requested a home visit by, said person;
+
+(e) Any person who has had, or one who represents a company which has had, a prior business transaction, such as a prior sale or credit arrangement, with the prospective customer;
+
+(f) Any person selling or offering for sale a service unconnected with the sale or offering for sale of goods;
+
+(g) Any person holding a sale required by statute or by order of any court and any person conducting a bona fide auction sale pursuant to law;
+
+(h) Any employee, officer or agent of a charitable organization who engages in direct sales for or on behalf of said organization, provided that there is submitted to the City Clerk/Treasurer proof that such charitable organization is registered under § 440.41, Wis. Stats., or which is exempt from that statute’s registration requirements, shall be required to register under this Chapter; it is intended to include any employee, officer, agent or member of any local charitable organization having a local group or association;
+
+(i) Any person who claims to be a permanent merchant, but against whom a complaint has been made to the City Clerk/Treasurer that such person is a transient merchant, provided that there is submitted to the City Clerk/Treasurer proof that such person has leased for at least one (1) year, or purch",no,yes,yes,,entry,operation,yes,False,2,1,0,split,It doesn't talk about the actual article is just provides exceptions to a law about business but it isnt really a business law,"exemptions from solicitor/merchant registration, scope of entry reqs, could be other",
+8f120a49d20db63ac60dcc28d796fa6b,business,wi,monroe,,Rules,Business,,### § 3-2-3. Fee. [2016 Code],"The registration fee for each amusement device shall be set by resolution of the council. The re-registration fee for each year shall be in an amount equal to the registration fee in effect at the time of re-registration. Such fee shall be paid to the city treasurer upon registration or re-registration of each amusement device. The city treasurer shall require the registrant to submit such information as may be necessary to identify the amusement device so registered and shall issue to the registrant any appropriate registration tag. All registrants shall keep proof of registration at the same premises as the amusement device. A separate tag is required for each amusement device. Every registrant, or his or her agent, shall show to any person, upon request, the registration tag for each amusement device on the premises.",yes,yes,yes,entry,entry,"entry,operation",yes,True,3,0,0,split,Registration Fee for machines,"reg fee + tag display on premises, mostly entry",Covers both initial registration and re-registration

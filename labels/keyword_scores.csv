@@ -1,0 +1,19 @@
+keyword,rows_labeled,called_commerce,share_commerce
+permit*,17,4,0.235
+inspection*,9,2,0.222
+sign*,6,1,0.167
+licens*,5,4,0.8
+business*,4,4,1.0
+franchis*,3,2,0.667
+registr*,2,1,0.5
+noise,2,0,0.0
+theater*,1,1,1.0
+adult entertainment,1,1,1.0
+liquor,1,0,0.0
+nonrenewal,1,0,0.0
+solicitor*,1,1,1.0
+application fee*,1,0,0.0
+price*,1,1,1.0
+contractor*,1,1,1.0
+alcoholic,1,0,0.0
+beverage*,1,0,0.0

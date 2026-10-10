@@ -44,17 +44,38 @@ def norm_commerce(raw: str) -> str | None:
     return None
 
 
+CATS = ("entry", "operation", "exit", "other")
+NOT_A_CATEGORY = {"", "n/a", "na", "none", "unsure", "?", "idk", "tbd"}
+
+
 def norm_category(raw: str) -> str | None:
+    """Normalize a category cell to a sorted, comma-joined set of known categories.
+
+    People write "entry & operation", "operations", "entry, exit, operation", "n/a".
+    Those are the same judgment written four ways, and treating them as distinct
+    labels destroys the agreement statistic. A cell naming no known category
+    (blank, n/a, unsure) counts as unlabeled rather than as a category of its own.
+    """
     v = (raw or "").strip().lower()
-    return v or None
+    if v in NOT_A_CATEGORY:
+        return None
+    found = [c for c in CATS if c in v]      # 'operations' contains 'operation'
+    if not found:
+        return None
+    return ",".join(sorted(found))
 
 
 def labeler_name(path: pathlib.Path, row: dict) -> str:
-    stated = (row.get("labeler") or "").strip()
-    if stated:
-        return stated.lower()
+    """One identity per FILE, taken from its name.
+
+    The `labeler` column is free text, so the same person can appear as "ainesh"
+    and "ainesh sabharwal" in one file and split into two phantom annotators.
+    The file is the reliable unit; the column is kept only as a note.
+    """
     stem = path.stem
-    return stem.replace("label_sheet_", "").replace("labels_", "").lower() or stem.lower()
+    name = stem.replace("label_sheet_", "").replace("labels_", "").strip()
+    name = name.split(" - ")[0].split("-")[0].strip()
+    return (name or stem).lower()
 
 
 def majority(values: list[str]) -> tuple[str, bool]:
@@ -188,6 +209,11 @@ def main() -> None:
     k_c = fleiss_kappa(full_c, ["yes", "no", "unsure"])
     cats = sorted({v for item in full_g for v in item})
     k_g = fleiss_kappa(full_g, cats) if cats else None
+    # Kappa over rows where every labeler named exactly ONE category, so the
+    # statistic is not dominated by multi-label cells.
+    single = [i for i in full_g if all("," not in v for v in i)]
+    cats1 = sorted({v for item in single for v in item})
+    k_g1 = fleiss_kappa(single, cats1) if cats1 else None
 
     # Keyword scores, from the majority call on boundary rows.
     hits = collections.Counter()
@@ -209,8 +235,22 @@ def main() -> None:
     print(f"rows seen        {len(rows):,}")
     print(f"rows all covered {len(full_c):,}")
     print(f"disagreements    {len(contested):,}  -> {dis_path}")
-    print(f"Fleiss kappa     is_commerce {k_c if k_c is None else round(k_c, 3)}, "
-          f"category {k_g if k_g is None else round(k_g, 3)}")
+    print(f"Fleiss kappa     is_commerce {k_c if k_c is None else round(k_c, 3)} "
+          f"(n={len(full_c)})")
+    print(f"                 category    {k_g if k_g is None else round(k_g, 3)} "
+          f"(n={len(full_g)}, multi-label cells included)")
+    print(f"                 category    {k_g1 if k_g1 is None else round(k_g1, 3)} "
+          f"(n={len(single)}, single-category rows only)")
+    per = {}
+    for rec in rows.values():
+        for who, v in rec["commerce"].items():
+            per.setdefault(who, collections.Counter())[v] += 1
+    print("\nyes / no / unsure by labeler (a large spread here is itself the finding):")
+    for who in people:
+        c = per.get(who, collections.Counter())
+        tot = sum(c.values()) or 1
+        print(f"  {who:<10} yes {c['yes']:>3} ({100*c['yes']/tot:.0f}%)  "
+              f"no {c['no']:>3}  unsure {c['unsure']:>3}  total {tot}")
     print(f"wrote            {merged_path}, {dis_path}, {ldir / 'keyword_scores.csv'}")
 
 

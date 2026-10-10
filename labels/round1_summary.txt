@@ -1,0 +1,13 @@
+label files      3  (ainesh, daniel, sachin)
+rows seen        300
+rows all covered 97
+disagreements    72  -> labels/disagreements.csv
+Fleiss kappa     is_commerce 0.232 (n=97)
+                 category    0.509 (n=45, multi-label cells included)
+                 category    0.567 (n=41, single-category rows only)
+
+yes / no / unsure by labeler (a large spread here is itself the finding):
+  ainesh     yes  47 (47%)  no  35  unsure  19  total 101
+  daniel     yes  52 (52%)  no  24  unsure  24  total 100
+  sachin     yes  83 (85%)  no   6  unsure   9  total 98
+wrote            labels/merged.csv, labels/disagreements.csv, labels/keyword_scores.csv
