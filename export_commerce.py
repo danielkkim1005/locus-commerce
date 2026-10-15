@@ -52,6 +52,36 @@ import duckdb
 CHUNK_ID = """md5(concat_ws('|', state, coalesce(city, ''), coalesce(county, ''),
                             coalesce(header, ''), coalesce(content, '')))"""
 
+# You do not have to download the 1.8 GB corpus. DuckDB's httpfs extension reads
+# the shards straight off the Hub over range requests, and Parquet is columnar, so
+# a query only pays for the columns it names: on one shard, scanning header+topic
+# takes about a second, scanning content about eight. The dataset is public, so no
+# token is needed.
+HF_SOURCE = "hf://datasets/LocalLaws/LOCUS-v1/data/train-*.parquet"
+REMOTE_SCHEMES = ("hf://", "s3://", "gcs://", "gs://", "az://", "http://", "https://")
+
+
+def parquet_source(con: "duckdb.DuckDBPyConnection", data: str) -> tuple[str, str]:
+    """Resolve --data to (glob for read_parquet, one-line description).
+
+    Accepts a local folder of shards, or any remote path DuckDB can open. Remote
+    paths need httpfs, which ships with DuckDB but loads on demand.
+    """
+    if data.startswith(REMOTE_SCHEMES):
+        con.execute("INSTALL httpfs")
+        con.execute("LOAD httpfs")
+        return data, f"remote: {data}"
+    folder = pathlib.Path(data)
+    shards = sorted(folder.glob("train-*.parquet"))
+    if not shards:
+        raise SystemExit(
+            f"no parquet shards under {folder.resolve()}\n"
+            f"  pass --data if LOCUS-v1 is somewhere else, or\n"
+            f"  pass --hf to read the corpus off Hugging Face without downloading it"
+        )
+    return ((folder / "train-*.parquet").as_posix(),
+            f"{len(shards)} local shards under {folder.resolve()}")
+
 
 def load_keywords(path: pathlib.Path) -> list[str]:
     words = []
