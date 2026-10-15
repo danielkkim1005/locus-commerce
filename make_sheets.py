@@ -187,6 +187,16 @@ def main() -> None:
                 # drift, be left blank, or be spelled three ways in one sheet.
                 value = name if col == "labeler" else row[col]
                 c = ws.cell(row=i, column=j, value=value)
+                # header and content come out of LOCUS-v1, which is scraped
+                # municipal text, and a chunk can begin with any character. openpyxl
+                # types a value starting with "=" as a formula, so such a row would
+                # reach the labeler as #NAME? instead of the law they are supposed
+                # to read - and a formula in a spreadsheet someone else opens is
+                # worth not writing at all. Forcing the string type keeps the cell
+                # literal. One of the current 75 rows starts with "-", which
+                # openpyxl already stores as text; "=" is the one that converts.
+                if isinstance(value, str) and value.startswith("="):
+                    c.data_type = "s"
                 if col in READ_ONLY:
                     c.font = RO_FONT
                 if col in VALIDATED or col in FREE_TEXT:

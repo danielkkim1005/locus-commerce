@@ -21,9 +21,15 @@ commerce it misses. 15 random rows is a thin estimate, but it is the first one.
 
 Rows labeled in round 1 are excluded by default, so this is a fresh sample.
 
+round2_sheet.csv holds LOCUS text verbatim, including rows that begin with "="
+or "-". It is a data file: scripts read it, and neutralizing those characters here
+would alter the text we are asking people to judge. The spreadsheets labelers
+actually open are built by make_sheets.py, which forces every cell to a literal
+string. If you open this CSV in Excel or Sheets yourself, import it as text.
+
 Two files come out:
 
-  out/round2_sheet.csv   what labelers get: text, blank columns, nothing else
+  out/round2_sheet.csv   the master rows: text, blank columns, nothing else
   out/round2_key.csv     slice / topic / function / jurisdiction, joined on row_id
                          Coordinator keeps this. Do not send it to labelers.
 
