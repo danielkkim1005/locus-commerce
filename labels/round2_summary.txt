@@ -1,0 +1,44 @@
+label files      3  (ainesh, daniel, sachin)
+rows seen        75   key joined
+rows all coded   74 (tier or unresolvable)   all tiered 52
+disagreements    15 on tier, 1 on reason only  -> labels/round2_disagreements.csv
+
+agreement, over rows every labeler coded
+  PRIMARY        kappa +0.555   AC1 +0.579   (n=74)
+                 tier + unresolvable together; only self-contradicting cells dropped
+  minus trunc    kappa +0.607   AC1 +0.637   (n=66)
+                 rows anyone called truncated dropped: LOCUS chunking, not our wording
+  conditional on all three finding the chunk legible:
+    tier 3-way   kappa +0.724   AC1 +0.748   (n=52)
+    core vs rest kappa +0.724   AC1 +0.761   (n=52)   <- nearest thing to round 1's 0.232
+  adjacent_rsn   kappa +1.000   AC1 +1.000   (n=3)
+  category       kappa +0.311   AC1 +0.574   (n=17)
+  step           kappa +0.440   AC1 +0.539   (n=75)
+
+tier by labeler (the spread is itself the finding)
+  ainesh   core  22 (35%)  adjacent  13 (21%)  not  27 (44%)  unres 13  tiered 62/75
+  daniel   core  28 (41%)  adjacent  14 (20%)  not  27 (39%)  unres  5  tiered 69/75
+  sachin   core  19 (33%)  adjacent  11 (19%)  not  28 (48%)  unres 17  tiered 58/75
+
+step that decided it (where the procedure is actually doing work)
+  ainesh   s1 13  s2 19  s3  8  s4  1  s5 34
+  daniel   s1  6  s2 10  s3 17  s4  1  s5 41
+  sachin   s1 17  s2 26  s3  2  s4  0  s5 30
+
+adjacent reasons, majority call
+  revenue              5
+  procedure            4
+  land-use             3
+  tie                  3
+  definition           1
+  counterparty         1
+
+tier by stratum, majority call
+  boundary   core   4/29  adjacent   5  not  18  tie  2
+  business   core  19/30  adjacent   9  not   1  tie  1
+  random     core   1/15  adjacent   3  not  11  tie  0
+
+consistency checks, per labeler-row
+  unresolvable AND a tier                1   daniel r23   <- both cells dropped from every statistic
+
+wrote            labels/round2_merged.csv, labels/round2_disagreements.csv, labels/round2_summary.txt, labels/round2_keyword_scores.csv
