@@ -10,9 +10,15 @@ All numbers below come from `python merge_round2.py`, reproduced in
 
 ## Headline
 
-**kappa 0.555, AC1 0.579, n=74** — tier and `unresolvable` together, every row.
+**kappa 0.549, AC1 0.573, n=75** — tier and `unresolvable` together, every row.
 
 Round 1 was kappa 0.232 on `is_commerce` (n=97). Agreement roughly doubled.
+
+Supersedes the first pass, which read 0.555 / 0.579 on n=74 because daniel's r23
+carried both a tier and an `unresolvable` code and was dropped. r23 is now
+`no-context` with no tier, nothing is excluded, and the headline falls very
+slightly: ainesh and sachin both called that row `not`, so the cell moved from
+dropped to disagreeing. Every figure below is the corrected run.
 
 Not a like-for-like comparison: round 2 is a different sample, holds out round 1's
 chunks, and asks a three-tier question instead of yes/no. The definition rewrite is
@@ -24,13 +30,13 @@ Each row drops more of the sheet. The gaps are the diagnosis.
 
 | rows kept | excluded | kappa | AC1 | n |
 | --- | --- | --- | --- | --- |
-| all | self-contradicting cells only | **0.555** | 0.579 | 74 |
-| no `truncated` | 8 rows anyone called cut off | 0.607 | 0.637 | 66 |
-| no `unresolvable` | 21 legibility-split rows | 0.724 | 0.748 | 52 |
+| all | nothing | **0.549** | 0.573 | 75 |
+| no `truncated` | 8 rows anyone called cut off | 0.599 | 0.629 | 67 |
+| no `unresolvable` | 22 legibility-split rows | 0.724 | 0.748 | 52 |
 
 Core vs rest (nearest equivalent to round 1's yes/no): 0.724 / AC1 0.761, n=52.
 
-Of the 0.169 gap between 0.555 and 0.724, about a third is `truncated` — LOCUS chunk
+Of the 0.175 gap between 0.549 and 0.724, about a third is `truncated` — LOCUS chunk
 boundaries, which we can describe but not fix. The rest is `no-context`: disagreement
 about how much a chunk must name before it is labelable. That part is our wording.
 
@@ -40,7 +46,7 @@ Other fields:
 | --- | --- | --- | --- | --- |
 | adjacent_reason | 1.000 | 1.000 | 3 | n too small to mean anything |
 | category | 0.311 | 0.574 | 17 | round 1: 0.509 / 0.567. n too small to compare |
-| step | 0.440 | 0.539 | 75 | same tier reached by different routes |
+| step | 0.440 | 0.539 | 75 | same tier reached by different routes — see finding 3 |
 
 Two statistics throughout. Fleiss' kappa is what round 1 reported, so it is the
 comparison. Gwet's AC1 does not collapse when one category dominates, which in a
@@ -49,12 +55,12 @@ labelers agree but the sheet is lopsided — see `category`.
 
 ## Finding 1 — the disagreement is about legibility, not commerce
 
-21 of 75 rows had someone code `unresolvable` while someone else assigned a tier.
+22 of 75 rows had someone code `unresolvable` while someone else assigned a tier.
 
 | | no-context | truncated | total |
 | --- | --- | --- | --- |
 | ainesh | 8 | 5 | 13 |
-| daniel | 5 | 0 | 5 |
+| daniel | 6 | 0 | 6 |
 | sachin | 11 | 6 | 17 |
 
 Daniel never used `truncated`; ainesh and sachin used it 11 times across 8 rows
@@ -131,16 +137,60 @@ decorative, and where the paths diverge we cannot predict the outcome.
 
 Step 4 fired twice in 225 labeler-rows. Near dead weight.
 
+### Collapsing steps 2 and 3
+
+Steps 2 and 3 both terminate in `not`, and the questions are adjacent: step 2 asks
+whether any commercial subject is named at all, step 3 asks whether a named
+commercial subject survives the observation that a non-commercial actor doing the
+same thing would be bound too. A labeler who reads "any person" as settling the row
+can record either number for the same judgment. So the step figure was recomputed
+with values merged — a sensitivity analysis on the procedure's granularity, not on
+anyone's labels.
+
+| coding | kappa | AC1 | unanimous rows |
+| --- | --- | --- | --- |
+| as recorded | 0.440 | 0.539 | 35/75 |
+| **2+3 merged** | **0.601** | **0.686** | **48/75** |
+| 2+3 and 4+5 merged | 0.603 | 0.647 | 48/75 |
+| 4+5 merged only | 0.440 | 0.513 | 35/75 |
+
+Merging values raises raw agreement and the chance term together, so kappa can fall
+as well as rise; 4+5 merged leaves kappa flat and lowers AC1, which is the control
+case. The 2+3 merge is the one that moves.
+
+The decisive number is narrower than kappa. 40 of 75 rows drew the identical answer
+from all three labelers — same tier, or all three `unresolvable`. On **13 of those
+40**, the recorded step differs. Merging steps 2 and 3 takes that count to **zero**,
+and merging 4 and 5 leaves it at 13.
+
+So every route-only disagreement in round 2 is a step-2-versus-step-3 disagreement.
+All 13 are `not` rows:
+
+```
+r1  r2  r3  r34 r36 r39 r41 r45 r53 r56 r60 r67 r70
+```
+
+Two readings, and they imply different fixes. Either the steps are one step and the
+procedure is really three (legibility, no commercial subject, judgment on a
+commercial party), or the distinction is real and the wording does not survive
+contact with an "any person" clause — the case where a provision names a trade and
+then sweeps past it. The second is the more interesting possibility, because steps 2
+and 3 together dispose of 82 of the 225 labeler-rows, so wherever that line falls is
+largely what sets the boundary slice's core rate.
+
+Either way, step kappa 0.440 should not be read as the group disagreeing about the
+procedure. It is largely two labels for one judgment.
+
 ## Tier rates by labeler
 
 | | core | adjacent | not | unresolvable | tiered |
 | --- | --- | --- | --- | --- | --- |
 | ainesh | 22 (35%) | 13 (21%) | 27 (44%) | 13 | 62/75 |
-| daniel | 28 (41%) | 14 (20%) | 27 (39%) | 5 | 69/75 |
+| daniel | 28 (41%) | 14 (20%) | 27 (39%) | 6 | 69/75 |
 | sachin | 19 (33%) | 11 (19%) | 28 (48%) | 17 | 58/75 |
 
 Round 1's yes-rate spread was ainesh 47%, daniel 52%, sachin 85%. The outlier is gone.
-The remaining spread is in `unresolvable` (5 to 17), i.e. finding 1.
+The remaining spread is in `unresolvable` (6 to 17), i.e. finding 1.
 
 ## Tier by stratum, majority call
 
@@ -179,12 +229,10 @@ largest n.
 ## Data quality
 
 - Zero off-list values across 225 labeler-rows. The `make_sheets.py` dropdowns worked.
-- One self-contradiction: daniel r23 set both `unresolvable` (`no-context`) and a tier
-  (`not`). Both cells are dropped from every statistic — step 1 says an unresolvable
-  chunk gets no tier, and preferring one cell would be choosing his answer for him.
-  Raw values stay in `round2_merged.csv`, with `excluded = daniel`. This is why n=74
-  and not 75.
-- No blank cell lacked an `unresolvable` code: all 35 untiered cells are step-1 answers,
+- Consistency checks clean. The one self-contradiction in the first pass — daniel r23
+  set both `unresolvable` (`no-context`) and a tier (`not`) — has been resolved to
+  `no-context` with no tier, so no cells are excluded and n=75 throughout.
+- No blank cell lacks an `unresolvable` code: all 36 untiered cells are step-1 answers,
   not unfinished work.
 
 ## Next steps, in order
@@ -193,8 +241,11 @@ largest n.
    lever on the headline number.
 2. Work the 21 legibility-split rows as the discussion queue, ahead of the 15 tier rows.
 3. Prune `permit*` from `commerce_keywords.txt`, citing 0/16 in the commit message.
-4. Have daniel re-answer r23.
-5. Leave `category` alone until n is larger.
+4. Decide the step-2/step-3 question (finding 3): merge the two steps, or write the
+   distinction so it survives contact with an "any person" clause.
+5. Decide the asymmetric-`unresolvable` rule explicitly, now that `truncated` is used
+   0 / 5 / 6 times across three sheets. The ladder shows it moving the headline by 0.050.
+6. Leave `category` alone until n is larger.
 
 ## Reproduce
 

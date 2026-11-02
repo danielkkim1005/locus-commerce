@@ -1,12 +1,12 @@
 label files      3  (ainesh, daniel, sachin)
 rows seen        75   key joined
-rows all coded   74 (tier or unresolvable)   all tiered 52
+rows all coded   75 (tier or unresolvable)   all tiered 52
 disagreements    15 on tier, 1 on reason only  -> labels/round2_disagreements.csv
 
 agreement, over rows every labeler coded
-  PRIMARY        kappa +0.555   AC1 +0.579   (n=74)
+  PRIMARY        kappa +0.549   AC1 +0.573   (n=75)
                  tier + unresolvable together; only self-contradicting cells dropped
-  minus trunc    kappa +0.607   AC1 +0.637   (n=66)
+  minus trunc    kappa +0.599   AC1 +0.629   (n=67)
                  rows anyone called truncated dropped: LOCUS chunking, not our wording
   conditional on all three finding the chunk legible:
     tier 3-way   kappa +0.724   AC1 +0.748   (n=52)
@@ -15,9 +15,23 @@ agreement, over rows every labeler coded
   category       kappa +0.311   AC1 +0.574   (n=17)
   step           kappa +0.440   AC1 +0.539   (n=75)
 
+step agreement under collapsed codings (sensitivity on the procedure, not the labels)
+  as recorded          kappa +0.440   AC1 +0.539   (n=75)   unanimous 35/75
+  2+3 merged           kappa +0.601   AC1 +0.686   (n=75)   unanimous 48/75
+  2+3 and 4+5 merged   kappa +0.603   AC1 +0.647   (n=75)   unanimous 48/75
+  4+5 merged only      kappa +0.440   AC1 +0.513   (n=75)   unanimous 35/75
+  merging values raises raw agreement AND the chance term, so kappa can fall
+
+same answer, different route
+  rows all three answered identically (tier or unresolvable)   40/75
+    as recorded          same tier, different step:  13   <- route-only disagreement
+    2+3 merged           same tier, different step:   0
+    2+3 and 4+5 merged   same tier, different step:   0
+    4+5 merged only      same tier, different step:  13
+
 tier by labeler (the spread is itself the finding)
   ainesh   core  22 (35%)  adjacent  13 (21%)  not  27 (44%)  unres 13  tiered 62/75
-  daniel   core  28 (41%)  adjacent  14 (20%)  not  27 (39%)  unres  5  tiered 69/75
+  daniel   core  28 (41%)  adjacent  14 (20%)  not  27 (39%)  unres  6  tiered 69/75
   sachin   core  19 (33%)  adjacent  11 (19%)  not  28 (48%)  unres 17  tiered 58/75
 
 step that decided it (where the procedure is actually doing work)
@@ -39,6 +53,6 @@ tier by stratum, majority call
   random     core   1/15  adjacent   3  not  11  tie  0
 
 consistency checks, per labeler-row
-  unresolvable AND a tier                1   daniel r23   <- both cells dropped from every statistic
+  all clean
 
 wrote            labels/round2_merged.csv, labels/round2_disagreements.csv, labels/round2_summary.txt, labels/round2_keyword_scores.csv

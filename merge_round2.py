@@ -59,6 +59,32 @@ CATEGORIES = ["entry", "operation", "exit", "other"]
 UNRESOLVABLE = ["truncated", "no-context"]
 STEPS = ["1", "2", "3", "4", "5"]
 
+# Sensitivity analysis on the procedure's own granularity, not on the labels.
+#
+# Round 2 gave step kappa 0.440 against tier kappa 0.724: the group reaches the
+# same tier along different routes. The suspected cause is that steps 2 and 3 are
+# not distinguished in practice. Both terminate in `not`, and the question they
+# ask is close - step 2 is "is any commercial subject named at all", step 3 is
+# "a commercial subject is named, but would a non-commercial actor doing the same
+# thing be bound anyway". A labeler who reads "any person" as settling the matter
+# can record either number for the same judgment. Sachin resolved 26 rows at
+# step 2 and 2 at step 3; daniel resolved 10 and 17. If those are largely the
+# same rows, step kappa is measuring vocabulary rather than disagreement.
+#
+# Step 4 is the other candidate: it fired twice in 225 labeler-rows, and its only
+# outcome is `adjacent / counterparty`, which step 5 could select as a reason
+# code without a gate of its own.
+#
+# Collapsing categories is not a free win. Merging two values raises observed
+# agreement mechanically, but it also raises Fleiss' chance term, so kappa can
+# move either way - which is what makes the comparison informative rather than
+# decorative. Report the ladder, never a collapsed figure on its own.
+STEP_COLLAPSES = [
+    ("2+3 merged", {"2": "2/3", "3": "2/3"}),
+    ("2+3 and 4+5 merged", {"2": "2/3", "3": "2/3", "4": "4/5", "5": "4/5"}),
+    ("4+5 merged only", {"4": "4/5", "5": "4/5"}),
+]
+
 CODED = {"tier": TIERS, "adjacent_reason": ADJACENT_REASONS,
          "category": CATEGORIES, "unresolvable": UNRESOLVABLE, "step": STEPS}
 
@@ -131,6 +157,25 @@ def gwet_ac1(items: list[list[str]], categories: list[str]) -> float | None:
     if p_e >= 1:
         return None
     return (p_a - p_e) / (1 - p_e)
+
+
+def collapse(items: list[list[str]], mapping: dict[str, str],
+             categories: list[str]) -> tuple[list[list[str]], list[str]]:
+    """Apply a value mapping to every rating, returning the new items and the
+    new category list in a stable order. Values absent from the mapping pass
+    through unchanged."""
+    out = [[mapping.get(v, v) for v in row] for row in items]
+    seen: list[str] = []
+    for c in categories:
+        m = mapping.get(c, c)
+        if m not in seen:
+            seen.append(m)
+    return out, seen
+
+
+def unanimous_rows(items: list[list[str]]) -> int:
+    """How many rows every labeler rated identically."""
+    return sum(1 for row in items if len(set(row)) == 1)
 
 
 def both(items: list[list[str]], categories: list[str]) -> str:
@@ -324,6 +369,31 @@ def main() -> None:
     cat_items = complete("category")
     step_items = complete("step")
 
+    # Rows where every labeler recorded both an outcome (tier or unresolvable)
+    # and a step, paired so the two can be read against each other. The question
+    # this answers: when the group lands on the same answer, how often does it
+    # claim to have got there by different routes? That count is the size of the
+    # vocabulary problem, as distinct from real disagreement.
+    paired: list[tuple[list[str], list[str]]] = []
+    for rec in rows.values():
+        outcome, steps = [], []
+        for p in people:
+            if p in rec["tier"]:
+                outcome.append(rec["tier"][p])
+            elif p in rec["unresolvable"]:
+                outcome.append("unresolvable")
+            else:
+                outcome = []
+                break
+            if p in rec["step"]:
+                steps.append(rec["step"][p])
+            else:
+                outcome = []
+                break
+        if outcome and len(steps) == len(people):
+            paired.append((outcome, steps))
+    same_answer = [s for o, s in paired if len(set(o)) == 1]
+
     # ---- consistency checks ----------------------------------------------
     checks = collections.Counter()
     detail: dict[str, list[str]] = collections.defaultdict(list)
@@ -384,6 +454,24 @@ def main() -> None:
     say(f"  adjacent_rsn   {both(reason_items, ADJACENT_REASONS)}")
     say(f"  category       {both(cat_items, CATEGORIES)}")
     say(f"  step           {both(step_items, STEPS)}")
+    say()
+    say("step agreement under collapsed codings (sensitivity on the procedure, not the labels)")
+    say(f"  as recorded          {both(step_items, STEPS)}   unanimous "
+        f"{unanimous_rows(step_items)}/{len(step_items)}")
+    for label, mapping in STEP_COLLAPSES:
+        ci, cc = collapse(step_items, mapping, STEPS)
+        say(f"  {label:<20} {both(ci, cc)}   unanimous "
+            f"{unanimous_rows(ci)}/{len(ci)}")
+    say( "  merging values raises raw agreement AND the chance term, so kappa can fall")
+    say()
+    say("same answer, different route")
+    say(f"  rows all three answered identically (tier or unresolvable)   {len(same_answer)}"
+        f"/{len(paired)}")
+    for label, mapping in [("as recorded", {})] + STEP_COLLAPSES:
+        ci, _ = collapse(same_answer, mapping, STEPS)
+        split = len(ci) - unanimous_rows(ci)
+        say(f"    {label:<20} same tier, different step: {split:>3}"
+            + ("   <- route-only disagreement" if not mapping else ""))
     say()
     say("tier by labeler (the spread is itself the finding)")
     for p in people:
