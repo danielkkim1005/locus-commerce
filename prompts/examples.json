@@ -1,0 +1,156 @@
+[
+ {
+  "id": "taxicab",
+  "tier": "core",
+  "text": "No person shall operate or cause to be operated any taxicab ... without a valid taxicab permit first having been obtained authorizing such operation, and a valid taxicab driver's permit having been obtained for the driver ... Violation of this section shall be a misdemeanor.",
+  "why": "Step 2 clears: operating a taxicab for hire is a trade, and the prohibition reaches the operator as an operator rather than as one instance of \"any person doing anything\". Step 4 is a flat prohibition conditioned on holding a permit, which is an eligibility condition.",
+  "fields": {
+   "tier": "core",
+   "adjacent_reason": "",
+   "category": "entry",
+   "unresolvable": "",
+   "step": 4,
+   "confidence": "High"
+  }
+ },
+ {
+  "id": "insurance",
+  "tier": "core",
+  "text": "No license shall be issued or continued in effect unless there is in full force and effect liability insurance for each garbage collection company authorized in the amount of $500,000.00 bodily injury to any one person ...",
+  "why": "A named commercial party and a condition on holding the license. No penalty is stated and none is needed.",
+  "fields": {
+   "tier": "core",
+   "adjacent_reason": "",
+   "category": "entry",
+   "unresolvable": "",
+   "step": 4,
+   "confidence": "High"
+  }
+ },
+ {
+  "id": "bnb",
+  "tier": "core",
+  "text": "The following standards shall apply to all bed and breakfast establishments: A. Bed and breakfast establishments shall only be located within the Bed and Breakfast Overlay District. B. The owner or manager shall live on the premises. C. Separate toilet and bathing facilities shall be provided for the exclusive use of guests. ...",
+  "why": "Subsection A alone would be land-use. But the bulk of the section conditions the OPERATOR's conduct - residency, facilities, occupancy, food service - which is the land-use carve-out. Dominant content governs.",
+  "fields": {
+   "tier": "core",
+   "adjacent_reason": "",
+   "category": "operation",
+   "unresolvable": "",
+   "step": 4,
+   "confidence": "Medium"
+  }
+ },
+ {
+  "id": "secondhand",
+  "tier": "core",
+  "text": "No property purchased by any dealer in secondhand merchandise shall be sold, disposed of or removed from the place of business of such dealer for at least 48 hours after the required reports have been delivered to the director of police. Every dealer in secondhand merchandise ... shall prepare and deliver daily to the director of police services ... a report containing a legible and correct description of each and every article ... purchased during the preceding day ...",
+  "why": "The reports feel administrative, but the duty to produce them falls on the dealer under threat of sanction, so the recordkeeping is the regulated conduct rather than agency machinery. Category is operation, not entry: nothing here is about obtaining authorization.",
+  "fields": {
+   "tier": "core",
+   "adjacent_reason": "",
+   "category": "operation",
+   "unresolvable": "",
+   "step": 4,
+   "confidence": "Medium"
+  }
+ },
+ {
+  "id": "gastax",
+  "tier": "adjacent",
+  "text": "There is hereby levied and imposed and there shall be collected from and paid by every distributor of gasoline and every retail dealer in gasoline a license tax of one cent ($0.01) per gallon on each gallon of gasoline and motor fuel sold within the Village.",
+  "why": "Step 2 clears on a named commercial class. At step 4 there is a payment obligation, but every tax has one; if that were enough, revenue would never apply to anything. Nothing here says the license is withheld or lost for nonpayment, so failing to pay makes you a debtor rather than an unlicensed operator.",
+  "fields": {
+   "tier": "adjacent",
+   "adjacent_reason": "revenue",
+   "category": "other",
+   "unresolvable": "",
+   "step": 4,
+   "confidence": "Medium"
+  }
+ },
+ {
+  "id": "vet",
+  "tier": "adjacent",
+  "text": "Veterinary hospitals or clinics and pet kennels shall be located at least 300 feet from the nearest residence. The minimum area is two and one-half acres within the AU zoning classification.",
+  "why": "The provision names commercial uses but acts on them through dimensional standards - setback and minimum lot area - which land-use names explicitly. The operator carve-out does not reach it: this binds geometry, not conduct. sometimes-business does not fire, because \"pet kennels\" and \"veterinary hospitals\" name establishments rather than leaving the activity open.",
+  "fields": {
+   "tier": "adjacent",
+   "adjacent_reason": "land-use",
+   "category": "entry",
+   "unresolvable": "",
+   "step": 4,
+   "confidence": "Medium"
+  }
+ },
+ {
+  "id": "adultemp",
+  "tier": "adjacent",
+  "text": "It shall be the duty of each applicant, licensee and employee to furnish notice to the zoning administrator in writing of any change of mailing address ... Employees of an adult entertainment establishment shall be not less than 18 years of age ...",
+  "why": "The qualification and notice duties fall on the individual employee rather than on the establishment, so the row is reached at step 3 and the reason code is forced.",
+  "fields": {
+   "tier": "adjacent",
+   "adjacent_reason": "counterparty",
+   "category": "entry",
+   "unresolvable": "",
+   "step": 3,
+   "confidence": "Medium"
+  }
+ },
+ {
+  "id": "snow",
+  "tier": "not",
+  "text": "All snow and ice remaining upon public sidewalks and trails is hereby declared to constitute a public nuisance and shall be abated by the owner or tenant of the abutting private property within 24 hours after the snow or ice has ceased to be deposited. ... The owner of the property from which the accumulations were removed shall be invoiced for payment of those services ...",
+  "why": "Step 2 fails on the second prong. The duty runs on a class defined by what land you hold, not by whether you are in a trade: a homeowner, a church and a hardware store are caught identically. The collection machinery in later subsections runs against the same class.",
+  "fields": {
+   "tier": "not",
+   "adjacent_reason": "",
+   "category": "",
+   "unresolvable": "",
+   "step": 2,
+   "confidence": "High"
+  }
+ },
+ {
+  "id": "trail",
+  "tier": "not",
+  "text": "(a) The community services director may issue permits to make an opening or excavation for any purpose in any county trail ... to place or display ... any kind of sign or device ... (b) It shall be unlawful for any person to do any of the acts specified in this section without the authority of such a permit.",
+  "why": "Structurally identical to the taxicab example - permit, or else unlawful - and the only difference is the class bound. \"Any person\" digging a hole in a trail is general law. The permit mechanism is not what makes a row commercial; the identity of the party being authorized is. The passing mention of a sign does not make this a signage provision.",
+  "fields": {
+   "tier": "not",
+   "adjacent_reason": "",
+   "category": "",
+   "unresolvable": "",
+   "step": 2,
+   "confidence": "High"
+  }
+ },
+ {
+  "id": "display",
+  "tier": "",
+  "text": "Permits shall be displayed in a manner determined by the Chief of Police.",
+  "why": "A complete, grammatical sentence with no subject. Permits for what? Chief-of-police permits cover parades, solicitation, firearms, alarms, taxis and massage alike; the form tells you nothing. Not procedure, because that code's guard requires an identifiable commercial subject.",
+  "fields": {
+   "tier": "",
+   "adjacent_reason": "",
+   "category": "",
+   "unresolvable": "no-context",
+   "step": 1,
+   "confidence": "High"
+  }
+ },
+ {
+  "id": "revoke",
+  "tier": "",
+  "text": "The chief of police, or his designee, shall have the authority to revoke any permit issued pursuant to this article if any information supplied by the applicant is discovered to be false or intentionally misleading ...",
+  "why": "Revocation for false statements is the cleanest exit provision in the corpus - if the article were named this would be squarely core. The whole tier is decided by step 1, which is why rows like this are evidence about chunk boundaries rather than about the definition.",
+  "fields": {
+   "tier": "",
+   "adjacent_reason": "",
+   "category": "",
+   "unresolvable": "no-context",
+   "step": 1,
+   "confidence": "High"
+  }
+ }
+]

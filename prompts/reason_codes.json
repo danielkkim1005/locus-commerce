@@ -1,0 +1,34 @@
+[
+ {
+  "code": "gov-market",
+  "body": "Government acting as buyer, seller or grantor rather than as regulator.\nProcurement and competitive-bid rules and their exceptions, franchise grants and\nreserved rights, municipal utility tariffs and customer contracts, prices the\ncity sets for things it sells.\nAsk: is the city setting terms it will itself trade on, or setting rules others\nmust follow?"
+ },
+ {
+  "code": "revenue",
+  "body": "Raises money rather than governing conduct. Occupation and business license\ntaxes, tax exemptions and credits, bare fee schedules.\nCarve-out, ask: does failing to pay stop them operating, or only make them a\ndebtor? If payment conditions lawful operation, that is an eligibility condition\nand the row is CORE at step 4. Only the amount, the exemption and the bare\nschedule are revenue."
+ },
+ {
+  "code": "land-use",
+  "body": "The effect on commerce runs through the permitted use of land rather than\nthrough a rule on a trade. Permitted-use tables, commercial districts, setbacks,\ndimensional standards, mixed-use lists.\nCarve-out, ask: does the provision put conditions on the OPERATOR (hours,\ncustomers, signage, registration), or on the PARCEL? A home-occupation or\nshort-term-rental provision conditioning the operator is CORE. The bare use\ntable is land-use."
+ },
+ {
+  "code": "general-law",
+  "body": "General law that reached step 4 only because it was scoped to licensees or\ncommercial premises. A sign code applying to all signs in a district, a licensing\ndivision enforcing ordinary traffic law against its licensees, exceptions written\ninto anti-discrimination law.\nCarve-out, ask: is this aimed at COMMERCIAL signage, advertising or false\nadvertising? If so, CORE. Aimed at all signs, general-law."
+ },
+ {
+  "code": "counterparty",
+  "body": "The duty falls on someone dealing with a business rather than on the business.\nCustomer obligations, utility-customer rules, employee conduct provisions written\nagainst the employee. This is the step 3 outcome."
+ },
+ {
+  "code": "procedure",
+  "body": "The administrative machinery of a chapter whose commercial subject is\nidentifiable: how to apply, what the clerk does, hearings, renewal mechanics,\ninspection steps.\nGuard, ask: can you tell from THIS text what trade the chapter licenses? If not,\nthat is step 1 and no-context, not procedure.\nBoundary with core: when the paperwork duty falls on the business under threat of\nsanction - a dealer who must file a daily report - the recordkeeping IS the\nregulated conduct, and the row is CORE. procedure is for machinery performed by\nthe agency."
+ },
+ {
+  "code": "definition",
+  "body": "A definitions section for a chapter whose commercial subject is identifiable.\nSplit from procedure so the two can be counted separately."
+ },
+ {
+  "code": "sometimes-business",
+  "body": "The regulated activity is commercial only sometimes and the text does not say\nwhich. Kennels, day care, massage, towing, assisted living.\nCarve-out, ask: does the text name a commercial operator (\"massage parlor\",\n\"kennel operator\")? If so, CORE."
+ }
+]
