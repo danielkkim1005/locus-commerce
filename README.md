@@ -1,105 +1,121 @@
 # locus-commerce
 
-Tooling for WP3 (Commerce) of the Local Laws Observatory URAP. It cuts the
-LOCUS-v1 corpus into the slices we need to answer Denis's question: what is and
-isn't commerce?
+Tooling and annotation data for **WP3 (Commerce)** of the Local Laws Observatory
+URAP. The question the group was given: what does and does not count as commerce
+in the LOCUS-v1 corpus of US municipal and county ordinances?
+
+The deliverable is the codebook, not the code. Everything here exists to cut
+samples for people to label, and to measure how much they agreed.
+
+## Layout
+
+```
+codebook/            the definition, by version. v3.md is current.
+wp3/                 shared library: schema, agreement statistics, sheet reading
+rounds/              one module per labeling round's scoring
+labels/              the sheets people filled in — inputs, never regenerated
+results/             everything the scripts derive from them
+prompts/             the fragments llm_ablation.py composes
+out/                 corpus slices and cut sheets (gitignored, large)
+```
+
+The split between `labels/` and `results/` is the one worth respecting. A sheet
+in `labels/` is someone's afternoon and cannot be reproduced; everything in
+`results/` can be regenerated from those sheets plus a script, and is tracked
+only so a commit's reported numbers stay readable without a rerun.
+
+## Scripts
+
+| Script | What it does |
+| --- | --- |
+| `build_slices.py` | builds the `business` and `boundary` slices from the LOCUS-v1 shards |
+| `cut_sheet.py --round N` | samples a stratified labeling sheet out of those slices, with provenance withheld |
+| `make_sheets.py` | turns a sheet CSV into one `.xlsx` per labeler, with dropdowns |
+| `merge_round.py --round N` | merges the returned sheets, reports agreement, writes `results/roundN/` |
+| `pick_disagreements.py` | ranks contested rows by how far apart the group actually was |
+| `clean_round1.py` | builds round 1's intersection reference table |
+| `llm_ablation.py` | runs a model against the frozen codebook in five prompt variants |
+
+`build_slices.py` and `cut_sheet.py` used to be called `export_commerce.py` and
+`export_round2.py`, which made them look like round variants of one operation.
+They are two different operations: one reads the corpus, the other samples from
+what it produced.
 
 ## Setup
-
-You need a local copy of LOCUS-v1 (about 1.8 GB). It is not in this repo.
 
 ```bash
 git clone <this repo>
 cd locus-commerce
-pip install duckdb
+pip install duckdb openpyxl
 
-# LOCUS-v1 should sit next to this folder:
-#   somewhere/
-#     locus-commerce/     <- this repo
-#     LOCUS-v1/data/train-00000-of-00008.parquet ...
-python export_commerce.py
+python build_slices.py            # expects LOCUS-v1 beside this folder
+python build_slices.py --hf       # or read the shards off Hugging Face directly
 ```
 
-If LOCUS-v1 is elsewhere, pass `--data /path/to/LOCUS-v1/data`.
+LOCUS-v1 is about 1.8 GB and is not in this repo. Put it next to the clone, or
+pass `--data /path/to/LOCUS-v1/data`. DuckDB can also stream the shards from the
+Hub over range requests, which is what `--hf` does; the dataset is public, so no
+token is needed.
 
-Get LOCUS-v1 from https://huggingface.co/datasets/LocalLaws/LOCUS-v1 (needs
-git-lfs), or ask and I'll share the folder.
+## Running a round
 
-## What it produces
-
-Everything lands in `out/`, which is gitignored.
-
-| File | What it is |
-| --- | --- |
-| `summary.txt` | row counts for the run, and where the boundary rows sit in the LOCUS taxonomy |
-| `business.parquet` | rows where `topic == 'Business'` |
-| `boundary.parquet` | rows where `topic != 'Business'` but the header hit a keyword, plus which keywords hit |
-| `label_sheet.csv` | a sample of both slices with blank columns to fill in |
-| `keyword_hits.csv` | header hits per keyword |
-| `locus.duckdb` | the views, if you'd rather query than read files |
-
-To query directly:
+See `LABELING.md` for the full procedure. In short:
 
 ```bash
-python -c "import duckdb; duckdb.connect('out/locus.duckdb').sql('select * from boundary limit 5').show()"
+python cut_sheet.py --round 3                 # writes out/round3_sheet.csv and the key
+python make_sheets.py                          # one .xlsx per labeler
+# ... people label, and send their files back into labels/ ...
+python merge_round.py --round 3                # writes results/round3/
 ```
 
-## The two slices
+`out/round<N>_key.csv` carries the stratum, topic, function and jurisdiction
+columns that the labeling sheet deliberately withholds. It is coordinator-only
+and gitignored. Without it `merge_round.py` still runs, but skips the stratum
+and keyword sections.
 
-`business` is the plain `topic == 'Business'` selection. On one shard it was
-about 11% of rows.
+## The two slices, and why there are two
+
+`business` is the plain `topic == 'Business'` selection: 232,224 rows, 10.5% of
+the corpus.
 
 `boundary` is the part worth arguing about: rows LOCUS did *not* label Business
-whose section header contains a commerce word. About another 9%.
+whose section header matches a commerce keyword. 168,013 rows, 7.6%.
 
-The reason for the second slice: LOCUS only assigns a topic when a chunk is
-classified Rules or Enforcement. Chunks classified Process or Context get
-`topic = NULL`, and much of the licensing machinery lives there, such as how to
-apply, what the clerk does, hearings, renewals. Those rows cannot appear under
-`topic == 'Business'` no matter how the label was assigned. In a one-shard run,
-about 4,300 boundary rows were Process or Context.
+The second slice exists because LOCUS assigns a `topic` only to chunks it
+classified as Rules or Enforcement. Chunks classified Process or Context get
+`topic = NULL`, and much of the licensing machinery lives there — how to apply,
+what the clerk does, hearings, renewals. 21,675 boundary rows are Process or
+Context, and no amount of classifier accuracy would bring them under the
+Business label.
 
-## How we use the keyword list
+## The keyword list
 
-`commerce_keywords.txt` is a way to find candidates for a person to read. It is
-not the definition of commerce.
+`commerce_keywords.txt` finds candidates for a person to read. It is **not** the
+definition of commerce.
 
-That distinction is what keeps a loose keyword cheap. Nothing enters the final
+That distinction is what keeps a loose keyword cheap: nothing enters the final
 set without someone reading it, so a bad keyword costs reading time rather than
-bending our numbers. A word none of us thought of is worse, because the rows it
-would have caught are invisible to us.
+bending the numbers. A word nobody thought of is the worse failure, because the
+rows it would have caught are invisible.
 
-Prune with evidence, not taste. Once a sample is labeled, each keyword can be
-scored by the share of its hits that turned out to be commerce, and the weak ones
-dropped with a number attached. `keyword_hits.csv` is the starting point;
-`sign` and `permit` are the obvious suspects for low precision.
+Prune with evidence. Once a round is labeled, `results/round<N>/` scores each
+keyword by the share of its hits the group called core, and the weak ones go
+with a number attached. Round 2 retired `permit*` on 0 of 16. Say in the commit
+message what changed and why.
 
-Edit the file, rerun, and say in the commit message what you changed and why.
+Matching is on word boundaries, and the convention is in the file: a bare word
+matches the whole word, a trailing `*` matches a prefix. `licens*` catches
+license, licensing and licensee; `tow` does not match "town". Plain substring
+matching previously had `sign` matching "design" and accounted for 11% of
+sampled boundary rows.
 
-## Labeling
+## Where the numbers are
 
-`LABELING.md` has the round-by-round workflow: who does what, how the copies get
-made, how the files come back, and what the merge produces. Read that before a
-round. In short, `out/label_sheet.csv` opens in Excel or Google Sheets, no code
-needed, and you fill in:
+- `results/round1/` — round 1: Fleiss' κ 0.232 on `is_commerce`, n=97
+- `results/round2/` — round 2: κ 0.549 all rows, 0.724 core-vs-rest on legible
+  rows, n=75 / 52
+- `ROUND2_RESULTS.md` — the round-2 writeup, with the agreement ladder and the
+  step-collapse analysis
 
-- `is_commerce` — yes / no / unsure
-- `category` — entry / operation / exit / other (from the WP3 stub)
-- `notes` — why, if the call was hard. These become the edge-case log.
-- `labeler` — your name
-
-Leave the other columns alone. `chunk_id` is a hash of the row's own text, so
-it's the same id on everyone's machine and our labels can be joined on it.
-
-Two of us labeling the *same* rows independently is the point, in separate
-copies so nobody sees anyone else's calls. `--sample` and `--seed` are fixed so
-we all get identical rows; don't change them without telling the group.
-
-Filled-in sheets go in `labels/` as `label_sheet_<yourname>.csv`, then
-`python merge_labels.py` joins them on `chunk_id`, writes the disagreements out,
-reports Fleiss' kappa, and scores each keyword by the share of its hits the group
-called commerce.
-
-## Definition
-
-See `definition.md`. That file, not this one, is the deliverable.
+Both rounds can be regenerated: `python merge_round.py --round 1` and
+`--round 2` reproduce the committed CSVs byte for byte.

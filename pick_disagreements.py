@@ -101,8 +101,8 @@ def score(row, people):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--src", default="labels/round1_clean.csv")
-    ap.add_argument("--out", default="labels/discussion_queue.csv")
+    ap.add_argument("--src", default="results/round1/round1_clean.csv")
+    ap.add_argument("--out", default="results/round1/discussion_queue.csv")
     ap.add_argument("--top", type=int, default=20)
     ap.add_argument("--per-theme", type=int, default=2,
                     help="most rows one theme may contribute; 0 lifts the cap")

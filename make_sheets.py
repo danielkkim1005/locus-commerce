@@ -1,4 +1,4 @@
-"""Turn out/round2_sheet.csv into one .xlsx per labeler, with dropdowns.
+"""Turn a round's sheet CSV into one .xlsx per labeler, with dropdowns.
 
 Round 1 collected every label as free text and paid for it: `is_commerce` came
 back as yes/y/true/1, `category` came back with several categories in one cell,
@@ -37,20 +37,27 @@ from openpyxl.styles import Alignment, Font, PatternFill
 from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.datavalidation import DataValidation
 
-# Must match definition_v2.md. If you edit one, edit the other.
-TIERS = ["core", "adjacent", "not"]
-ADJACENT_REASONS = ["gov-market", "revenue", "land-use", "general-law",
-                    "counterparty", "procedure", "definition", "sometimes-business"]
-CATEGORIES = ["entry", "operation", "exit", "other"]
-UNRESOLVABLE = ["truncated", "no-context"]
-STEPS = ["1", "2", "3", "4", "5"]
+from wp3 import schema
+
+# The codebook version these sheets are cut for. The value lists come from
+# wp3/schema.py so a sheet cannot offer a value the merge will not accept:
+# before that module existed this file still offered `truncated` and steps 1-5,
+# both of which codebook v3 removed.
+SCHEMA_VERSION = 3
+
+TIERS = schema.TIERS
+ADJACENT_REASONS = schema.ADJACENT_REASONS
+CATEGORIES = schema.CATEGORIES
+CONFIDENCE = schema.CONFIDENCE
+UNRESOLVABLE = schema.unresolvable_values(SCHEMA_VERSION)
+STEPS = schema.steps(SCHEMA_VERSION)
 
 # column -> (allowed values, prompt shown when the cell is selected)
 VALIDATED = {
     "tier": (TIERS,
              "core = duty/prohibition/sanction/eligibility on a commercial party. "
              "adjacent = commercial subject, but pick a reason. "
-             "not = fails step 2 or 3. Leave blank if unresolvable."),
+             "not = fails step 2. Leave blank if unresolvable."),
     "adjacent_reason": (ADJACENT_REASONS,
                         "Required when tier = adjacent. Leave blank otherwise. "
                         "If nothing fits, say so in notes - that is a finding."),
@@ -58,10 +65,15 @@ VALIDATED = {
                  "entry = getting started. operation = while running. "
                  "exit = losing the ability to operate. other = commercial but none of those."),
     "unresolvable": (UNRESOLVABLE,
-                     "truncated = text cut off mid-provision. "
                      "no-context = the chunk never names what it governs. "
+                     "A chunk cut mid-sentence that still holds a judgeable "
+                     "provision is labeled normally, not flagged. "
                      "Set this and leave tier blank."),
-    "step": (STEPS, "Which step of the decision procedure decided it (1-5)."),
+    "step": (STEPS, "Which step of the decision procedure decided it (1-4)."),
+    "confidence": (CONFIDENCE,
+                   "High = the procedure reaches one answer and nothing competes. "
+                   "Medium = another tier or code had a real claim. "
+                   "Low = hard to classify, or no reason code quite fits."),
 }
 FREE_TEXT = ["notes"]
 READ_ONLY = ["row_id", "chunk_id", "header", "text", "text_truncated"]
@@ -73,23 +85,27 @@ GUIDE = [
     ("adjacent", "Commercial subject matter, but one of the reason codes below means "
                  "it is not a conduct rule on a commercial party. Not a bucket for "
                  "hard rows - pick a reason or it is not adjacent."),
-    ("not", "Fails step 2 or step 3. No commercial subject, or generally applicable "
+    ("not", "Fails step 2. No commercial subject, or generally applicable "
             "law that happens to bind businesses too."),
     ("", None),
     ("Decision procedure - stop at the first step that answers", None),
-    ("1", "Can you tell what is regulated? If the text is cut off, or never names the "
-          "activity or party it governs, set unresolvable and leave tier blank. "
-          "Do not guess from the header."),
-    ("2", "Is any commercial subject named - business, trade, occupation, licensee, "
-          "vendor, franchisee, commercial premises, commercial use of land? If no: not."),
-    ("3", "Would a non-commercial actor doing the same thing be bound? If yes it is "
-          "generally applicable: not. Unless the provision is written only for "
-          "licensees or only for commercial premises - then continue to step 5."),
-    ("4", "Is the regulated party the business itself? If the duty falls on someone "
-          "dealing with a business - customer, employee, counterparty - then "
-          "adjacent / counterparty, not core."),
-    ("5", "Does it impose a duty, prohibition, sanction, or eligibility condition on "
-          "that commercial party? Yes: core. Otherwise: adjacent, and pick a reason."),
+    ("1", "Can you tell what is regulated? If the chunk never names the activity "
+          "or party it governs, set unresolvable = no-context and leave tier "
+          "blank. Do not guess from the header. A chunk cut mid-sentence that "
+          "still holds a judgeable provision is labeled normally."),
+    ("2", "Does the provision reach anyone BECAUSE they are in commerce? It must "
+          "name a commercial subject AND reach it as a commercial actor rather "
+          "than sweeping it in as one instance of a general class. 'Any person', "
+          "'every owner', 'any owner, agent or contractor' is general law. If "
+          "either half fails: not. Exception: written only for licensees or only "
+          "for commercial premises - continue to step 3."),
+    ("3", "Is the regulated party the business itself? If the duty falls on "
+          "someone dealing with a business - customer, employee, counterparty - "
+          "then adjacent / counterparty. An applicant for a licence is the "
+          "business, not a counterparty."),
+    ("4", "Does it impose a duty, prohibition, sanction, or eligibility condition "
+          "on that commercial party? Those are alternatives, not a conjunction - "
+          "no penalty is needed. Yes: core. Otherwise: adjacent, pick a reason."),
     ("", None),
     ("Adjacent reason codes", None),
     ("gov-market", "Government as buyer, seller, or grantor rather than regulator. "

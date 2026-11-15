@@ -1,129 +1,22 @@
-"""Merge the label sheets from labels/ and report where we disagree.
+"""Round 1's merge, as it was run, with the shared code lifted into wp3/.
 
-Each labeler works in their own copy of out/label_sheet.csv and hands it back.
-Drop those files in labels/ named label_sheet_<name>.csv, then:
+Round 1 asked a single yes/no/unsure question (`is_commerce`) plus a free-text
+`category`, so its scoring cannot be folded into round 2's. It is kept because
+its outputs are published numbers and must stay reproducible, not because
+anything new should use this schema.
 
-    python merge_labels.py
-
-What it does:
-
-    joins every labels/*.csv on chunk_id
-    takes a majority vote on is_commerce and category
-    lists the rows we did not agree on
-    reports Fleiss' kappa per field, over rows every labeler covered
-    scores each keyword by the share of its hits the group called commerce
-
-Outputs, in labels/:
-
-    merged.csv           one row per chunk: each labeler's call, the majority, agreement
-    disagreements.csv    the subset worth talking through, most contested first
-    keyword_scores.csv   per keyword: hits labeled, share called commerce
-
-Accepted values for is_commerce: yes/y/true/1, no/n/false/0, unsure/u/maybe/?.
-Blank means not labeled and is ignored rather than counted as a no.
+    python merge_round.py --round 1
 """
 
-import argparse
 import collections
 import csv
 import pathlib
 
-YES = {"yes", "y", "true", "1", "t"}
-NO = {"no", "n", "false", "0", "f"}
-UNSURE = {"unsure", "u", "maybe", "?", "idk"}
+from wp3 import agreement
+from wp3.sheets import labeler_name, sheet_files, norm_legacy_category, norm_legacy_commerce
 
-
-def norm_commerce(raw: str) -> str | None:
-    v = (raw or "").strip().lower()
-    if v in YES:
-        return "yes"
-    if v in NO:
-        return "no"
-    if v in UNSURE:
-        return "unsure"
-    return None
-
-
-CATS = ("entry", "operation", "exit", "other")
-NOT_A_CATEGORY = {"", "n/a", "na", "none", "unsure", "?", "idk", "tbd"}
-
-
-def norm_category(raw: str) -> str | None:
-    """Normalize a category cell to a sorted, comma-joined set of known categories.
-
-    People write "entry & operation", "operations", "entry, exit, operation", "n/a".
-    Those are the same judgment written four ways, and treating them as distinct
-    labels destroys the agreement statistic. A cell naming no known category
-    (blank, n/a, unsure) counts as unlabeled rather than as a category of its own.
-    """
-    v = (raw or "").strip().lower()
-    if v in NOT_A_CATEGORY:
-        return None
-    found = [c for c in CATS if c in v]      # 'operations' contains 'operation'
-    if not found:
-        return None
-    return ",".join(sorted(found))
-
-
-def labeler_name(path: pathlib.Path, row: dict) -> str:
-    """One identity per FILE, taken from its name.
-
-    The `labeler` column is free text, so the same person can appear as "ainesh"
-    and "ainesh sabharwal" in one file and split into two phantom annotators.
-    The file is the reliable unit; the column is kept only as a note.
-    """
-    stem = path.stem
-    name = stem.replace("label_sheet_", "").replace("labels_", "").strip()
-    name = name.split(" - ")[0].split("-")[0].strip()
-    return (name or stem).lower()
-
-
-def majority(values: list[str]) -> tuple[str, bool]:
-    """Most common value, and whether everyone agreed."""
-    counts = collections.Counter(values)
-    top, n = counts.most_common(1)[0]
-    tied = [v for v, c in counts.items() if c == n]
-    if len(tied) > 1:
-        return "tie", False
-    return top, len(counts) == 1
-
-
-def fleiss_kappa(items: list[list[str]], categories: list[str]) -> float | None:
-    """Fleiss' kappa. items = one list of ratings per item, all the same length."""
-    items = [i for i in items if len(i) == len(items[0])] if items else []
-    n = len(items[0]) if items else 0
-    if not items or n < 2:
-        return None
-    N = len(items)
-    k = len(categories)
-    if k < 2:
-        return None
-    idx = {c: j for j, c in enumerate(categories)}
-
-    p_j = [0.0] * k
-    agree = []
-    for ratings in items:
-        counts = [0] * k
-        for r in ratings:
-            counts[idx[r]] += 1
-        for j in range(k):
-            p_j[j] += counts[j]
-        agree.append((sum(c * c for c in counts) - n) / (n * (n - 1)))
-    p_j = [v / (N * n) for v in p_j]
-    p_bar = sum(agree) / N
-    p_e = sum(v * v for v in p_j)
-    if p_e >= 1:
-        return None
-    return (p_bar - p_e) / (1 - p_e)
-
-
-def main() -> None:
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--labels", default="labels")
-    args = ap.parse_args()
-    ldir = pathlib.Path(args.labels)
-    files = sorted(p for p in ldir.glob("*.csv")
-                   if p.name not in {"merged.csv", "disagreements.csv", "keyword_scores.csv"})
+def merge(ldir: pathlib.Path, outdir: pathlib.Path) -> None:
+    files = sheet_files(ldir, 1)
     if not files:
         raise SystemExit(f"no label files in {ldir.resolve()} "
                          f"(expected labels/label_sheet_<name>.csv)")
@@ -138,7 +31,7 @@ def main() -> None:
                 cid = (row.get("chunk_id") or "").strip()
                 if not cid:
                     continue
-                who = labeler_name(path, row)
+                who = labeler_name(path)
                 labelers.add(who)
                 rec = rows.setdefault(cid, {"meta": {}, "commerce": {}, "category": {}})
                 rec["meta"] = {
@@ -152,18 +45,18 @@ def main() -> None:
                         x for x in [rec["meta"].get("notes", ""), (row.get("notes") or "").strip()] if x
                     ),
                 }
-                c = norm_commerce(row.get("is_commerce", ""))
+                c = norm_legacy_commerce(row.get("is_commerce", ""))
                 if c:
                     rec["commerce"][who] = c
-                g = norm_category(row.get("category", ""))
+                g = norm_legacy_category(row.get("category", ""))
                 if g:
                     rec["category"][who] = g
 
     people = sorted(labelers)
-    ldir.mkdir(exist_ok=True)
+    outdir.mkdir(parents=True, exist_ok=True)
 
-    merged_path = ldir / "merged.csv"
-    dis_path = ldir / "disagreements.csv"
+    merged_path = outdir / "merged.csv"
+    dis_path = outdir / "disagreements.csv"
     fields = (["chunk_id", "slice", "state", "function", "topic", "header", "matched"]
               + [f"commerce_{p}" for p in people]
               + [f"category_{p}" for p in people]
@@ -174,8 +67,8 @@ def main() -> None:
     for cid, rec in rows.items():
         cvals = [rec["commerce"][p] for p in people if p in rec["commerce"]]
         gvals = [rec["category"][p] for p in people if p in rec["category"]]
-        cmaj, cuni = majority(cvals) if cvals else ("", False)
-        gmaj, guni = majority(gvals) if gvals else ("", False)
+        cmaj, cuni = agreement.majority(cvals) if cvals else ("", False)
+        gmaj, guni = agreement.majority(gvals) if gvals else ("", False)
         out_rows.append({
             "chunk_id": cid, **{k: rec["meta"].get(k, "") for k in
                                 ["slice", "state", "function", "topic", "header", "matched"]},
@@ -206,14 +99,14 @@ def main() -> None:
             full_c.append([rec["commerce"][p] for p in people])
         if all(p in rec["category"] for p in people) and len(people) >= 2:
             full_g.append([rec["category"][p] for p in people])
-    k_c = fleiss_kappa(full_c, ["yes", "no", "unsure"])
+    k_c = agreement.fleiss_kappa(full_c, ["yes", "no", "unsure"])
     cats = sorted({v for item in full_g for v in item})
-    k_g = fleiss_kappa(full_g, cats) if cats else None
+    k_g = agreement.fleiss_kappa(full_g, cats) if cats else None
     # Kappa over rows where every labeler named exactly ONE category, so the
     # statistic is not dominated by multi-label cells.
     single = [i for i in full_g if all("," not in v for v in i)]
     cats1 = sorted({v for item in single for v in item})
-    k_g1 = fleiss_kappa(single, cats1) if cats1 else None
+    k_g1 = agreement.fleiss_kappa(single, cats1) if cats1 else None
 
     # Keyword scores, from the majority call on boundary rows.
     hits = collections.Counter()
@@ -225,7 +118,7 @@ def main() -> None:
             hits[kw] += 1
             if r["commerce_majority"] == "yes":
                 yes_hits[kw] += 1
-    with (ldir / "keyword_scores.csv").open("w", encoding="utf-8", newline="") as fh:
+    with (outdir / "keyword_scores.csv").open("w", encoding="utf-8", newline="") as fh:
         w = csv.writer(fh)
         w.writerow(["keyword", "rows_labeled", "called_commerce", "share_commerce"])
         for kw, n in hits.most_common():
@@ -251,8 +144,5 @@ def main() -> None:
         tot = sum(c.values()) or 1
         print(f"  {who:<10} yes {c['yes']:>3} ({100*c['yes']/tot:.0f}%)  "
               f"no {c['no']:>3}  unsure {c['unsure']:>3}  total {tot}")
-    print(f"wrote            {merged_path}, {dis_path}, {ldir / 'keyword_scores.csv'}")
+    print(f"wrote            {merged_path}, {dis_path}, {outdir / 'keyword_scores.csv'}")
 
-
-if __name__ == "__main__":
-    main()

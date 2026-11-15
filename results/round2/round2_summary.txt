@@ -1,25 +1,25 @@
 label files      3  (ainesh, daniel, sachin)
 rows seen        75   key joined
 rows all coded   75 (tier or unresolvable)   all tiered 52
-disagreements    15 on tier, 1 on reason only  -> labels/round2_disagreements.csv
+disagreements    15 on tier, 1 on reason only  -> results\round2\round2_disagreements.csv
 
 agreement, over rows every labeler coded
-  PRIMARY        kappa +0.549   AC1 +0.573   (n=75)
+  PRIMARY        kappa  +0.549   AC1  +0.573   (n=75)
                  tier + unresolvable together; only self-contradicting cells dropped
-  minus trunc    kappa +0.599   AC1 +0.629   (n=67)
+  minus trunc    kappa  +0.599   AC1  +0.629   (n=67)
                  rows anyone called truncated dropped: LOCUS chunking, not our wording
   conditional on all three finding the chunk legible:
-    tier 3-way   kappa +0.724   AC1 +0.748   (n=52)
-    core vs rest kappa +0.724   AC1 +0.761   (n=52)   <- nearest thing to round 1's 0.232
-  adjacent_rsn   kappa +1.000   AC1 +1.000   (n=3)
-  category       kappa +0.311   AC1 +0.574   (n=17)
-  step           kappa +0.440   AC1 +0.539   (n=75)
+    tier 3-way   kappa  +0.724   AC1  +0.748   (n=52)
+    core vs rest kappa  +0.724   AC1  +0.761   (n=52)   <- nearest thing to round 1's 0.232
+  adjacent_rsn   kappa  +1.000   AC1  +1.000   (n=3)
+  category       kappa  +0.311   AC1  +0.574   (n=17)
+  step           kappa  +0.440   AC1  +0.539   (n=75)
 
 step agreement under collapsed codings (sensitivity on the procedure, not the labels)
-  as recorded          kappa +0.440   AC1 +0.539   (n=75)   unanimous 35/75
-  2+3 merged           kappa +0.601   AC1 +0.686   (n=75)   unanimous 48/75
-  2+3 and 4+5 merged   kappa +0.603   AC1 +0.647   (n=75)   unanimous 48/75
-  4+5 merged only      kappa +0.440   AC1 +0.513   (n=75)   unanimous 35/75
+  as recorded          kappa  +0.440   AC1  +0.539   (n=75)   unanimous 35/75
+  2+3 merged           kappa  +0.601   AC1  +0.686   (n=75)   unanimous 48/75
+  2+3 and 4+5 merged   kappa  +0.603   AC1  +0.647   (n=75)   unanimous 48/75
+  4+5 merged only      kappa  +0.440   AC1  +0.513   (n=75)   unanimous 35/75
   merging values raises raw agreement AND the chance term, so kappa can fall
 
 same answer, different route
@@ -55,4 +55,4 @@ tier by stratum, majority call
 consistency checks, per labeler-row
   all clean
 
-wrote            labels/round2_merged.csv, labels/round2_disagreements.csv, labels/round2_summary.txt, labels/round2_keyword_scores.csv
+wrote            results\round2\round2_merged.csv, results\round2\round2_disagreements.csv, results\round2\round2_summary.txt, results\round2\round2_keyword_scores.csv
