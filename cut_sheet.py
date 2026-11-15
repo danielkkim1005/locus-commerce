@@ -1,4 +1,7 @@
-"""Cut the round-2 labeling sheet: three strata, shuffled, with the labels withheld.
+"""Cut a labeling sheet: three strata, shuffled, with the labels withheld.
+
+Renamed from export_round2.py and parameterised by --round, so round 3 does not
+mean another copy of this file.
 
 Round 1 drew 150 from `business` and 150 from `boundary`, kept the slice and topic
 columns in the sheet, and listed the two slices one after the other. That gave the
@@ -103,6 +106,8 @@ def load_excluded(path: pathlib.Path) -> set[str]:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
+    ap.add_argument("--round", type=int, required=True,
+                    help="round number; names the output files")
     ap.add_argument("--data", default="../LOCUS-v1/data",
                     help="folder of train-*.parquet shards, or a remote glob "
                          "(hf://, s3://, https://). See --hf.")
@@ -116,7 +121,7 @@ def main() -> None:
     ap.add_argument("--n-random", type=int, default=15)
     ap.add_argument("--seed", type=int, default=71)
     ap.add_argument("--chars", type=int, default=6000)
-    ap.add_argument("--exclude", default="labels/round1_clean.csv")
+    ap.add_argument("--exclude", default="results/round1/round1_clean.csv")
     args = ap.parse_args()
 
     out = pathlib.Path(args.out)
@@ -210,8 +215,8 @@ def main() -> None:
     # One shuffle over everything, so slice is not recoverable from position.
     rng.shuffle(picked)
 
-    sheet_path = out / "round2_sheet.csv"
-    key_path = out / "round2_key.csv"
+    sheet_path = out / f"round{args.round}_sheet.csv"
+    key_path = out / f"round{args.round}_key.csv"
     sheet_cols = (["row_id", "chunk_id", "header", "text", "text_truncated"]
                   + BLANK_COLUMNS)
     truncated = 0

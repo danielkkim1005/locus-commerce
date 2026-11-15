@@ -1,97 +1,39 @@
-"""Merge the round-2 label sheets from labels/ and report where we disagree.
+"""Round 2's merge: three tiers, the decision procedure, the reason codes.
 
-Round 2 replaced round 1's single is_commerce/category pair with the three tiers
-and the decision procedure in definition_v2.md, so merge_labels.py cannot read
-these sheets: the coded columns are tier, adjacent_reason, category,
-unresolvable and step.
+Reads the sheets collected under codebook v2, which is why the schema version
+is pinned to 2 here: round 2 allowed `truncated` as an `unresolvable` value and
+numbered the steps 1-5. Codebook v3 removed the first and merged steps 2 and 3,
+so a round-3 merge will pin version 3 instead.
 
-    python merge_round2.py
-
-What it does:
-
-    joins labels/round2_<name>.csv on chunk_id
-    majority vote on tier, adjacent_reason and category
-    lists the rows we did not agree on, most contested first
-    reports Fleiss' kappa and Gwet's AC1 per field, leading with the figure over
-      every row - tier and unresolvable together, since an unresolvable call is
-      an answer step 1 asks for, not a missing label
-    reports the same agreement again with the `truncated` rows dropped, to separate
-      disagreement about LOCUS chunk boundaries from disagreement about our wording
-    breaks the tier call down by stratum, and scores keywords, when the key is present
-    runs the consistency checks definition_v2.md implies (adjacent needs a reason,
-    unresolvable means no tier)
-
-Outputs, in labels/:
-
-    round2_merged.csv          one row per chunk: each labeler's call, majority, agreement
-    round2_disagreements.csv   the subset worth talking through
-    round2_summary.txt         the printed report, so a round is committable as a number
-    round2_keyword_scores.csv  per keyword: rows labeled, share called core (needs --key)
-
-Two statistics, not one. Fleiss' kappa is what round 1 reported (0.232 on
-is_commerce), so it is what round 2 is compared against. But kappa collapses
-toward zero when one category dominates, and in a stratified sheet that is a
-property of the sample rather than of the labelers. Gwet's AC1 does not have
-that behaviour, so a large kappa/AC1 gap is itself the finding: it says the
-labelers agree but the sheet is lopsided. Both are printed, always.
+    python merge_round.py --round 2
 
 A labeler who coded both `tier` and `unresolvable` on one row has contradicted
-step 1, and both cells are dropped from the statistics rather than one being
-preferred. They survive in merged.csv with an `excluded` column naming who.
-
-The dropdowns in make_sheets.py mean the coded cells should already be clean.
-Anything off-list is still reported rather than dropped - a value that escaped a
-dropdown means someone typed around the validation, and that is worth seeing.
+step 1, and both cells are dropped rather than one being preferred.
 """
 
-import argparse
 import collections
 import csv
 import pathlib
 
-from merge_labels import fleiss_kappa, majority
+from wp3 import agreement, schema
+from wp3.agreement import both, collapse, fleiss_kappa, gwet_ac1, majority, unanimous_rows
+from wp3.sheets import labeler_name, sheet_files
 
-# Must match make_sheets.py, which must match definition_v2.md.
-TIERS = ["core", "adjacent", "not"]
-ADJACENT_REASONS = ["gov-market", "revenue", "land-use", "general-law",
-                    "counterparty", "procedure", "definition", "sometimes-business"]
-CATEGORIES = ["entry", "operation", "exit", "other"]
-UNRESOLVABLE = ["truncated", "no-context"]
-STEPS = ["1", "2", "3", "4", "5"]
+SCHEMA_VERSION = 2
+CODED = schema.coded_columns(SCHEMA_VERSION)
+TIERS = schema.TIERS
+ADJACENT_REASONS = schema.ADJACENT_REASONS
+CATEGORIES = schema.CATEGORIES
+UNRESOLVABLE = schema.unresolvable_values(SCHEMA_VERSION)
+STEPS = schema.steps(SCHEMA_VERSION)
+KEY_FIELDS = ["slice", "topic", "function", "matched", "state", "city", "county"]
 
-# Sensitivity analysis on the procedure's own granularity, not on the labels.
-#
-# Round 2 gave step kappa 0.440 against tier kappa 0.724: the group reaches the
-# same tier along different routes. The suspected cause is that steps 2 and 3 are
-# not distinguished in practice. Both terminate in `not`, and the question they
-# ask is close - step 2 is "is any commercial subject named at all", step 3 is
-# "a commercial subject is named, but would a non-commercial actor doing the same
-# thing be bound anyway". A labeler who reads "any person" as settling the matter
-# can record either number for the same judgment. Sachin resolved 26 rows at
-# step 2 and 2 at step 3; daniel resolved 10 and 17. If those are largely the
-# same rows, step kappa is measuring vocabulary rather than disagreement.
-#
-# Step 4 is the other candidate: it fired twice in 225 labeler-rows, and its only
-# outcome is `adjacent / counterparty`, which step 5 could select as a reason
-# code without a gate of its own.
-#
-# Collapsing categories is not a free win. Merging two values raises observed
-# agreement mechanically, but it also raises Fleiss' chance term, so kappa can
-# move either way - which is what makes the comparison informative rather than
-# decorative. Report the ladder, never a collapsed figure on its own.
+
 STEP_COLLAPSES = [
     ("2+3 merged", {"2": "2/3", "3": "2/3"}),
     ("2+3 and 4+5 merged", {"2": "2/3", "3": "2/3", "4": "4/5", "5": "4/5"}),
     ("4+5 merged only", {"4": "4/5", "5": "4/5"}),
 ]
-
-CODED = {"tier": TIERS, "adjacent_reason": ADJACENT_REASONS,
-         "category": CATEGORIES, "unresolvable": UNRESOLVABLE, "step": STEPS}
-
-OUTPUTS = {"round2_merged.csv", "round2_disagreements.csv",
-           "round2_keyword_scores.csv", "round2_summary.txt"}
-
-KEY_FIELDS = ["slice", "topic", "function", "matched", "state", "city", "county"]
 
 
 def norm(field: str, raw: str) -> tuple[str | None, str | None]:
@@ -114,97 +56,14 @@ def norm(field: str, raw: str) -> tuple[str | None, str | None]:
         return v, None
     return None, (raw or "").strip()
 
-
-def labeler_name(path: pathlib.Path) -> str:
-    """One identity per FILE, as in merge_labels.py: the column can drift, the
-    file cannot. round2_sachin.csv -> sachin."""
-    stem = path.stem
-    for prefix in ("round2_", "label_sheet_", "labels_"):
-        if stem.startswith(prefix):
-            stem = stem[len(prefix):]
-    return (stem.split(" - ")[0].strip() or path.stem).lower()
-
-
-def gwet_ac1(items: list[list[str]], categories: list[str]) -> float | None:
-    """Gwet's AC1. Same inputs as fleiss_kappa.
-
-    Identical observed agreement; the chance term is
-    (1/(k-1)) * sum_j pi_j (1 - pi_j), which does not blow up when one category
-    takes almost every rating the way Fleiss' sum of squared marginals does.
-    """
-    items = [i for i in items if len(i) == len(items[0])] if items else []
-    n = len(items[0]) if items else 0
-    if not items or n < 2:
-        return None
-    k = len(categories)
-    if k < 2:
-        return None
-    idx = {c: j for j, c in enumerate(categories)}
-    N = len(items)
-
-    pi = [0.0] * k
-    agree = []
-    for ratings in items:
-        counts = [0] * k
-        for r in ratings:
-            counts[idx[r]] += 1
-        for j in range(k):
-            pi[j] += counts[j]
-        agree.append((sum(c * c for c in counts) - n) / (n * (n - 1)))
-    pi = [v / (N * n) for v in pi]
-    p_a = sum(agree) / N
-    p_e = sum(p * (1 - p) for p in pi) / (k - 1)
-    if p_e >= 1:
-        return None
-    return (p_a - p_e) / (1 - p_e)
-
-
-def collapse(items: list[list[str]], mapping: dict[str, str],
-             categories: list[str]) -> tuple[list[list[str]], list[str]]:
-    """Apply a value mapping to every rating, returning the new items and the
-    new category list in a stable order. Values absent from the mapping pass
-    through unchanged."""
-    out = [[mapping.get(v, v) for v in row] for row in items]
-    seen: list[str] = []
-    for c in categories:
-        m = mapping.get(c, c)
-        if m not in seen:
-            seen.append(m)
-    return out, seen
-
-
-def unanimous_rows(items: list[list[str]]) -> int:
-    """How many rows every labeler rated identically."""
-    return sum(1 for row in items if len(set(row)) == 1)
-
-
-def both(items: list[list[str]], categories: list[str]) -> str:
-    """Kappa and AC1 side by side, for the report."""
-    if not items:
-        return f"n=0"
-    k = fleiss_kappa(items, categories)
-    a = gwet_ac1(items, categories)
-    ks = "n/a" if k is None else f"{k:+.3f}"
-    as_ = "n/a" if a is None else f"{a:+.3f}"
-    return f"kappa {ks}   AC1 {as_}   (n={len(items)})"
-
-
-def main() -> None:
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--labels", default="labels")
-    ap.add_argument("--key", default="out/round2_key.csv",
-                    help="coordinator-only key: adds stratum, state and keyword "
-                         "columns the sheets withheld. Skipped if missing.")
-    args = ap.parse_args()
-
-    ldir = pathlib.Path(args.labels)
-    files = sorted(p for p in ldir.glob("round2_*.csv") if p.name not in OUTPUTS)
+def merge(ldir: pathlib.Path, outdir: pathlib.Path, key_path: pathlib.Path | None) -> None:
+    files = sheet_files(ldir, 2)
     if not files:
         raise SystemExit(f"no round-2 label files in {ldir.resolve()} "
                          f"(expected labels/round2_<name>.csv)")
 
     key: dict[str, dict] = {}
-    kpath = pathlib.Path(args.key)
+    kpath = key_path if key_path else pathlib.Path("out/round2_key.csv")
     if kpath.exists():
         with kpath.open(encoding="utf-8-sig", newline="") as fh:
             for row in csv.DictReader(fh):
@@ -299,7 +158,7 @@ def main() -> None:
         })
     out_rows.sort(key=lambda r: int(r["row_id"]) if r["row_id"].isdigit() else 0)
 
-    merged_path = ldir / "round2_merged.csv"
+    merged_path = outdir / "round2_merged.csv"
     with merged_path.open("w", encoding="utf-8", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=fields)
         w.writeheader()
@@ -312,7 +171,7 @@ def main() -> None:
     reason_split = [r for r in out_rows
                     if r["tier_unanimous"] and r["tier_majority"] == "adjacent"
                     and r["reason_majority"] and not r["reason_unanimous"]]
-    dis_path = ldir / "round2_disagreements.csv"
+    dis_path = outdir / "round2_disagreements.csv"
     with dis_path.open("w", encoding="utf-8", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=fields)
         w.writeheader()
@@ -415,7 +274,7 @@ def main() -> None:
                 detail["tier with no step"].append(f"{p} r{r['row_id']}")
 
     # ---- keyword scores ---------------------------------------------------
-    kw_path = ldir / "round2_keyword_scores.csv"
+    kw_path = outdir / "round2_keyword_scores.csv"
     if key:
         hits, core_hits = collections.Counter(), collections.Counter()
         for r in out_rows:
@@ -528,11 +387,8 @@ def main() -> None:
     else:
         say("  all clean")
     say()
-    outs = [merged_path, dis_path, ldir / 'round2_summary.txt'] + ([kw_path] if key else [])
+    outs = [merged_path, dis_path, outdir / 'round2_summary.txt'] + ([kw_path] if key else [])
     say("wrote            " + ", ".join(str(p) for p in outs))
 
-    (ldir / "round2_summary.txt").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    (outdir / "round2_summary.txt").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
-
-if __name__ == "__main__":
-    main()

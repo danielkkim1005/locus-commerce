@@ -1,12 +1,15 @@
-# Data stays out of the repo. Everyone downloads LOCUS-v1 themselves.
+# The corpus stays out of the repo. Everyone downloads LOCUS-v1 themselves,
+# or reads it off the Hub with `python build_slices.py --hf`.
 LOCUS-v1/
 *.parquet
 *.duckdb
-out/
-commerce/
 
-# Labels people have filled in go in labels/, not out/
-out/label_sheet.csv
+# Everything the scripts derive from the corpus: slices, cut sheets, and the
+# coordinator-only provenance key. Large, and regenerable from a seed.
+out/
+
+# Model responses, cached by exact prompt so a rerun costs nothing.
+out/llm_cache/
 
 __pycache__/
 *.pyc

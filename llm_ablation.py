@@ -80,14 +80,14 @@ import time
 import urllib.error
 import urllib.request
 
-from merge_labels import fleiss_kappa, majority
-from merge_round2 import gwet_ac1
+from wp3 import schema
+from wp3.agreement import cohen_kappa, fleiss_kappa, fmt, gwet_ac1, majority
+from wp3.sheets import labeler_name
 
-TIERS = ["core", "adjacent", "not"]
-OUTCOMES = TIERS + ["unresolvable"]
-REASONS = ["gov-market", "revenue", "land-use", "general-law",
-           "counterparty", "procedure", "definition", "sometimes-business"]
-CATEGORIES = ["entry", "operation", "exit", "other"]
+TIERS = schema.TIERS
+OUTCOMES = schema.OUTCOMES
+REASONS = schema.ADJACENT_REASONS
+CATEGORIES = schema.CATEGORIES
 
 # fragment stack per variant; "reasons" and "examples" are rendered, not read raw
 VARIANTS = {
@@ -308,12 +308,6 @@ def outcome(rec: dict) -> str:
 
 # ------------------------------------------------------------------------ gold
 
-def labeler_name(path: pathlib.Path) -> str:
-    stem = path.stem
-    for prefix in ("round2_", "label_sheet_", "labels_"):
-        if stem.startswith(prefix):
-            stem = stem[len(prefix):]
-    return (stem.split(" - ")[0].strip() or path.stem).lower()
 
 
 OUTPUTS = {"round2_merged.csv", "round2_disagreements.csv",
@@ -398,26 +392,8 @@ def load_round1(ldir: pathlib.Path) -> list:
 
 # --------------------------------------------------------------------- scoring
 
-def cohen_kappa(pairs: list[tuple[str, str]], categories: list[str]) -> float | None:
-    """Two raters, same items. Fleiss on 2 raters is Cohen's up to rounding, but
-    this is written out so the binary comparisons read plainly."""
-    pairs = [(a, b) for a, b in pairs if a in categories and b in categories]
-    n = len(pairs)
-    if n < 2:
-        return None
-    po = sum(1 for a, b in pairs if a == b) / n
-    pe = 0.0
-    for c in categories:
-        pa = sum(1 for a, _ in pairs if a == c) / n
-        pb = sum(1 for _, b in pairs if b == c) / n
-        pe += pa * pb
-    if pe >= 1:
-        return None
-    return (po - pe) / (1 - pe)
 
 
-def fmt(v) -> str:
-    return "n/a" if v is None else f"{v:+.3f}"
 
 
 def per_class(pairs: list[tuple[str, str]], label: str) -> tuple[float, float, float]:

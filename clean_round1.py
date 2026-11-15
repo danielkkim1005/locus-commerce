@@ -8,53 +8,32 @@ with each labeler's call beside the text.
 """
 import argparse, collections, csv, pathlib
 
-YES = {"yes", "y", "true", "1", "t"}
-NO = {"no", "n", "false", "0", "f"}
-UNSURE = {"unsure", "u", "maybe", "?", "idk"}
-CATS = ("entry", "operation", "exit", "other")
-NOT_A_CATEGORY = {"", "n/a", "na", "none", "unsure", "?", "idk", "tbd"}
+from wp3.sheets import labeler_name, norm_legacy_category, norm_legacy_commerce
 
-
-def norm_commerce(v):
-    v = (v or "").strip().lower()
-    return "yes" if v in YES else "no" if v in NO else "unsure" if v in UNSURE else ""
-
-
-def norm_category(v):
-    v = (v or "").strip().lower()
-    if v in NOT_A_CATEGORY:
-        return ""
-    found = [c for c in CATS if c in v]
-    return ",".join(sorted(found))
-
-
-def name_of(path):
-    stem = path.stem.replace("label_sheet_", "").replace("labels_", "").strip()
-    return stem.split(" - ")[0].split("-")[0].strip().lower() or path.stem.lower()
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--labels", default="labels")
-    ap.add_argument("--out", default="round1_clean.csv")
+    ap.add_argument("--out", default="results/round1/round1_clean.csv")
     args = ap.parse_args()
     files = sorted(p for p in pathlib.Path(args.labels).glob("*.csv")
                    if p.stem not in {"merged", "disagreements", "keyword_scores", "round1_clean"})
 
     per, meta = {}, {}
     for p in files:
-        who = name_of(p)
+        who = labeler_name(p)
         with p.open(encoding="utf-8-sig", newline="") as fh:
             for row in csv.DictReader(fh):
                 cid = (row.get("chunk_id") or "").strip()
                 if not cid:
                     continue
                 meta.setdefault(cid, row)
-                c = norm_commerce(row.get("is_commerce"))
+                c = norm_legacy_commerce(row.get("is_commerce"))
                 if c:
                     per.setdefault(cid, {})[who] = {
                         "commerce": c,
-                        "category": norm_category(row.get("category")),
+                        "category": norm_legacy_category(row.get("category")),
                         "notes": (row.get("notes") or "").strip(),
                     }
 

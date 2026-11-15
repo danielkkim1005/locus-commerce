@@ -1,4 +1,8 @@
-"""Build the WP3 (Commerce) working slices from a local copy of LOCUS-v1.
+"""Build the WP3 (Commerce) working slices from LOCUS-v1.
+
+Renamed from export_commerce.py: this builds the corpus slices, while
+cut_sheet.py samples a labeling sheet out of them. The old names made them look
+like a pair of round variants, which they are not.
 
 Two slices come out of this:
 
@@ -47,74 +51,8 @@ import textwrap
 
 import duckdb
 
-# LOCUS-v1 has no row identifier, so we make a stable one from the row's own
-# content. Same row, same id, on anyone's machine. Labels can be joined back on it.
-CHUNK_ID = """md5(concat_ws('|', state, coalesce(city, ''), coalesce(county, ''),
-                            coalesce(header, ''), coalesce(content, '')))"""
-
-# You do not have to download the 1.8 GB corpus. DuckDB's httpfs extension reads
-# the shards straight off the Hub over range requests, and Parquet is columnar, so
-# a query only pays for the columns it names: on one shard, scanning header+topic
-# takes about a second, scanning content about eight. The dataset is public, so no
-# token is needed.
-HF_SOURCE = "hf://datasets/LocalLaws/LOCUS-v1/data/train-*.parquet"
-REMOTE_SCHEMES = ("hf://", "s3://", "gcs://", "gs://", "az://", "http://", "https://")
-
-
-def parquet_source(con: "duckdb.DuckDBPyConnection", data: str) -> tuple[str, str]:
-    """Resolve --data to (glob for read_parquet, one-line description).
-
-    Accepts a local folder of shards, or any remote path DuckDB can open. Remote
-    paths need httpfs, which ships with DuckDB but loads on demand.
-    """
-    if data.startswith(REMOTE_SCHEMES):
-        con.execute("INSTALL httpfs")
-        con.execute("LOAD httpfs")
-        return data, f"remote: {data}"
-    folder = pathlib.Path(data)
-    shards = sorted(folder.glob("train-*.parquet"))
-    if not shards:
-        raise SystemExit(
-            f"no parquet shards under {folder.resolve()}\n"
-            f"  pass --data if LOCUS-v1 is somewhere else, or\n"
-            f"  pass --hf to read the corpus off Hugging Face without downloading it"
-        )
-    return ((folder / "train-*.parquet").as_posix(),
-            f"{len(shards)} local shards under {folder.resolve()}")
-
-
-def load_keywords(path: pathlib.Path) -> list[str]:
-    words = []
-    for line in path.read_text(encoding="utf-8").splitlines():
-        line = line.strip()
-        if line and not line.startswith("#"):
-            words.append(line.lower())
-    if not words:
-        raise SystemExit(f"no keywords found in {path}")
-    return words
-
-
-def keyword_regex(word: str) -> str:
-    """Match on word boundaries, so 'sign' stops matching 'design' and 'assigns'.
-
-    A trailing * means prefix match: 'licens*' catches license, licensing, licensee.
-    Without it the whole word must match: 'tow' will not match 'town'.
-    """
-    stem = word[:-1] if word.endswith("*") else word
-    body = re.escape(stem).replace("\\ ", " ")
-    return r"\b" + body if word.endswith("*") else r"\b" + body + r"\b"
-
-
-def sql_list(words: list[str]) -> str:
-    """A DuckDB list literal of the patterns. Single quotes doubled; nothing else in."""
-    inner = ", ".join("'" + keyword_regex(w).replace("'", "''") + "'" for w in words)
-    return "[" + inner + "]"
-
-
-def sql_labels(words: list[str]) -> str:
-    """The keywords as written, in the same order as sql_list, for reporting."""
-    inner = ", ".join("'" + w.replace("'", "''") + "'" for w in words)
-    return "[" + inner + "]"
+from wp3.corpus import (CHUNK_ID, HF_SOURCE, keyword_regex, load_keywords,
+                        parquet_source, sql_labels, sql_list)
 
 
 def main() -> None:

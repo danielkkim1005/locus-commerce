@@ -1,0 +1,15 @@
+keyword,rows_labeled,called_core,share_core
+permit*,16,0,0.0
+sign*,4,1,0.25
+revocation,2,0,0.0
+inspection*,1,0,0.0
+licens*,1,1,1.0
+short-term rental*,1,1,1.0
+suspension,1,0,0.0
+sanitation,1,1,1.0
+business*,1,0,0.0
+alcoholic,1,0,0.0
+beverage*,1,0,0.0
+noise,1,0,0.0
+bed and breakfast,1,1,1.0
+kennel*,1,0,0.0
