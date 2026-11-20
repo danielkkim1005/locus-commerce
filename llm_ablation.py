@@ -18,17 +18,23 @@ Five prompt variants, composed from the fragments in prompts/:
 
     A  core test only                      baseline
     B  A + the four-step procedure         isolates the procedure
-    C  B + reason codes with carve-outs    isolates the carve-out prose
-    D  core test + examples, NO procedure  isolates the edge-case log
+    C  B + reason codes with carve-outs    the full codebook minus examples
+    D  E minus the procedure               the full codebook minus the procedure
     E  everything                          the shipped codebook
 
-B minus A is what the procedure is worth. D minus C is the edge-case log against
-the carve-out prose. E minus C is what examples add on top of a full procedural
-rendering. If D beats B while the human record runs the other way, the
-instruction format is audience-dependent and that is the finding.
+B minus A is what the procedure is worth on a bare definition. C and D are the
+headline contrast: each is the full codebook with exactly one part removed, so
+E minus C is what the worked examples add and E minus D is what the procedure
+adds. If D beats C while the human record runs the other way, the instruction
+format is audience-dependent and that is the finding.
+
+Two caveats on D. The worked examples' explanations still mention step numbers,
+so D is procedure-free in its instructions but not entirely in its examples.
+And the output contract asks every variant for a step number, which A and D
+never define; ignore step agreement for those two.
 
 Length is a confound and is not controlled: --dry-run reports roughly 1.0k, 1.5k,
-2.5k, 3.2k and 4.5k tokens for A through E, so D is about a quarter longer than C.
+2.5k, 3.9k and 4.5k tokens for A through E, so D is about half again as long as C.
 If D wins, check it is not winning on length alone by trimming the example set
 and rerunning; if three examples do what eleven do, length was not the mechanism.
 
@@ -95,8 +101,8 @@ VARIANTS = {
     "B": ["task", "core_test", "procedure", "label_space", "output_contract"],
     "C": ["task", "core_test", "procedure", "label_space", "reasons",
           "categories", "output_contract"],
-    "D": ["task", "core_test", "label_space", "categories", "examples",
-          "output_contract"],
+    "D": ["task", "core_test", "label_space", "reasons", "categories",
+          "examples", "output_contract"],
     "E": ["task", "core_test", "procedure", "label_space", "reasons",
           "categories", "examples", "output_contract"],
 }
@@ -571,9 +577,9 @@ def main() -> None:
                 f"   {why}")
     delta("B", "A", "the four-step procedure")
     delta("C", "B", "reason codes with carve-outs")
-    delta("D", "C", "edge-case log vs carve-out prose")
-    delta("E", "C", "examples on top of full procedure")
-    delta("E", "D", "procedure on top of examples")
+    delta("D", "C", "examples vs procedure, each the full codebook minus one")
+    delta("E", "C", "what the worked examples add")
+    delta("E", "D", "what the procedure adds")
     say("  human record for comparison: round 1 (definition only) kappa 0.232,")
     say("  round 2 (procedural) 0.549 all rows / 0.724 legible rows.")
 
