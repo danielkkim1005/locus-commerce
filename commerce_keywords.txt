@@ -13,7 +13,8 @@
 
 # entry: getting a business started
 licens*
-permit*
+# permit* retired: 0 of 16 boundary rows called core in round 2 (4 of 17 called
+# commerce in round 1), and the largest single source of boundary hits (70,566).
 registr*
 application fee*
 occupation tax

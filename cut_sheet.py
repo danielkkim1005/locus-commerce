@@ -39,11 +39,11 @@ Two files come out:
 Usage, with no local copy of the corpus:
 
     pip install duckdb
-    python export_round2.py --hf
+    python cut_sheet.py --round 3 --hf
 
 Or against a local LOCUS-v1 sitting next to the repo:
 
-    python export_round2.py
+    python cut_sheet.py --round 3
 
 Options:
 
@@ -73,10 +73,10 @@ import textwrap
 
 import duckdb
 
-from export_commerce import (CHUNK_ID, HF_SOURCE, keyword_regex, load_keywords,
-                             parquet_source, sql_labels, sql_list)
+from wp3.corpus import (CHUNK_ID, HF_SOURCE, keyword_regex, load_keywords,
+                        parquet_source, sql_labels, sql_list)
 
-# What the labeler fills in. Must match the columns in definition_v2.md.
+# What the labeler fills in. Must match the columns in codebook/v2.md.
 BLANK_COLUMNS = [
     "tier",             # core / adjacent / not   (blank if unresolvable)
     "adjacent_reason",  # required iff tier == adjacent

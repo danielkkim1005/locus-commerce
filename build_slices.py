@@ -20,13 +20,15 @@ of commerce.
 
 Usage, from inside the repo folder, with LOCUS-v1 sitting next to it:
 
-    pip install duckdb
-    python export_commerce.py
+    pip install duckdb pandas
+    python build_slices.py
+    python build_slices.py --hf      # read the shards off Hugging Face instead
 
 Options:
 
-    --data      folder holding the train-*.parquet shards
+    --data      folder holding the train-*.parquet shards, or a remote glob
                 (default: ../LOCUS-v1/data)
+    --hf        read LOCUS-v1 off Hugging Face; no download, no token
     --out       output folder (default: out)
     --keywords  keyword file (default: commerce_keywords.txt)
     --sample    rows per slice in the labeling sheet (default: 150)
@@ -58,24 +60,21 @@ from wp3.corpus import (CHUNK_ID, HF_SOURCE, keyword_regex, load_keywords,
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--data", default="../LOCUS-v1/data")
+    ap.add_argument("--hf", action="store_true",
+                    help="read LOCUS-v1 off Hugging Face instead of a local copy")
     ap.add_argument("--out", default="out")
     ap.add_argument("--keywords", default="commerce_keywords.txt")
     ap.add_argument("--sample", type=int, default=150)
     ap.add_argument("--seed", type=int, default=70)
     args = ap.parse_args()
 
-    data = pathlib.Path(args.data)
     out = pathlib.Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
     words = load_keywords(pathlib.Path(args.keywords))
 
-    glob = (data / "train-*.parquet").as_posix()
-    shards = sorted(data.glob("train-*.parquet"))
-    if not shards:
-        raise SystemExit(f"no parquet shards under {data.resolve()} "
-                         f"(pass --data if LOCUS-v1 is somewhere else)")
-
     con = duckdb.connect((out / "locus.duckdb").as_posix())
+    glob, source = parquet_source(con, HF_SOURCE if args.hf else args.data)
+    print(f"reading {source}")
     con.execute(f"""
         CREATE OR REPLACE VIEW locus AS
         SELECT {CHUNK_ID} AS chunk_id, * FROM read_parquet('{glob}')
@@ -148,7 +147,7 @@ def main() -> None:
     """).df()
 
     summary = textwrap.dedent(f"""\
-        shards read      {len(shards)}
+        source           {source}
         keywords         {len(words)}   (from {args.keywords})
         rows total       {total:,}
         topic=Business   {n_bus:,}  ({100 * n_bus / total:.1f}%)

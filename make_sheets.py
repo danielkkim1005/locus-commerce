@@ -135,7 +135,7 @@ GUIDE = [
                            "code - only one round-1 row hit it."),
     ("", None),
     ("House rules", None),
-    ("", "Judge the text in front of you against definition_v2.md. Do not look up the "
+    ("", "Judge the text in front of you against codebook/v2.md. Do not look up the "
          "jurisdiction or the rest of the code, and do not check what anyone else said."),
     ("", "notes is the most valuable column. Write why whenever the call was hard. "
          "These become the edge-case log, and they are what edits the definition."),
@@ -175,7 +175,7 @@ def main() -> None:
 
     src = pathlib.Path(args.sheet)
     if not src.exists():
-        raise SystemExit(f"{src} not found - run export_round2.py --hf first")
+        raise SystemExit(f"{src} not found - run cut_sheet.py --round N first")
     with src.open(newline="", encoding="utf-8") as fh:
         rows = list(csv.DictReader(fh))
     cols = list(rows[0].keys())

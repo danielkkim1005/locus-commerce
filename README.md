@@ -29,7 +29,7 @@ only so a commit's reported numbers stay readable without a rerun.
 | Script | What it does |
 | --- | --- |
 | `build_slices.py` | builds the `business` and `boundary` slices from the LOCUS-v1 shards |
-| `cut_sheet.py --round N` | samples a stratified labeling sheet out of those slices, with provenance withheld |
+| `cut_sheet.py --round N` | samples a stratified labeling sheet (business, boundary, random) straight from the corpus, with provenance withheld |
 | `make_sheets.py` | turns a sheet CSV into one `.xlsx` per labeler, with dropdowns |
 | `merge_round.py --round N` | merges the returned sheets, reports agreement, writes `results/roundN/` |
 | `pick_disagreements.py` | ranks contested rows by how far apart the group actually was |
@@ -46,7 +46,7 @@ what it produced.
 ```bash
 git clone <this repo>
 cd locus-commerce
-pip install duckdb openpyxl
+pip install duckdb pandas openpyxl
 
 python build_slices.py            # expects LOCUS-v1 beside this folder
 python build_slices.py --hf       # or read the shards off Hugging Face directly
@@ -79,14 +79,16 @@ and keyword sections.
 the corpus.
 
 `boundary` is the part worth arguing about: rows LOCUS did *not* label Business
-whose section header matches a commerce keyword. 168,013 rows, 7.6%.
+whose section header matches a commerce keyword. 106,379 rows, 4.8%, after
+`permit*` was pruned. Rounds 1 and 2 were sampled from the earlier 168,013-row
+(7.6%) frame that still included it.
 
 The second slice exists because LOCUS assigns a `topic` only to chunks it
 classified as Rules or Enforcement. Chunks classified Process or Context get
 `topic = NULL`, and much of the licensing machinery lives there — how to apply,
-what the clerk does, hearings, renewals. 21,675 boundary rows are Process or
-Context, and no amount of classifier accuracy would bring them under the
-Business label.
+what the clerk does, hearings, renewals. 17,262 boundary rows are Process or
+Context (21,675 before the `permit*` prune), and no amount of classifier
+accuracy would bring them under the Business label.
 
 ## The keyword list
 
@@ -100,8 +102,10 @@ rows it would have caught are invisible.
 
 Prune with evidence. Once a round is labeled, `results/round<N>/` scores each
 keyword by the share of its hits the group called core, and the weak ones go
-with a number attached. Round 2 retired `permit*` on 0 of 16. Say in the commit
-message what changed and why.
+with a number attached. `permit*` was retired on that evidence: 0 of 16 boundary
+rows core in round 2, after 4 of 17 called commerce in round 1. It was also the
+largest single source of boundary rows, so pruning it shrank the slice by 37%.
+Say in the commit message what changed and why.
 
 Matching is on word boundaries, and the convention is in the file: a bare word
 matches the whole word, a trailing `*` matches a prefix. `licens*` catches
