@@ -3,7 +3,18 @@ are each worth.
 
     python llm_ablation.py --backend stub                  # no API key, end to end
     python llm_ablation.py --backend openai --model gpt-5.4-nano --repeats 5
-    python llm_ablation.py --dry-run --variant E           # print a prompt, call nothing
+    python llm_ablation.py --dry-run --variants E          # print a prompt, call nothing
+
+Gemini, through its OpenAI-compatible endpoint (key in your shell, never in a file):
+
+    export OPENAI_API_KEY="$GEMINI_API_KEY"
+    export OPENAI_BASE_URL="https://generativelanguage.googleapis.com/v1beta/openai"
+    python llm_ablation.py --backend openai --model gemini-3.5-flash-lite \
+        --reasoning-effort minimal --sleep 4 --eval round1 --limit 5
+
+--sleep spaces out real calls (60 / requests-per-minute, plus a margin), and
+rate-limit errors are retried with a growing wait. A run that stops for any
+reason resumes from the cache when rerun with the same command.
 
 The question this answers is not "can a model label commerce". It is whether a
 specification written for humans is the right specification for a model. Round 1
@@ -210,14 +221,22 @@ def _post(url: str, payload: dict, headers: dict, timeout: int = 120) -> dict:
         return json.loads(fh.read().decode("utf-8"))
 
 
+# Extra request fields set from the command line. reasoning_effort is the
+# OpenAI-compatible name for a thinking budget; Gemini maps it to its own
+# thinking levels. None means "send nothing and take the model's default".
+REQUEST_OPTS: dict = {"reasoning_effort": None}
+
+
 def call_openai(prompt: str, model: str, temperature: float) -> str:
     key = os.environ.get("OPENAI_API_KEY")
     if not key:
         raise SystemExit("OPENAI_API_KEY is not set (or use --backend stub)")
     base = os.environ.get("OPENAI_BASE_URL", "https://api.openai.com/v1").rstrip("/")
-    body = _post(f"{base}/chat/completions",
-                 {"model": model, "temperature": temperature,
-                  "messages": [{"role": "user", "content": prompt}]},
+    payload = {"model": model, "temperature": temperature,
+               "messages": [{"role": "user", "content": prompt}]}
+    if REQUEST_OPTS["reasoning_effort"]:
+        payload["reasoning_effort"] = REQUEST_OPTS["reasoning_effort"]
+    body = _post(f"{base}/chat/completions", payload,
                  {"Authorization": f"Bearer {key}"})
     return body["choices"][0]["message"]["content"]
 
@@ -237,9 +256,24 @@ BACKENDS = {"stub": call_stub, "openai": call_openai, "anthropic": call_anthropi
 
 
 def cached_call(prompt: str, backend: str, model: str, temperature: float,
-                cache: pathlib.Path, retries: int = 3) -> str:
-    key = hashlib.sha1(
-        f"{backend}|{model}|{temperature}|{prompt}".encode("utf-8")).hexdigest()
+                cache: pathlib.Path, retries: int = 6, sleep: float = 0.0) -> str:
+    """Call the model once per distinct prompt, and never twice.
+
+    Responses are cached by prompt, so a run that stops partway - a rate limit,
+    a dropped connection, a daily quota - resumes where it left off when rerun.
+
+    Rate limits (429) and server errors (5xx) are retried with a growing wait,
+    honouring Retry-After when the server sends one. Any other 4xx is a
+    configuration problem (bad model name, bad key, bad field) and stops at
+    once with the server's message, since retrying cannot fix it. `sleep`
+    spaces out real calls to stay under a requests-per-minute limit; cache
+    hits do not wait.
+    """
+    effort = REQUEST_OPTS["reasoning_effort"]
+    ident = f"{backend}|{model}|{temperature}|{prompt}"
+    if effort:                      # a different thinking budget is a different call
+        ident = f"{backend}|{model}|{temperature}|effort={effort}|{prompt}"
+    key = hashlib.sha1(ident.encode("utf-8")).hexdigest()
     path = cache / f"{key}.json"
     if path.exists():
         return json.loads(path.read_text(encoding="utf-8"))["response"]
@@ -248,12 +282,37 @@ def cached_call(prompt: str, backend: str, model: str, temperature: float,
         try:
             resp = BACKENDS[backend](prompt, model, temperature)
             break
-        except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError) as exc:
+        except urllib.error.HTTPError as exc:
+            detail = ""
+            try:
+                detail = exc.read().decode("utf-8", "replace")[:500]
+            except Exception:
+                pass
+            if exc.code != 429 and exc.code < 500:
+                raise SystemExit(f"model call rejected (HTTP {exc.code}); not retrying.\n"
+                                 f"{detail}")
+            last = f"HTTP {exc.code} {detail}"
+            wait = min(60.0, 5.0 * 2 ** attempt)
+            retry_after = exc.headers.get("Retry-After") if exc.headers else None
+            if retry_after and retry_after.isdigit():
+                wait = max(wait, float(retry_after))
+            print(f"  HTTP {exc.code}; waiting {wait:.0f}s "
+                  f"(attempt {attempt + 1} of {retries})", file=sys.stderr)
+            time.sleep(wait)
+        except (urllib.error.URLError, TimeoutError) as exc:
             last = exc
-            time.sleep(2 ** attempt)
+            wait = min(60.0, 5.0 * 2 ** attempt)
+            print(f"  {exc}; waiting {wait:.0f}s (attempt {attempt + 1} of {retries})",
+                  file=sys.stderr)
+            time.sleep(wait)
     else:
-        raise SystemExit(f"model call failed after {retries} tries: {last}")
+        raise SystemExit(
+            f"model call failed after {retries} tries: {last}\n"
+            f"Responses so far are cached in {cache}; rerun the same command to "
+            f"resume. If this is a daily quota, it resets at midnight Pacific.")
     path.write_text(json.dumps({"prompt": prompt, "response": resp}), encoding="utf-8")
+    if sleep > 0:
+        time.sleep(sleep)
     return resp
 
 
@@ -378,7 +437,10 @@ def load_round1(ldir: pathlib.Path) -> list:
                 rec = rows.setdefault(cid, {"chunk_id": cid, "human": {}})
                 rec.setdefault("row_id", (r.get("row_id") or "").strip())
                 rec.setdefault("header", (r.get("header") or "").strip())
-                rec.setdefault("text", r.get("text") or "")
+                # Round-1 sheets carried the text as content_first_2000, not
+                # text. Reading only `text` sent the model a header with an
+                # empty body, and it correctly abstained on almost every row.
+                rec.setdefault("text", r.get("text") or r.get("content_first_2000") or "")
                 v = (r.get("is_commerce") or "").strip().lower()
                 if v in ("yes", "no", "unsure"):
                     rec["human"][who] = v
@@ -434,9 +496,22 @@ def main() -> None:
                     help="hold out this fraction of round 2 and score only it")
     ap.add_argument("--seed", type=int, default=71)
     ap.add_argument("--limit", type=int, default=0, help="first N rows, for a smoke test")
+    ap.add_argument("--sleep", type=float, default=0.0,
+                    help="seconds to wait after each real (uncached) call; set it "
+                         "to 60 / your requests-per-minute limit, plus a margin")
+    ap.add_argument("--reasoning-effort", default=None,
+                    choices=["none", "minimal", "low", "medium", "high"],
+                    help="thinking budget sent to the openai backend (Gemini reads "
+                         "it too). Record it with the results; it changes what the "
+                         "ablation measures")
+    ap.add_argument("--retries", type=int, default=6)
     ap.add_argument("--dry-run", action="store_true",
                     help="print one assembled prompt per variant and stop")
     args = ap.parse_args()
+    REQUEST_OPTS["reasoning_effort"] = args.reasoning_effort
+    if args.reasoning_effort and args.backend != "openai":
+        print(f"note: --reasoning-effort is only sent by the openai backend",
+              file=sys.stderr)
 
     ldir = pathlib.Path(args.labels)
     pdir = pathlib.Path(args.prompts)
@@ -496,7 +571,8 @@ def main() -> None:
                 rng = random.Random(args.seed * 1000 + rep)
                 prompt = build_prompt(v, frags, row["text"], row["header"], rng)
                 resp = cached_call(prompt, args.backend, args.model,
-                                   args.temperature, cache)
+                                   args.temperature, cache,
+                                   retries=args.retries, sleep=args.sleep)
                 rec = parse(resp)
                 runs.append({
                     "variant": v, "row_id": row["row_id"],
