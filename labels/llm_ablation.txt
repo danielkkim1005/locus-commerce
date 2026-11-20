@@ -1,0 +1,45 @@
+backend openai   model gemini-3.5-flash-lite   temp 0.7   repeats 5
+eval set round2   rows 72   label space ['core', 'adjacent', 'not', 'unresolvable']
+excluded 3 rows with no human majority (tie): r16, r19, r20
+
+modal answer per row (ties broken by first), against human majority
+  var     acc   kappa  parse  absten  per-class F1
+  A     0.625  +0.481   100%      3%  core 0.76 adja 0.34 not 0.74 unre 0.29
+  B     0.750  +0.643   100%      3%  core 0.82 adja 0.58 not 0.87 unre 0.29
+  C     0.736  +0.636   100%      3%  core 0.88 adja 0.61 not 0.82 unre 0.29
+  D     0.667  +0.553   100%      3%  core 0.82 adja 0.47 not 0.83 unre 0.29
+  E     0.750  +0.661   100%      4%  core 0.90 adja 0.56 not 0.88 unre 0.40
+
+contrasts (what each part of the codebook is worth)
+  B - A   acc +0.125   the four-step procedure
+  C - B   acc -0.014   reason codes with carve-outs
+  D - C   acc -0.069   examples vs procedure, each the full codebook minus one
+  E - C   acc +0.014   what the worked examples add
+  E - D   acc +0.083   what the procedure adds
+  human record for comparison: round 1 (definition only) kappa 0.232,
+  round 2 (procedural) 0.549 all rows / 0.724 legible rows.
+
+self-consistency across repeats, and where it lines up with human splits
+  A    self-kappa +1.000  AC1 +1.000   unstable rows 0/72
+       P(humans split | model unstable) 0.00   vs base rate 0.44
+  B    self-kappa +1.000  AC1 +1.000   unstable rows 0/72
+       P(humans split | model unstable) 0.00   vs base rate 0.44
+  C    self-kappa +0.816  AC1 +0.838   unstable rows 18/72
+       P(humans split | model unstable) 0.61   vs base rate 0.44
+  D    self-kappa +0.763  AC1 +0.787   unstable rows 22/72
+       P(humans split | model unstable) 0.64   vs base rate 0.44
+  E    self-kappa +0.783  AC1 +0.805   unstable rows 21/72
+       P(humans split | model unstable) 0.57   vs base rate 0.44
+
+  A lift over the base rate is the ambiguity-localization result: the
+  rows a model cannot answer the same way twice are the rows the
+  codebook under-specifies, and that detector runs without humans.
+
+model as a declared fourth annotator (variant E modal answer)
+  4-way Fleiss with model   +0.586   AC1 +0.607   (n=72)
+  humans only               +0.586
+  model vs ainesh           +0.551
+  model vs daniel           +0.630
+  model vs sachin           +0.593
+
+wrote labels\llm_runs.csv, labels\llm_rowstats.csv, labels\llm_ablation.txt

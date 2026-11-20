@@ -441,13 +441,21 @@ def load_round1(ldir: pathlib.Path) -> list:
                 # text. Reading only `text` sent the model a header with an
                 # empty body, and it correctly abstained on almost every row.
                 rec.setdefault("text", r.get("text") or r.get("content_first_2000") or "")
+                # Round 1 was free text: one labeler wrote y/n throughout. Without
+                # the legacy normalizer their whole sheet silently dropped out,
+                # leaving two labelers and only the rows those two agreed on.
                 v = (r.get("is_commerce") or "").strip().lower()
-                if v in ("yes", "no", "unsure"):
+                v = ("yes" if v in schema.LEGACY_YES else
+                     "no" if v in schema.LEGACY_NO else
+                     "unsure" if v in schema.LEGACY_UNSURE else "")
+                if v:
                     rec["human"][who] = v
     out = []
     for r in rows.values():
         vals = list(r["human"].values())
-        if not vals or "unsure" in vals:
+        # A one-person label is not a gold label: the 300-row round-1 sheet was
+        # only partly labeled, and a row only one of us reached has no majority.
+        if len(vals) < 2 or "unsure" in vals:
             continue
         maj, uni = majority(vals)
         r["gold"] = {"yes": "core", "no": "not"}.get(maj, "")
@@ -623,6 +631,13 @@ def main() -> None:
     say("modal answer per row (ties broken by first), against human majority")
     say(f"  {'var':<4} {'acc':>6} {'kappa':>7} {'parse':>6} {'absten':>7}  per-class F1")
 
+    # Round 1 is scored as core versus everything else. The model still answers
+    # in the full four-way label space, so adjacent, not and unresolvable all
+    # count as "not core" here; without this, an adjacent answer on a row the
+    # humans called "no" was scored as wrong, and fell outside kappa's labels.
+    def scored(o: str) -> str:
+        return ("core" if o == "core" else "not") if binary else o
+
     summary = {}
     for v in variants:
         pairs, abst, parsed_n, n = [], 0, 0, 0
@@ -636,7 +651,7 @@ def main() -> None:
             modal = collections.Counter(vals).most_common(1)[0][0]
             if modal == "unresolvable":
                 abst += 1
-            pairs.append((r["gold"], modal))
+            pairs.append((r["gold"], scored(modal)))
         acc = sum(1 for g, m in pairs if g == m) / len(pairs) if pairs else 0.0
         k = cohen_kappa(pairs, label_space)
         f1s = " ".join(f"{lab[:4]} {per_class(pairs, lab)[2]:.2f}"
@@ -667,7 +682,7 @@ def main() -> None:
         selfitems, unstable_split, unstable_agree = [], 0, 0
         stable_split, stable_agree = 0, 0
         for r in rows:
-            vals = [x["outcome"] for x in by[(v, r["chunk_id"])] if x["outcome"]]
+            vals = [scored(x["outcome"]) for x in by[(v, r["chunk_id"])] if x["outcome"]]
             if len(vals) < 2:
                 continue
             selfitems.append(vals)
