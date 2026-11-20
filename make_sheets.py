@@ -135,7 +135,7 @@ GUIDE = [
                            "code - only one round-1 row hit it."),
     ("", None),
     ("House rules", None),
-    ("", "Judge the text in front of you against codebook/v2.md. Do not look up the "
+    ("", "Judge the text in front of you against codebook/v3.md. Do not look up the "
          "jurisdiction or the rest of the code, and do not check what anyone else said."),
     ("", "notes is the most valuable column. Write why whenever the call was hard. "
          "These become the edge-case log, and they are what edits the definition."),

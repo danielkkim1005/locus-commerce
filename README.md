@@ -52,8 +52,9 @@ python build_slices.py            # expects LOCUS-v1 beside this folder
 python build_slices.py --hf       # or read the shards off Hugging Face directly
 ```
 
-LOCUS-v1 is about 1.8 GB and is not in this repo. Put it next to the clone, or
-pass `--data /path/to/LOCUS-v1/data`. DuckDB can also stream the shards from the
+LOCUS-v1 is about 1.8 GB and is not in this repo. It lives on Hugging Face at
+[LocalLaws/LOCUS-v1](https://huggingface.co/datasets/LocalLaws/LOCUS-v1). Clone
+it next to this repo, or pass `--data /path/to/LOCUS-v1/data`. DuckDB can also stream the shards from the
 Hub over range requests, which is what `--hf` does; the dataset is public, so no
 token is needed.
 
@@ -67,6 +68,24 @@ python make_sheets.py                          # one .xlsx per labeler
 # ... people label, and send their files back into labels/ ...
 python merge_round.py --round 3                # writes results/round3/
 ```
+
+### The expert batch (round 3)
+
+There is no further labeling round inside the group. The next labeled rows come
+from the expert annotators, sampled with the defaults, which are set for that
+batch:
+
+```bash
+python cut_sheet.py --round 3 \
+    --n-business 30 --n-boundary 20 --n-pc 20 --n-random 30 --seed 72
+```
+
+That is 100 rows in four strata: `business` (topic is Business), `boundary`
+(keyword hit, Rules or Enforcement), `process_ctx` (keyword hit, Process or
+Context, the rows LOCUS can never call Business) and `random` (the whole
+corpus, the only stratum that can show what the other three miss). Rows from
+rounds 1 and 2 are held out. The flags repeat the defaults so the command stays
+the record even if the defaults change.
 
 `out/round<N>_key.csv` carries the stratum, topic, function and jurisdiction
 columns that the labeling sheet deliberately withholds. It is coordinator-only
