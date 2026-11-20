@@ -1,12 +1,12 @@
 # WP3 Commerce — round 2 results
 
-Labeled against `definition_v2.md` (three tiers, 5-step decision procedure,
+Labeled against `codebook/v2.md` (three tiers, 5-step decision procedure,
 8 adjacent reason codes). Sheet: 75 rows, seed 71, round-1 chunks held out.
 Strata: business 30, boundary 30, random 15.
 
 Labelers: ainesh, daniel, sachin. Sheets in `locus-commerce/labels/round2_*.csv`.
-All numbers below come from `python merge_round2.py`, reproduced in
-`labels/round2_summary.txt`. Nothing here is estimated.
+All numbers below come from `python merge_round.py --round 2`, reproduced in
+`results/round2/round2_summary.txt`. Nothing here is estimated.
 
 ## Headline
 
@@ -251,10 +251,10 @@ largest n.
 
 ```
 cd locus-commerce
-python merge_round2.py          # reads labels/round2_*.csv and out/round2_key.csv
+python merge_round.py --round 2   # reads labels/round2_*.csv and out/round2_key.csv
 ```
 
-Writes `labels/round2_merged.csv`, `round2_disagreements.csv`,
+Writes `results/round2/round2_merged.csv`, `round2_disagreements.csv`,
 `round2_keyword_scores.csv`, `round2_summary.txt`.
 
 `out/round2_key.csv` is coordinator-only — it carries the stratum, state and keyword

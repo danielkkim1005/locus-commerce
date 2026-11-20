@@ -9,22 +9,26 @@ labeler the answer before they read the text: a row's slice told them LOCUS had
 already called it Business, and the sheet's ordering told them where the slice
 changed. Round 2 withholds all of it and shuffles.
 
-Three strata, so the sheet can answer three different questions:
+Four strata, so the sheet can answer four different questions:
 
-  business   topic == 'Business'          how we do on rows LOCUS already labels
-  boundary   keyword hit in the header,   the contested rows the slice was built for
-             topic != 'Business'
-  random     any row at all               prevalence anchor, and the only stratum
-                                          that can catch commerce both the LOCUS
-                                          label and the keyword list miss
+  business     topic == 'Business'           how we do on rows LOCUS already labels
+  boundary     keyword hit in the header,    the contested Rules/Enforcement rows
+               topic != 'Business', function
+               Rules or Enforcement
+  process_ctx  keyword hit in the header,    the rows LOCUS can never call Business,
+               function Process or Context   because it gives them no topic at all
+  random       any row at all                prevalence anchor, and the only stratum
+                                             that can catch commerce both the LOCUS
+                                             label and the keyword list miss
 
-The random stratum is the point of this round. business + boundary is a biased
-frame by construction; sampling it forever cannot tell us what fraction of
-commerce it misses. 15 random rows is a thin estimate, but it is the first one.
+Round 2 drew boundary rows without splitting them by function, which left only 3
+Process/Context rows: too few to say whether the taxonomy gap holds much core
+commerce. process_ctx samples them on purpose. random stays the only way to
+estimate what business + boundary miss, so it gets a real share of the budget.
 
-Rows labeled in round 1 are excluded by default, so this is a fresh sample.
+Rows labeled in rounds 1 and 2 are excluded by default, so this is a fresh sample.
 
-round2_sheet.csv holds LOCUS text verbatim, including rows that begin with "="
+round<N>_sheet.csv holds LOCUS text verbatim, including rows that begin with "="
 or "-". It is a data file: scripts read it, and neutralizing those characters here
 would alter the text we are asking people to judge. The spreadsheets labelers
 actually open are built by make_sheets.py, which forces every cell to a literal
@@ -32,18 +36,18 @@ string. If you open this CSV in Excel or Sheets yourself, import it as text.
 
 Two files come out:
 
-  out/round2_sheet.csv   the master rows: text, blank columns, nothing else
-  out/round2_key.csv     slice / topic / function / jurisdiction, joined on row_id
+  out/round<N>_sheet.csv   the master rows: text, blank columns, nothing else
+  out/round<N>_key.csv     slice / topic / function / jurisdiction, joined on row_id
                          Coordinator keeps this. Do not send it to labelers.
 
 Usage, with no local copy of the corpus:
 
     pip install duckdb
-    python export_round2.py --hf
+    python cut_sheet.py --round 3 --hf
 
 Or against a local LOCUS-v1 sitting next to the repo:
 
-    python export_round2.py
+    python cut_sheet.py --round 3
 
 Options:
 
@@ -53,12 +57,13 @@ Options:
     --out          output folder (default: out)
     --keywords     keyword file (default: commerce_keywords.txt)
     --n-business   rows from topic == 'Business' (default: 30)
-    --n-boundary   rows from the keyword/boundary slice (default: 30)
-    --n-random     rows sampled from all of LOCUS (default: 15)
-    --seed         sampling and shuffle seed (default: 71; round 1 used 70)
+    --n-boundary   boundary rows classified Rules or Enforcement (default: 20)
+    --n-pc         boundary rows classified Process or Context (default: 20)
+    --n-random     rows sampled from all of LOCUS (default: 30)
+    --seed         sampling and shuffle seed (default: 72; rounds 1 and 2 used 70, 71)
     --chars        characters of text per row (default: 6000)
-    --exclude      CSV with a chunk_id column, whose rows are held out
-                   (default: labels/round1_clean.csv)
+    --exclude      one or more CSVs with a chunk_id column, whose rows are held out
+                   (default: results/round1/merged.csv results/round2/round2_merged.csv)
 
 Nothing here writes to the LOCUS-v1 folder.
 """
@@ -73,16 +78,18 @@ import textwrap
 
 import duckdb
 
-from export_commerce import (CHUNK_ID, HF_SOURCE, keyword_regex, load_keywords,
-                             parquet_source, sql_labels, sql_list)
+from wp3.corpus import (CHUNK_ID, HF_SOURCE, keyword_regex, load_keywords,
+                        parquet_source, sql_labels, sql_list)
 
-# What the labeler fills in. Must match the columns in definition_v2.md.
+# What the labeler fills in. Must match the fields in codebook/v3.md (section 1)
+# and the closed lists in wp3/schema.py.
 BLANK_COLUMNS = [
     "tier",             # core / adjacent / not   (blank if unresolvable)
     "adjacent_reason",  # required iff tier == adjacent
     "category",         # entry / operation / exit / other
-    "unresolvable",     # blank / truncated / no-context
-    "step",             # which decision-procedure step decided it, 1-5
+    "unresolvable",     # blank / no-context
+    "step",             # which decision-procedure step decided it, 1-4
+    "confidence",       # High / Medium / Low
     "notes",
     "labeler",
 ]
@@ -96,7 +103,8 @@ KEY_COLUMNS = ["slice", "topic", "function", "matched", "state", "city", "county
 
 def load_excluded(path: pathlib.Path) -> set[str]:
     if not path.exists():
-        return set()
+        raise SystemExit(f"{path} not found; refusing to cut a sheet that might "
+                         f"repeat already-labeled rows (pass --exclude explicitly)")
     with path.open(newline="", encoding="utf-8") as fh:
         reader = csv.DictReader(fh)
         if "chunk_id" not in (reader.fieldnames or []):
@@ -117,19 +125,25 @@ def main() -> None:
     ap.add_argument("--out", default="out")
     ap.add_argument("--keywords", default="commerce_keywords.txt")
     ap.add_argument("--n-business", type=int, default=30)
-    ap.add_argument("--n-boundary", type=int, default=30)
-    ap.add_argument("--n-random", type=int, default=15)
-    ap.add_argument("--seed", type=int, default=71)
+    ap.add_argument("--n-boundary", type=int, default=20)
+    ap.add_argument("--n-pc", type=int, default=20)
+    ap.add_argument("--n-random", type=int, default=30)
+    ap.add_argument("--seed", type=int, default=72)
     ap.add_argument("--chars", type=int, default=6000)
-    ap.add_argument("--exclude", default="results/round1/round1_clean.csv")
+    ap.add_argument("--exclude", nargs="+",
+                    default=["results/round1/merged.csv",
+                             "results/round2/round2_merged.csv"],
+                    help="CSVs with a chunk_id column; their rows are held out")
     args = ap.parse_args()
 
     out = pathlib.Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
 
     words = load_keywords(pathlib.Path(args.keywords))
-    excluded = load_excluded(pathlib.Path(args.exclude))
-    print(f"holding out {len(excluded)} chunk_ids from {args.exclude}")
+    excluded: set[str] = set()
+    for path in args.exclude:
+        excluded |= load_excluded(pathlib.Path(path))
+    print(f"holding out {len(excluded)} chunk_ids from {', '.join(args.exclude)}")
 
     con = duckdb.connect()
     glob, source = parquet_source(con, HF_SOURCE if args.hf else args.data)
@@ -140,8 +154,8 @@ def main() -> None:
     """)
 
     # Oversample, then drop held-out rows in Python and trim to size. Simpler than
-    # pushing a 97-element NOT IN list through the sampler, and the margin is wide
-    # enough that a round-1 collision cannot starve a stratum.
+    # pushing a few hundred ids through a NOT IN list, and the margin is wide
+    # enough that a collision with an earlier round cannot starve a stratum.
     over = 4
     big = "(" + "|".join(keyword_regex(w) for w in words) + ")"
     matched = (f"list_transform(list_filter(list_zip({sql_list(words)}, {sql_labels(words)}),"
@@ -160,16 +174,32 @@ def main() -> None:
             FROM cand
             USING SAMPLE {args.n_business * over} ROWS (reservoir, {args.seed})
         """,
+        # The boundary slice split by LOCUS function. Process and Context rows get
+        # no topic at all, so they are the part of the slice LOCUS could never
+        # have labeled Business; they get their own stratum and their own count.
         "boundary": f"""
             WITH cand AS (
                 SELECT * FROM locus
                 WHERE topic IS DISTINCT FROM 'Business'
+                  AND function IN ('Rules', 'Enforcement')
                   AND regexp_matches(lower(header), '{big.replace("'", "''")}')
             )
             SELECT chunk_id, state, city, county, function, topic, header, content,
                    array_to_string({matched}, '; ') AS matched
             FROM cand
             USING SAMPLE {args.n_boundary * over} ROWS (reservoir, {args.seed})
+        """,
+        "process_ctx": f"""
+            WITH cand AS (
+                SELECT * FROM locus
+                WHERE topic IS DISTINCT FROM 'Business'
+                  AND function IN ('Process', 'Context')
+                  AND regexp_matches(lower(header), '{big.replace("'", "''")}')
+            )
+            SELECT chunk_id, state, city, county, function, topic, header, content,
+                   array_to_string({matched}, '; ') AS matched
+            FROM cand
+            USING SAMPLE {args.n_pc * over} ROWS (reservoir, {args.seed})
         """,
         # No filter at all. This is the stratum that can surprise us.
         "random": f"""
@@ -180,7 +210,8 @@ def main() -> None:
         """,
     }
     wanted = {"business": args.n_business, "boundary": args.n_boundary,
-              "random": args.n_random}
+              "process_ctx": args.n_pc, "random": args.n_random}
+    strata = {name: sql for name, sql in strata.items() if wanted[name] > 0}
 
     rng = random.Random(args.seed)
     picked: list[dict] = []
@@ -257,11 +288,11 @@ def main() -> None:
                 "full_chars": len(content),
             })
 
-    counts = {name: sum(1 for r in picked if r["slice"] == name) for name in strata}
+    counts = {name: sum(1 for r in picked if r["slice"] == name) for name in wanted}
     summary = textwrap.dedent(f"""\
-        round 2 sheet    {len(picked)} rows, shuffled, seed {args.seed}
-        strata           business {counts['business']}  boundary {counts['boundary']}  random {counts['random']}
-        held out         {len(excluded)} round-1 chunk_ids
+        round {args.round} sheet    {len(picked)} rows, shuffled, seed {args.seed}
+        strata           {'  '.join(f"{k} {v}" for k, v in counts.items())}
+        held out         {len(excluded)} chunk_ids from earlier rounds
         text per row     {args.chars} chars ({truncated} rows hit the limit)
         withheld         {', '.join(KEY_COLUMNS)}
         to fill in       {', '.join(BLANK_COLUMNS)}
@@ -269,7 +300,7 @@ def main() -> None:
         sheet            {sheet_path.resolve()}
         key              {key_path.resolve()}   <- coordinator only, do not share
         """)
-    (out / "round2_summary.txt").write_text(summary, encoding="utf-8")
+    (out / f"round{args.round}_summary.txt").write_text(summary, encoding="utf-8")
     print()
     print(summary)
     con.close()
