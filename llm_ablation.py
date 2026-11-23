@@ -12,6 +12,10 @@ Gemini, through its OpenAI-compatible endpoint (key in your shell, never in a fi
     python llm_ablation.py --backend openai --model gemini-3.5-flash-lite \
         --reasoning-effort minimal --sleep 4 --eval round1 --limit 5
 
+Rebuild every table from the committed responses, with no API key and no calls:
+
+    python llm_ablation.py --eval round2 --repeats 5 --from-runs labels/llm_runs.csv
+
 --sleep spaces out real calls (60 / requests-per-minute, plus a margin), and
 rate-limit errors are retried with a growing wait. A run that stops for any
 reason resumes from the cache when rerun with the same command.
@@ -87,6 +91,7 @@ import collections
 import csv
 import hashlib
 import json
+import math
 import os
 import pathlib
 import random
@@ -484,6 +489,51 @@ def per_class(pairs: list[tuple[str, str]], label: str) -> tuple[float, float, f
 
 # ------------------------------------------------------------------------ main
 
+# ------------------------------------------------------------- significance
+# Exact tests, stdlib only. At 72 rows a contrast turns on a handful of rows,
+# so an accuracy gap means little until it is checked on the rows where the
+# two variants actually disagree.
+
+def mcnemar_exact(won: int, lost: int) -> float:
+    """Two-sided exact McNemar test (binomial on the discordant rows).
+
+    won = rows the first variant got right and the second got wrong; lost =
+    the reverse. Rows both got right, or both got wrong, carry no information
+    about which variant is better and do not enter.
+    """
+    n = won + lost
+    if n == 0:
+        return 1.0
+    k = min(won, lost)
+    return min(1.0, 2 * sum(math.comb(n, i) for i in range(k + 1)) / 2 ** n)
+
+
+def fisher_greater(a: int, b: int, c: int, d: int) -> float:
+    """One-sided Fisher exact test that row 1 has the higher rate in column 1.
+
+    Table [[a, b], [c, d]]: rows = model unstable / stable, columns = humans
+    split / agreed. Small p = unstable rows are richer in human splits than
+    chance would give.
+    """
+    n, r1, c1 = a + b + c + d, a + b, a + c
+    if n == 0 or r1 == 0 or c1 == 0:
+        return 1.0
+    total = math.comb(n, r1)
+    return sum(math.comb(c1, k) * math.comb(n - c1, r1 - k)
+               for k in range(a, min(r1, c1) + 1)) / total
+
+
+def load_runs(path: pathlib.Path) -> list[dict]:
+    """Read a saved llm_runs.csv back into the records the scorer expects."""
+    with path.open(encoding="utf-8", newline="") as fh:
+        out = []
+        for r in csv.DictReader(fh):
+            r["repeat"] = int(r["repeat"])
+            r["parsed"] = r["parsed"] == "True"
+            out.append(r)
+    return out
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--labels", default="labels")
@@ -513,6 +563,10 @@ def main() -> None:
                          "it too). Record it with the results; it changes what the "
                          "ablation measures")
     ap.add_argument("--retries", type=int, default=6)
+    ap.add_argument("--from-runs", default=None, metavar="CSV",
+                    help="score a saved llm_runs.csv instead of calling a model; "
+                         "the API cache is not in the repo, this file is, so "
+                         "this is how anyone can rebuild every table")
     ap.add_argument("--dry-run", action="store_true",
                     help="print one assembled prompt per variant and stop")
     args = ap.parse_args()
@@ -571,9 +625,16 @@ def main() -> None:
 
     # ---- run
     runs = []
+    if args.from_runs:
+        wanted = {r["chunk_id"] for r in rows}
+        runs = [r for r in load_runs(pathlib.Path(args.from_runs))
+                if r["variant"] in variants and r["chunk_id"] in wanted
+                and r["repeat"] < args.repeats]
+        print(f"scoring {len(runs)} saved responses from {args.from_runs}; "
+              f"no model calls", file=sys.stderr)
     total = len(variants) * len(rows) * args.repeats
     done = 0
-    for v in variants:
+    for v in (variants if not args.from_runs else []):
         for row in rows:
             for rep in range(args.repeats):
                 rng = random.Random(args.seed * 1000 + rep)
@@ -596,7 +657,11 @@ def main() -> None:
                 if done % 25 == 0 or done == total:
                     print(f"  {done}/{total}", file=sys.stderr)
 
-    with (ldir / "llm_runs.csv").open("w", encoding="utf-8", newline="") as fh:
+    runs_out = ldir / "llm_runs.csv"
+    if args.from_runs and pathlib.Path(args.from_runs).resolve() == runs_out.resolve():
+        runs_out = None     # never rewrite the file we are scoring
+    with (runs_out.open("w", encoding="utf-8", newline="") if runs_out
+          else open(os.devnull, "w")) as fh:
         cols = ["variant", "row_id", "chunk_id", "repeat", "parsed", "outcome",
                 "tier", "adjacent_reason", "category", "unresolvable", "step",
                 "confidence", "notes", "reasoning"]
@@ -639,8 +704,10 @@ def main() -> None:
         return ("core" if o == "core" else "not") if binary else o
 
     summary = {}
+    right: dict[str, dict[str, bool]] = {}      # variant -> chunk_id -> correct
     for v in variants:
         pairs, abst, parsed_n, n = [], 0, 0, 0
+        right[v] = {}
         for r in rows:
             recs = by[(v, r["chunk_id"])]
             n += len(recs)
@@ -652,6 +719,7 @@ def main() -> None:
             if modal == "unresolvable":
                 abst += 1
             pairs.append((r["gold"], scored(modal)))
+            right[v][r["chunk_id"]] = r["gold"] == scored(modal)
         acc = sum(1 for g, m in pairs if g == m) / len(pairs) if pairs else 0.0
         k = cohen_kappa(pairs, label_space)
         f1s = " ".join(f"{lab[:4]} {per_class(pairs, lab)[2]:.2f}"
@@ -662,9 +730,15 @@ def main() -> None:
 
     say()
     say("contrasts (what each part of the codebook is worth)")
+    say("  (won / lost = rows the first variant got right and the second wrong,")
+    say("   and the reverse; p = exact two-sided McNemar test on those rows)")
     def delta(a, b, why):
         if a in summary and b in summary:
+            both = right[a].keys() & right[b].keys()
+            won = sum(1 for c in both if right[a][c] and not right[b][c])
+            lost = sum(1 for c in both if right[b][c] and not right[a][c])
             say(f"  {a} - {b}   acc {summary[a][0]-summary[b][0]:+.3f}"
+                f"   won {won:>2} / lost {lost:>2}   p {mcnemar_exact(won, lost):.3f}"
                 f"   {why}")
     delta("B", "A", "the four-step procedure")
     delta("C", "B", "reason codes with carve-outs")
@@ -678,7 +752,9 @@ def main() -> None:
     say()
     say("self-consistency across repeats, and where it lines up with human splits")
     rowstats = []
+    unstable_of: dict[str, dict[str, bool]] = {}   # variant -> chunk_id -> unstable
     for v in variants:
+        unstable_of[v] = {}
         selfitems, unstable_split, unstable_agree = [], 0, 0
         stable_split, stable_agree = 0, 0
         for r in rows:
@@ -687,6 +763,7 @@ def main() -> None:
                 continue
             selfitems.append(vals)
             unstable = len(set(vals)) > 1
+            unstable_of[v][r["chunk_id"]] = unstable
             if unstable and split[r["chunk_id"]]:
                 unstable_split += 1
             elif unstable:
@@ -709,8 +786,34 @@ def main() -> None:
         p_split_overall = ((unstable_split + stable_split) / tot) if tot else 0.0
         say(f"  {v:<4} self-kappa {fmt(sk)}  AC1 {fmt(sa)}   "
             f"unstable rows {unstable_split + unstable_agree}/{tot}")
+        p_split_given_stable = (stable_split / (stable_split + stable_agree)
+                                 if stable_split + stable_agree else 0.0)
         say(f"       P(humans split | model unstable) {p_split_given_unstable:.2f}"
             f"   vs base rate {p_split_overall:.2f}")
+        if unstable_split + unstable_agree:
+            fp = fisher_greater(unstable_split, unstable_agree,
+                                stable_split, stable_agree)
+            st = [c for c in unstable_of[v] if not unstable_of[v][c]]
+            un = [c for c in unstable_of[v] if unstable_of[v][c]]
+            acc_st = sum(right[v].get(c, False) for c in st) / len(st) if st else 0.0
+            acc_un = sum(right[v].get(c, False) for c in un) / len(un) if un else 0.0
+            say(f"       split rate unstable {p_split_given_unstable:.2f} vs stable "
+                f"{p_split_given_stable:.2f}   Fisher one-sided p {fp:.3f}")
+            say(f"       accuracy on stable rows {acc_st:.2f} ({len(st)}), "
+                f"on unstable rows {acc_un:.2f} ({len(un)})")
+
+    shuffled = [v for v in variants if any(unstable_of[v].values())]
+    if len(shuffled) > 1:
+        ids = set.intersection(*(set(unstable_of[v]) for v in shuffled))
+        anyu = {c: any(unstable_of[v][c] for v in shuffled) for c in ids}
+        a = sum(1 for c in ids if anyu[c] and split[c])
+        b = sum(1 for c in ids if anyu[c] and not split[c])
+        c_ = sum(1 for c in ids if not anyu[c] and split[c])
+        d = sum(1 for c in ids if not anyu[c] and not split[c])
+        say(f"  pooled: unstable in any of {', '.join(shuffled)}: {a + b} rows, "
+            f"humans split on {a / (a + b) if a + b else 0:.2f} vs "
+            f"{c_ / (c_ + d) if c_ + d else 0:.2f} of the rest   "
+            f"Fisher one-sided p {fisher_greater(a, b, c_, d):.3f}")
 
     with (ldir / "llm_rowstats.csv").open("w", encoding="utf-8", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=["variant", "row_id", "chunk_id", "gold",
@@ -749,8 +852,9 @@ def main() -> None:
                         f"{fmt(cohen_kappa([(x[i], x[-1]) for x in four], OUTCOMES))}")
 
     say()
-    say(f"wrote {ldir/'llm_runs.csv'}, {ldir/'llm_rowstats.csv'}, "
-        f"{ldir/'llm_ablation.txt'}")
+    written = ([ldir / "llm_runs.csv"] if runs_out else []) + [
+        ldir / "llm_rowstats.csv", ldir / "llm_ablation.txt"]
+    say("wrote " + ", ".join(str(w) for w in written))
     (ldir / "llm_ablation.txt").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
